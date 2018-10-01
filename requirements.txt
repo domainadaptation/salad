@@ -1,0 +1,9 @@
+numpy
+pillow
+scipy
+matplotlib
+torch
+torchvision
+h5py
+pandas
+pytables

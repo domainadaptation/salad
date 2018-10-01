@@ -1,0 +1,322 @@
+<h1 id="salad"><a href="#salad">salad</a></h1>
+<h2 id="salad.datasets"><a href="#salad.datasets">salad.datasets</a></h2>
+<h3 id="salad.datasets.da"><a href="#salad.datasets.da">salad.datasets.da</a></h3>
+<h4 id="salad.datasets.da.base"><a href="#salad.datasets.da.base">salad.datasets.da.base</a></h4>
+<h5 id="salad.datasets.da.base.jointloader"><em>salad.datasets.da.base</em>.<strong>JointLoader</strong></h5>
+<h5 id="salad.datasets.da.base.jointdataset"><em>salad.datasets.da.base</em>.<strong>JointDataset</strong></h5>
+<h5 id="salad.datasets.da.base.augmentationdataset"><em>salad.datasets.da.base</em>.<strong>AugmentationDataset</strong></h5>
+<h4 id="salad.datasets.da.digits"><a href="#salad.datasets.da.digits">salad.datasets.da.digits</a></h4>
+<h5 id="salad.datasets.da.digits.multidomainloader"><em>salad.datasets.da.digits</em>.<strong>MultiDomainLoader</strong></h5>
+<p>Wrapper around Joint Loader for multi domain training</p>
+<h5 id="salad.datasets.da.digits.digitsloader"><em>salad.datasets.da.digits</em>.<strong>DigitsLoader</strong></h5>
+<p>Digits dataset</p>
+<pre><code>Four domains available: SVHN, MNIST, SYNTH, USPS</code></pre>
+<h5 id="salad.datasets.da.digits.augmentationloader"><em>salad.datasets.da.digits</em>.<strong>AugmentationLoader</strong></h5>
+<h5 id="salad.datasets.da.digits.rotationloader"><em>salad.datasets.da.digits</em>.<strong>RotationLoader</strong></h5>
+<h5 id="salad.datasets.da.digits.lowtohighgaussian"><em>salad.datasets.da.digits</em>.<strong>LowToHighGaussian</strong></h5>
+<h5 id="salad.datasets.da.digits.hightolowgaussian"><em>salad.datasets.da.digits</em>.<strong>HighToLowGaussian</strong></h5>
+<h5 id="salad.datasets.da.digits.lowtohighsaltpepper"><em>salad.datasets.da.digits</em>.<strong>LowToHighSaltPepper</strong></h5>
+<h5 id="salad.datasets.da.digits.hightolowsaltpepper"><em>salad.datasets.da.digits</em>.<strong>HighToLowSaltPepper</strong></h5>
+<h4 id="salad.datasets.da.toy"><a href="#salad.datasets.da.toy">salad.datasets.da.toy</a></h4>
+<h3 id="salad.datasets.digits"><a href="#salad.datasets.digits">salad.datasets.digits</a></h3>
+<p>Digits datasets used in domain adaptation</p>
+<h4 id="salad.datasets.digits.base"><a href="#salad.datasets.digits.base">salad.datasets.digits.base</a></h4>
+<h5 id="salad.datasets.digits.base.basedataset"><em>salad.datasets.digits.base</em>.<strong>BaseDataset</strong></h5>
+<h4 id="salad.datasets.digits.mnist"><a href="#salad.datasets.digits.mnist">salad.datasets.digits.mnist</a></h4>
+<h5 id="salad.datasets.digits.mnist.mnist"><em>salad.datasets.digits.mnist</em>.<strong>MNIST</strong></h5>
+<h4 id="salad.datasets.digits.openset"><a href="#salad.datasets.digits.openset">salad.datasets.digits.openset</a></h4>
+<h5 id="salad.datasets.digits.openset.opensetdataset"><em>salad.datasets.digits.openset</em>.<strong>OpenSetDataset</strong></h5>
+<h4 id="salad.datasets.digits.synth"><a href="#salad.datasets.digits.synth">salad.datasets.digits.synth</a></h4>
+<h5 id="salad.datasets.digits.synth.synthsmall"><em>salad.datasets.digits.synth</em>.<strong>SynthSmall</strong></h5>
+<h5 id="salad.datasets.digits.synth.synth"><em>salad.datasets.digits.synth</em>.<strong>Synth</strong></h5>
+<h4 id="salad.datasets.digits.usps"><a href="#salad.datasets.digits.usps">salad.datasets.digits.usps</a></h4>
+<h5 id="salad.datasets.digits.usps.usps"><em>salad.datasets.digits.usps</em>.<strong>USPS</strong></h5>
+<pre><code>`USPS &lt;http://statweb.stanford.edu/~tibs/ElemStatLearn/data.html&gt;`_ Dataset.
+Args:
+    root (string): Root directory of dataset where ``processed/training.pt``
+        and  ``processed/test.pt`` exist.
+    train (bool, optional): If True, creates dataset from ``training.pt``,
+        otherwise from ``test.pt``.
+    download (bool, optional): If true, downloads the dataset from the internet and
+        puts it in root directory. If dataset is already downloaded, it is not
+        downloaded again.
+    transform (callable, optional): A function/transform that  takes in an PIL image
+        and returns a transformed version. E.g, ``transforms.RandomCrop``
+    target_transform (callable, optional): A function/transform that takes in the
+        target and transforms it.
+
+Download USPS dataset from
+http://statweb.stanford.edu/~tibs/ElemStatLearn/data.html
+Explicit links:
+Training: http://statweb.stanford.edu/~tibs/ElemStatLearn/datasets/zip.train.gz
+Test:     http://statweb.stanford.edu/~tibs/ElemStatLearn/datasets/zip.test.gz
+
+Code partly adapted from 
+https://github.com/haeusser/learning_by_association/blob/master/semisup/tools/usps.py</code></pre>
+<h3 id="salad.datasets.transforms"><a href="#salad.datasets.transforms">salad.datasets.transforms</a></h3>
+<h4 id="salad.datasets.transforms.digits"><a href="#salad.datasets.transforms.digits">salad.datasets.transforms.digits</a></h4>
+<h4 id="salad.datasets.transforms.ensembling"><a href="#salad.datasets.transforms.ensembling">salad.datasets.transforms.ensembling</a></h4>
+<h5 id="salad.datasets.transforms.ensembling.imageaugmentation"><em>salad.datasets.transforms.ensembling</em>.<strong>ImageAugmentation</strong></h5>
+<h4 id="salad.datasets.transforms.noise"><a href="#salad.datasets.transforms.noise">salad.datasets.transforms.noise</a></h4>
+<h5 id="salad.datasets.transforms.noise.domainconfusion"><em>salad.datasets.transforms.noise</em>.<strong>DomainConfusion</strong></h5>
+<p>Given x and a set of possible transforms, applies a random transform on x and returns a pair (x, d)</p>
+<h5 id="salad.datasets.transforms.noise.domainlabel"><em>salad.datasets.transforms.noise</em>.<strong>DomainLabel</strong></h5>
+<p>concats a domain label to the dataset</p>
+<h5 id="salad.datasets.transforms.noise.uniform"><em>salad.datasets.transforms.noise</em>.<strong>Uniform</strong></h5>
+<p>Add uniform noise</p>
+<h5 id="salad.datasets.transforms.noise.gaussian"><em>salad.datasets.transforms.noise</em>.<strong>Gaussian</strong></h5>
+<p>Add gaussian noise</p>
+<h5 id="salad.datasets.transforms.noise.saltandpepper"><em>salad.datasets.transforms.noise</em>.<strong>SaltAndPepper</strong></h5>
+<p>Adds salt and pepper noise with probability <em>p</em> to a given image or batch of images</p>
+<h5 id="salad.datasets.transforms.noise.invertcontrast"><em>salad.datasets.transforms.noise</em>.<strong>InvertContrast</strong></h5>
+<h5 id="salad.datasets.transforms.noise.shift"><em>salad.datasets.transforms.noise</em>.<strong>Shift</strong></h5>
+<h4 id="salad.datasets.transforms.noisy"><a href="#salad.datasets.transforms.noisy">salad.datasets.transforms.noisy</a></h4>
+<h3 id="salad.datasets.visda"><a href="#salad.datasets.visda">salad.datasets.visda</a></h3>
+<h4 id="salad.datasets.visda.detection"><a href="#salad.datasets.visda.detection">salad.datasets.visda.detection</a></h4>
+<h5 id="salad.datasets.visda.detection.visdadetectionloader"><em>salad.datasets.visda.detection</em>.<strong>VisdaDetectionLoader</strong></h5>
+<h5 id="salad.datasets.visda.detection.maxtransform"><em>salad.datasets.visda.detection</em>.<strong>MaxTransform</strong></h5>
+<h5 id="salad.datasets.visda.detection.coordshuffle"><em>salad.datasets.visda.detection</em>.<strong>CoordShuffle</strong></h5>
+<h4 id="salad.datasets.visda.openset"><a href="#salad.datasets.visda.openset">salad.datasets.visda.openset</a></h4>
+<h4 id="salad.datasets.visda.utils"><a href="#salad.datasets.visda.utils">salad.datasets.visda.utils</a></h4>
+<h5 id="salad.datasets.visda.utils.augmentation"><em>salad.datasets.visda.utils</em>.<strong>Augmentation</strong></h5>
+<h5 id="salad.datasets.visda.utils.multitransform"><em>salad.datasets.visda.utils</em>.<strong>MultiTransform</strong></h5>
+<h4 id="salad.datasets.visda.visda"><a href="#salad.datasets.visda.visda">salad.datasets.visda.visda</a></h4>
+<h2 id="salad.layers"><a href="#salad.layers">salad.layers</a></h2>
+<h3 id="salad.layers.association"><a href="#salad.layers.association">salad.layers.association</a></h3>
+<h5 id="salad.layers.association.walkerloss"><em>salad.layers.association</em>.<strong>WalkerLoss</strong></h5>
+<h5 id="salad.layers.association.visitloss"><em>salad.layers.association</em>.<strong>VisitLoss</strong></h5>
+<h5 id="salad.layers.association.associationmatrix"><em>salad.layers.association</em>.<strong>AssociationMatrix</strong></h5>
+<h5 id="salad.layers.association.associativeloss"><em>salad.layers.association</em>.<strong>AssociativeLoss</strong></h5>
+<p>Association Loss for Domain Adaptation</p>
+<pre><code>Reference:
+Associative Domain Adaptation, Hausser et al. (2017)</code></pre>
+<h5 id="salad.layers.association.otloss"><em>salad.layers.association</em>.<strong>OTLoss</strong></h5>
+<h5 id="salad.layers.association.wassersteinloss"><em>salad.layers.association</em>.<strong>WassersteinLoss</strong></h5>
+<h5 id="salad.layers.association.accuracy"><em>salad.layers.association</em>.<strong>Accuracy</strong></h5>
+<h5 id="salad.layers.association.augmentationloss"><em>salad.layers.association</em>.<strong>AugmentationLoss</strong></h5>
+<p>Augmentation Loss from https://github.com/Britefury/self-ensemble-visual-domain-adapt</p>
+<h5 id="salad.layers.association.classbalanceloss"><em>salad.layers.association</em>.<strong>ClassBalanceLoss</strong></h5>
+<p>Class Balance Loss from https://github.com/Britefury/self-ensemble-visual-domain-adapt</p>
+<h3 id="salad.layers.base"><a href="#salad.layers.base">salad.layers.base</a></h3>
+<h5 id="salad.layers.base.kldivwithlogits"><em>salad.layers.base</em>.<strong>KLDivWithLogits</strong></h5>
+<h5 id="salad.layers.base.accuracyscore"><em>salad.layers.base</em>.<strong>AccuracyScore</strong></h5>
+<h5 id="salad.layers.base.meanaccuracyscore"><em>salad.layers.base</em>.<strong>MeanAccuracyScore</strong></h5>
+<h5 id="salad.layers.base.weightedce"><em>salad.layers.base</em>.<strong>WeightedCE</strong></h5>
+<p>Adapted from Self-Ensembling repository</p>
+<h3 id="salad.layers.coral"><a href="#salad.layers.coral">salad.layers.coral</a></h3>
+<h5 id="salad.layers.coral.coralloss"><em>salad.layers.coral</em>.<strong>CoralLoss</strong></h5>
+<p>Deep CORAL loss from paper: https://arxiv.org/pdf/1607.01719.pdf</p>
+<h5 id="salad.layers.coral.correlationdistance"><em>salad.layers.coral</em>.<strong>CorrelationDistance</strong></h5>
+<h5 id="salad.layers.coral.logcoralloss"><em>salad.layers.coral</em>.<strong>LogCoralLoss</strong></h5>
+<h3 id="salad.layers.da"><a href="#salad.layers.da">salad.layers.da</a></h3>
+<h5 id="salad.layers.da.featureawarenormalization"><em>salad.layers.da</em>.<strong>FeatureAwareNormalization</strong></h5>
+<h5 id="salad.layers.da.autoalign2d"><em>salad.layers.da</em>.<strong>AutoAlign2d</strong></h5>
+<h3 id="salad.layers.vat"><a href="#salad.layers.vat">salad.layers.vat</a></h3>
+<h5 id="salad.layers.vat.vatloss"><em>salad.layers.vat</em>.<strong>VATLoss</strong></h5>
+<p>Virtual Adversarial Training Loss function</p>
+<pre><code>Reference:
+TODO</code></pre>
+<h5 id="salad.layers.vat.conditionalentropy"><em>salad.layers.vat</em>.<strong>ConditionalEntropy</strong></h5>
+<p>estimates the conditional cross entropy of the input</p>
+<pre><code>$$
+rac{1}{n} \sum_i \sum_c p(y_i = c | x_i) \log p(y_i = c | x_i)
+$$
+
+By default, will assume that samples are across the first and class probabilities
+across the second dimension.</code></pre>
+<h2 id="salad.models"><a href="#salad.models">salad.models</a></h2>
+<h3 id="salad.models.audio"><a href="#salad.models.audio">salad.models.audio</a></h3>
+<h3 id="salad.models.base"><a href="#salad.models.base">salad.models.base</a></h3>
+<h5 id="salad.models.base.basemodel"><em>salad.models.base</em>.<strong>BaseModel</strong></h5>
+<h5 id="salad.models.base.conditionaladaptive"><em>salad.models.base</em>.<strong>ConditionalAdaptive</strong></h5>
+<h3 id="salad.models.conditionals"><a href="#salad.models.conditionals">salad.models.conditionals</a></h3>
+<h3 id="salad.models.digits"><a href="#salad.models.digits">salad.models.digits</a></h3>
+<h5 id="salad.models.digits.svhn"><em>salad.models.digits</em>.<strong>SVHN</strong></h5>
+<h5 id="salad.models.digits.mnistmodel"><em>salad.models.digits</em>.<strong>MNISTModel</strong></h5>
+<h5 id="salad.models.digits.svhnmodel"><em>salad.models.digits</em>.<strong>SVHNmodel</strong></h5>
+<pre><code>Model for application on SVHN data (32x32x3)
+Architecture identical to https://github.com/haeusser/learning_by_association</code></pre>
+<h5 id="salad.models.digits.frenchmodel"><em>salad.models.digits</em>.<strong>FrenchModel</strong></h5>
+<pre><code>Model used in &quot;Self-Ensembling for Visual Domain Adaptation&quot;
+by French et al.</code></pre>
+<h3 id="salad.models.fan"><a href="#salad.models.fan">salad.models.fan</a></h3>
+<h5 id="salad.models.fan.conditionallayer"><em>salad.models.fan</em>.<strong>ConditionalLayer</strong></h5>
+<h5 id="salad.models.fan.conditionalbatchnorm"><em>salad.models.fan</em>.<strong>ConditionalBatchNorm</strong></h5>
+<h5 id="salad.models.fan.conditionalsequential"><em>salad.models.fan</em>.<strong>ConditionalSequential</strong></h5>
+<h5 id="salad.models.fan.featureawarenorm2d"><em>salad.models.fan</em>.<strong>FeatureAwareNorm2d</strong></h5>
+<p>Feature Aware Normalization</p>
+<h5 id="salad.models.fan.fanmodel"><em>salad.models.fan</em>.<strong>FANModel</strong></h5>
+<h5 id="salad.models.fan.conditionalmodel"><em>salad.models.fan</em>.<strong>ConditionalModel</strong></h5>
+<h3 id="salad.models.gan"><a href="#salad.models.gan">salad.models.gan</a></h3>
+<h5 id="salad.models.gan.conditionalgan"><em>salad.models.gan</em>.<strong>ConditionalGAN</strong></h5>
+<h5 id="salad.models.gan.discriminator"><em>salad.models.gan</em>.<strong>Discriminator</strong></h5>
+<h3 id="salad.models.neural"><a href="#salad.models.neural">salad.models.neural</a></h3>
+<h5 id="salad.models.neural.monkeydataset"><em>salad.models.neural</em>.<strong>MonkeyDataset</strong></h5>
+<p>Access dataset from Cadena et al (2018) in PyTorch</p>
+<h5 id="salad.models.neural.monkeydataloader"><em>salad.models.neural</em>.<strong>MonkeyDataLoader</strong></h5>
+<p>Provided by Santiago</p>
+<h3 id="salad.models.resnet"><a href="#salad.models.resnet">salad.models.resnet</a></h3>
+<h5 id="salad.models.resnet.conditionalsequential"><em>salad.models.resnet</em>.<strong>ConditionalSequential</strong></h5>
+<h5 id="salad.models.resnet.conditionalbatchnorm"><em>salad.models.resnet</em>.<strong>ConditionalBatchNorm</strong></h5>
+<h5 id="salad.models.resnet.conditionalparammodel"><em>salad.models.resnet</em>.<strong>ConditionalParamModel</strong></h5>
+<h5 id="salad.models.resnet.basicblock"><em>salad.models.resnet</em>.<strong>BasicBlock</strong></h5>
+<h5 id="salad.models.resnet.bottleneck"><em>salad.models.resnet</em>.<strong>Bottleneck</strong></h5>
+<h5 id="salad.models.resnet.resnet"><em>salad.models.resnet</em>.<strong>ResNet</strong></h5>
+<h3 id="salad.models.sensorimotor"><a href="#salad.models.sensorimotor">salad.models.sensorimotor</a></h3>
+<h3 id="salad.models.transfer"><a href="#salad.models.transfer">salad.models.transfer</a></h3>
+<h3 id="salad.models.unet"><a href="#salad.models.unet">salad.models.unet</a></h3>
+<h5 id="salad.models.unet.double_conv"><em>salad.models.unet</em>.<strong>double_conv</strong></h5>
+<p>(conv =&gt; BN =&gt; ReLU) * 2 ##### <em>salad.models.unet</em>.<strong>inconv</strong></p>
+<h5 id="salad.models.unet.down"><em>salad.models.unet</em>.<strong>down</strong></h5>
+<h5 id="salad.models.unet.up"><em>salad.models.unet</em>.<strong>up</strong></h5>
+<h5 id="salad.models.unet.outconv"><em>salad.models.unet</em>.<strong>outconv</strong></h5>
+<h5 id="salad.models.unet.unet"><em>salad.models.unet</em>.<strong>UNet</strong></h5>
+<p>Models for image registration</p>
+<h3 id="salad.models.utils"><a href="#salad.models.utils">salad.models.utils</a></h3>
+<h5 id="salad.models.utils.fixedbottleneck"><em>salad.models.utils</em>.<strong>FixedBottleneck</strong></h5>
+<h5 id="salad.models.utils.compressedresnet"><em>salad.models.utils</em>.<strong>CompressedResnet</strong></h5>
+<p>ResNet Variant where the batch norm statistics are merged into the transformation matrices</p>
+<h3 id="salad.models.vision"><a href="#salad.models.vision">salad.models.vision</a></h3>
+<h2 id="salad.optim"><a href="#salad.optim">salad.optim</a></h2>
+<h5 id="salad.optim.jointoptimizer"><em>salad.optim</em>.<strong>JointOptimizer</strong></h5>
+<h5 id="salad.optim.delayedweight"><em>salad.optim</em>.<strong>DelayedWeight</strong></h5>
+<h5 id="salad.optim.weightema"><em>salad.optim</em>.<strong>WeightEMA</strong></h5>
+<pre><code>Exponential moving average weight optimizer for mean teacher model
+
+Taken from https://github.com/Britefury/self-ensemble-visual-domain-adapt</code></pre>
+<h2 id="salad.solver"><a href="#salad.solver">salad.solver</a></h2>
+<p>Model optimization by stochastic gradient descent and variants The general structure:</p>
+<ul>
+<li>Each experiment configuration is a subclass of Solver or some derivative loss functions</li>
+<li>Solvers only specify how data and models are used to generate the losses</li>
+<li>Similarities between deep learning experiments (checkpointing, logging, ...) are implemented in the Solver class.</li>
+</ul>
+<p>In general, for many experiments, it makes sense to set up a solver as a subclass of a specific other solver; i.e. when the general problem is concerned with classifcation, a <code>CrossEntropySolver</code> would be a natural choice.</p>
+<p>Classes where designed with the possibility of re-use in mind. The goal is to exploit the particular structure most deep learning experiments share.</p>
+<h3 id="salad.solver.base"><a href="#salad.solver.base">salad.solver.base</a></h3>
+<h5 id="salad.solver.base.eventbasedsolver"><em>salad.solver.base</em>.<strong>EventBasedSolver</strong></h5>
+<h5 id="salad.solver.base.solver"><em>salad.solver.base</em>.<strong>Solver</strong></h5>
+<p>General gradient descent solver for deep learning experiments</p>
+<pre><code>Makes very little assumptions about the overall structure of the training
+routine, except
+
+- one or multiple models are used
+- the dataset can be fed to an instance of the torch.util.data.DataLoader
+
+To set up your own experiment, follow these steps:
+
+- Specify your optimizer(s)
+- Specify how losses are derived given your models and a batch of data
+
+Assumption:
+
+- multiple models, multiple losses, multiple optimizer
+
+- per model:
+    - multiple optimizers for different parts of the model
+    - per optimizer:
+        - multiple losses
+
+GAN:
+    - Discriminator
+        optim D
+            losses
+    - Generator
+        optim G
+
+--&gt; loop over models, then loop over optimizers, then aggregate losses</code></pre>
+<h3 id="salad.solver.classification"><a href="#salad.solver.classification">salad.solver.classification</a></h3>
+<h5 id="salad.solver.classification.classificationloss"><em>salad.solver.classification</em>.<strong>ClassificationLoss</strong></h5>
+<h5 id="salad.solver.classification.baseclasssolver"><em>salad.solver.classification</em>.<strong>BaseClassSolver</strong></h5>
+<h5 id="salad.solver.classification.bcesolver"><em>salad.solver.classification</em>.<strong>BCESolver</strong></h5>
+<h5 id="salad.solver.classification.multidomainbcesolver"><em>salad.solver.classification</em>.<strong>MultidomainBCESolver</strong></h5>
+<h3 id="salad.solver.da"><a href="#salad.solver.da">salad.solver.da</a></h3>
+<h4 id="salad.solver.da.association"><a href="#salad.solver.da.association">salad.solver.da.association</a></h4>
+<h5 id="salad.solver.da.association.associationloss"><em>salad.solver.da.association</em>.<strong>AssociationLoss</strong></h5>
+<h5 id="salad.solver.da.association.associativesolver"><em>salad.solver.da.association</em>.<strong>AssociativeSolver</strong></h5>
+<p>Train a Model using Associative Domain Adaptation</p>
+<p>Associative Domain Adaptation</p>
+<p>Hausser et al., CVPR 2017</p>
+<h4 id="salad.solver.da.base"><a href="#salad.solver.da.base">salad.solver.da.base</a></h4>
+<h5 id="salad.solver.da.base.dabasesolver"><em>salad.solver.da.base</em>.<strong>DABaseSolver</strong></h5>
+<p>Base Class for Unsupervised Domain Adaptation Approaches</p>
+<h5 id="salad.solver.da.base.dateacher"><em>salad.solver.da.base</em>.<strong>DATeacher</strong></h5>
+<p>Base Class for Unsupervised Domain Adaptation Approaches using a teacher model</p>
+<p>Solver classes for domain adaptation experiments</p>
+<h4 id="salad.solver.da.coral"><a href="#salad.solver.da.coral">salad.solver.da.coral</a></h4>
+<h5 id="salad.solver.da.coral.centroidloss"><em>salad.solver.da.coral</em>.<strong>CentroidLoss</strong></h5>
+<h5 id="salad.solver.da.coral.correlationdistanceloss"><em>salad.solver.da.coral</em>.<strong>CorrelationDistanceLoss</strong></h5>
+<h5 id="salad.solver.da.coral.correlationdistancesolver"><em>salad.solver.da.coral</em>.<strong>CorrelationDistanceSolver</strong></h5>
+<h5 id="salad.solver.da.coral.deepcoralsolver"><em>salad.solver.da.coral</em>.<strong>DeepCoralSolver</strong></h5>
+<pre><code>Deep CORAL: Correlation Alignment for Deep Domain Adaptation
+Paper: https://arxiv.org/pdf/1607.01719.pdf</code></pre>
+<h5 id="salad.solver.da.coral.deeplogcoralsolver"><em>salad.solver.da.coral</em>.<strong>DeepLogCoralSolver</strong></h5>
+<pre><code>Minimal Entropy Correlation Alignment for Unsupervised Domain Adaptation
+Paper: https://openreview.net/pdf?id=rJWechg0Z</code></pre>
+<h5 id="salad.solver.da.coral.corrdistancesolver"><em>salad.solver.da.coral</em>.<strong>CorrDistanceSolver</strong></h5>
+<pre><code>Minimal Entropy Correlation Alignment for Unsupervised Domain Adaptation
+Paper: https://openreview.net/pdf?id=rJWechg0Z</code></pre>
+<h5 id="salad.solver.da.coral.centroiddistancelosssolver"><em>salad.solver.da.coral</em>.<strong>CentroidDistanceLossSolver</strong></h5>
+<pre><code>Minimal Entropy Correlation Alignment for Unsupervised Domain Adaptation
+Paper: https://openreview.net/pdf?id=rJWechg0Z
+and: https://arxiv.org/pdf/1705.08180.pdf</code></pre>
+<p>Losses for Correlatin Alignment</p>
+<p>Deep CORAL: Correlation Alignment for Deep Domain Adaptation Paper: https://arxiv.org/pdf/1607.01719.pdf</p>
+<p>Minimal Entropy Correlation Alignment for Unsupervised Domain Adaptation Paper: https://openreview.net/pdf?id=rJWechg0Z</p>
+<h4 id="salad.solver.da.crossgrad"><a href="#salad.solver.da.crossgrad">salad.solver.da.crossgrad</a></h4>
+<h5 id="salad.solver.da.crossgrad.multidomainmodule"><em>salad.solver.da.crossgrad</em>.<strong>MultiDomainModule</strong></h5>
+<h5 id="salad.solver.da.crossgrad.model"><em>salad.solver.da.crossgrad</em>.<strong>Model</strong></h5>
+<h5 id="salad.solver.da.crossgrad.crossgradloss"><em>salad.solver.da.crossgrad</em>.<strong>CrossGradLoss</strong></h5>
+<p>Cross Gradient Training</p>
+<pre><code>http://arxiv.org/abs/1804.10745</code></pre>
+<h5 id="salad.solver.da.crossgrad.crossgradsolver"><em>salad.solver.da.crossgrad</em>.<strong>CrossGradSolver</strong></h5>
+<p>Cross Gradient Training</p>
+<p>ICLR 2018</p>
+<h4 id="salad.solver.da.dann"><a href="#salad.solver.da.dann">salad.solver.da.dann</a></h4>
+<h5 id="salad.solver.da.dann.adversarialloss"><em>salad.solver.da.dann</em>.<strong>AdversarialLoss</strong></h5>
+<h5 id="salad.solver.da.dann.dannsolver"><em>salad.solver.da.dann</em>.<strong>DANNSolver</strong></h5>
+<p>Domain Adversarial Neural Networks Solver</p>
+<pre><code>This builds upon the normal classification solver that uses CrossEntropy or
+BinaryCrossEntropy for optimizing neural networks.</code></pre>
+<h4 id="salad.solver.da.dirtt"><a href="#salad.solver.da.dirtt">salad.solver.da.dirtt</a></h4>
+<h5 id="salad.solver.da.dirtt.vada"><em>salad.solver.da.dirtt</em>.<strong>VADA</strong></h5>
+<h5 id="salad.solver.da.dirtt.dirtt"><em>salad.solver.da.dirtt</em>.<strong>DIRTT</strong></h5>
+<h5 id="salad.solver.da.dirtt.vadasolver"><em>salad.solver.da.dirtt</em>.<strong>VADASolver</strong></h5>
+<p>Virtual Adversarial Domain Adaptation</p>
+<h5 id="salad.solver.da.dirtt.dirttsolver"><em>salad.solver.da.dirtt</em>.<strong>DIRTTSolver</strong></h5>
+<p>Virtual Adversarial Domain Adaptation</p>
+<h4 id="salad.solver.da.dirtt_re"><a href="#salad.solver.da.dirtt_re">salad.solver.da.dirtt_re</a></h4>
+<h5 id="salad.solver.da.dirtt_re.dirtt"><em>salad.solver.da.dirtt_re</em>.<strong>DIRTT</strong></h5>
+<h5 id="salad.solver.da.dirtt_re.dirttsolver"><em>salad.solver.da.dirtt_re</em>.<strong>DIRTTSolver</strong></h5>
+<p>Self Ensembling for Visual Domain Adaptation</p>
+<h4 id="salad.solver.da.djdot"><a href="#salad.solver.da.djdot">salad.solver.da.djdot</a></h4>
+<h5 id="salad.solver.da.djdot.djdotsolver"><em>salad.solver.da.djdot</em>.<strong>DJDOTSolver</strong></h5>
+<p>Deep Joint Optimal Transport solver</p>
+<pre><code>TODO</code></pre>
+<h4 id="salad.solver.da.ensembling"><a href="#salad.solver.da.ensembling">salad.solver.da.ensembling</a></h4>
+<h5 id="salad.solver.da.ensembling.ensemblingloss"><em>salad.solver.da.ensembling</em>.<strong>EnsemblingLoss</strong></h5>
+<h5 id="salad.solver.da.ensembling.selfensemblingsolver"><em>salad.solver.da.ensembling</em>.<strong>SelfEnsemblingSolver</strong></h5>
+<p>Self Ensembling for Visual Domain Adaptation</p>
+<h3 id="salad.solver.generative"><a href="#salad.solver.generative">salad.solver.generative</a></h3>
+<h5 id="salad.solver.generative.gansolver"><em>salad.solver.generative</em>.<strong>GANSolver</strong></h5>
+<h5 id="salad.solver.generative.cganloss"><em>salad.solver.generative</em>.<strong>CGANLoss</strong></h5>
+<h5 id="salad.solver.generative.conditionalgansolver"><em>salad.solver.generative</em>.<strong>ConditionalGANSolver</strong></h5>
+<h3 id="salad.solver.openset"><a href="#salad.solver.openset">salad.solver.openset</a></h3>
+<h5 id="salad.solver.openset.vadaopenset"><em>salad.solver.openset</em>.<strong>VADAOpenset</strong></h5>
+<h5 id="salad.solver.openset.baseopensetsolver"><em>salad.solver.openset</em>.<strong>BaseOpensetSolver</strong></h5>
+<p>Routines for open set classification ## <a href="#salad.structural">salad.structural</a> ##### <em>salad.structural</em>.<strong>FixedBottleneck</strong></p>
+<h5 id="salad.structural.compressedresnet"><em>salad.structural</em>.<strong>CompressedResnet</strong></h5>
+<p>ResNet Variant where the batch norm statistics are merged into the transformation matrices</p>
+<p>Helper functions for structural learning</p>
+<h2 id="salad.utils"><a href="#salad.utils">salad.utils</a></h2>
+<h3 id="salad.utils.augment"><a href="#salad.utils.augment">salad.utils.augment</a></h3>
+<h5 id="salad.utils.augment.randomaffines"><em>salad.utils.augment</em>.<strong>RandomAffines</strong></h5>
+<h5 id="salad.utils.augment.affinetransformer"><em>salad.utils.augment</em>.<strong>AffineTransformer</strong></h5>
+<h3 id="salad.utils.base"><a href="#salad.utils.base">salad.utils.base</a></h3>
+<h3 id="salad.utils.config"><a href="#salad.utils.config">salad.utils.config</a></h3>
+<h5 id="salad.utils.config.baseconfig"><em>salad.utils.config</em>.<strong>BaseConfig</strong></h5>
+<h5 id="salad.utils.config.domainadaptconfig"><em>salad.utils.config</em>.<strong>DomainAdaptConfig</strong></h5>
+<h3 id="salad.utils.evaluate"><a href="#salad.utils.evaluate">salad.utils.evaluate</a></h3>
+<h3 id="salad.utils.finetune"><a href="#salad.utils.finetune">salad.utils.finetune</a></h3>
+<h5 id="salad.utils.finetune.loss"><em>salad.utils.finetune</em>.<strong>Loss</strong></h5>
+<h5 id="salad.utils.finetune.finetunesolver"><em>salad.utils.finetune</em>.<strong>FinetuneSolver</strong></h5>

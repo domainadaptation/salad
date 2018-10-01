@@ -1,0 +1,12 @@
+,acc_s,acc_t,aulc_s,aulc_t,fname,name,source,adapt,key
+0,0.974375,0.7097916668653488,43512.576388955116,30834.42361149192,log/noise-svhn-mnist/20180926-150522_SelfEnsemblingSolver/losshistory.csv,SelfEnsemblingSolver,svhn,noisy SVHN,svhnSelfEnsemblingSolver
+1,0.9673263889551162,0.608993055820465,21472.854166686535,13753.56944462657,log/noise-svhn-mnist/20180926-205216_DANNSolver/losshistory.csv,DANNSolver,svhn,noisy SVHN,svhnDANNSolver
+2,0.99875,0.18375,180392.3750000596,94952.92708416283,log/noise-svhn-mnist/20180926-160053_VADASolver/losshistory.csv,VADASolver,svhn,noisy SVHN,svhnVADASolver
+3,0.9623263889551162,0.6177430558204651,21481.618055582047,13761.562500178814,log/noise-svhn-mnist/20180926-212351_DeepCoralSolver/losshistory.csv,DeepCoralSolver,svhn,noisy SVHN,svhnDeepCoralSolver
+4,0.965,0.6830902779102326,25492.576388955116,18350.715277969837,log/noise-svhn-mnist/20180926-210537_AssociativeSolver/losshistory.csv,AssociativeSolver,svhn,noisy SVHN,svhnAssociativeSolver
+5,0.8384375,0.441875,573.53125,283.40625,log/noise-svhn-mnist/20180926-115734_SelfEnsemblingSolver/losshistory.csv,SelfEnsemblingSolver,svhn,noisy SVHN,svhnSelfEnsemblingSolver
+6,0.9965625,0.9653125,44530.0,42207.40625,log/noise-synth-mnist/20180926-231558_SelfEnsemblingSolver/losshistory.csv,SelfEnsemblingSolver,synth,noisy SYNTH,synthSelfEnsemblingSolver
+7,0.9940625,0.9171875,29410.15625,27467.6875,log/noise-synth-mnist/20180926-210625_AssociativeSolver/losshistory.csv,AssociativeSolver,synth,noisy SYNTH,synthAssociativeSolver
+8,0.9915625,0.8540625,13783.75,11846.5625,log/noise-synth-mnist/20180926-200821_DeepCoralSolver/losshistory.csv,DeepCoralSolver,synth,noisy SYNTH,synthDeepCoralSolver
+9,0.999375,0.988125,269050.4375,264562.84375,log/noise-synth-mnist/20180926-115933_VADASolver/losshistory.csv,VADASolver,synth,noisy SYNTH,synthVADASolver
+10,0.9990625,0.101875,134758.40625,28233.75,log/noise-synth-mnist/20180926-170243_DANNSolver/losshistory.csv,DANNSolver,synth,noisy SYNTH,synthDANNSolver
