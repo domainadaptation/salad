@@ -1,0 +1,3 @@
+[submodule "docs/_release"]
+	path = docs/_release
+	url = git@github.com:domainadaptation/domainadaptation.github.io.git
