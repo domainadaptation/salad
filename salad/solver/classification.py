@@ -60,6 +60,16 @@ class MultiDomainClassificationLoss(object):
 class BaseClassSolver(Solver):
 
     """ Base Solver for classification experiments
+
+    Parameters
+    ----------
+
+    model : nn.Module
+        A model to train on a classification target
+    dataset : torch.utils.data.Dataset
+        The dataset providing training samples
+    multiclass : bool
+        If True, ``CrossEntropyLoss`` is used, ``BCEWithLogitsLoss`` otherwise.
     """
 
     def __init__(self, model, dataset, multiclass = True, *args, **kwargs):

@@ -6,7 +6,7 @@ import argparse
 import torch
 from torch import nn
 
-from salad import solver, models, datasets
+from ... import solver, models, datasets
 
 from salad.datasets.transforms.ensembling import ImageAugmentation
 

@@ -26,7 +26,7 @@ class ComparisonConfig(config.DomainAdaptConfig):
         super()._init()
         self.add_argument('--seed', default=None, type=int, help="Random Seed")
         self.add_argument('--print', action='store_true')
-        self.add_argument('--null', action='store_strue')
+        self.add_argument('--null', action='store_true')
 
         for arg in self._algorithms:
             self.add_argument('--{}'.format(arg), action='store_true', help="Enable {}".format(arg))

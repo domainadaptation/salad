@@ -6,12 +6,15 @@
 .. figure:: docs/img/domainshift.png
    :alt: 
 
+
 ``salad`` is a library to easily setup experiments using the current
 state-of-the art techniques in domain adaptation. It features several of
 recent approaches, with the goal of being able to run fair comparisons
 between algorithms and transfer them to real-world use cases. The
 toolbox is under active development and will extended when new
 approaches are published.
+
+Contribute on Github: `https://github.com/domainadaptation/salad`_
 
 Currently implements the following techniques (in ``salad.solver``)
 
@@ -78,6 +81,20 @@ library comprises code to easily set up deep learning experiments in
 general. 
 
 This section will be extended upon pre-release.
+
+Quick Start
+~~~~~~~~~~~
+
+To get started, the ``scripts/`` directory contains several python scripts
+for both running replication studies on digit benchmarks and studies on
+a different dataset (toy example: adaptation to noisy images).
+
+.. code:: bash
+
+    $ cd scripts
+    $ python train_digits.py
+    $ python train_noise.py
+
 
 Reasons for using solver abstractions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
