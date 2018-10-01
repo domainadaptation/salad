@@ -3,7 +3,7 @@
 
 **S**\ emi-supervised **A**\ daptive **L**\ earning **A**\ cross **D**\ omains
 
-.. figure:: docs/img/domainshift.png
+.. figure:: img/domainshift.png
    :alt: 
 
 
@@ -50,6 +50,17 @@ Coming soon:
    `arxiv:1803.10081 <https://arxiv.org/abs/1803.10081>`__
 -  Translation based approaches
 
+📊 Benchmarking Results
+----------------------
+
+One of salad's purposes is to constantly track the state of the art of a variety of domain
+adaptation algorithms. The latest results can be reproduced by the files in the ``scripts/``
+directory.
+
+.. figure:: img/benchmarks.svg
+    :alt:
+
+
 💻 Installation
 ---------------
 
@@ -92,8 +103,57 @@ a different dataset (toy example: adaptation to noisy images).
 .. code:: bash
 
     $ cd scripts
-    $ python train_digits.py
-    $ python train_noise.py
+    $ python train_digits.py --log ./log --teach --source svhn --target mnist
+
+Refer to the help pages for all options:
+
+.. code::
+
+    usage: train_digits.py [-h] [--gpu GPU] [--cpu] [--njobs NJOBS] [--log LOG]
+                        [--epochs EPOCHS] [--checkpoint CHECKPOINT]
+                        [--learningrate LEARNINGRATE] [--dryrun]
+                        [--source {mnist,svhn,usps,synth,synth-small}]
+                        [--target {mnist,svhn,usps,synth,synth-small}]
+                        [--sourcebatch SOURCEBATCH] [--targetbatch TARGETBATCH]
+                        [--seed SEED] [--print] [--null] [--adv] [--vada]
+                        [--dann] [--assoc] [--coral] [--teach]
+
+    Domain Adaptation Comparision and Reproduction Study
+
+    optional arguments:
+    -h, --help            show this help message and exit
+    --gpu GPU             Specify GPU
+    --cpu                 Use CPU Training
+    --njobs NJOBS         Number of processes per dataloader
+    --log LOG             Log directory. Will be created if non-existing
+    --epochs EPOCHS       Number of Epochs (Full passes through the unsupervised
+                            training set)
+    --checkpoint CHECKPOINT
+                            Checkpoint path
+    --learningrate LEARNINGRATE
+                            Learning rate for Adam. Defaults to Karpathy's
+                            constant ;-)
+    --dryrun              Perform a test run, without actually training a
+                            network.
+    --source {mnist,svhn,usps,synth,synth-small}
+                            Source Dataset. Choose mnist or svhn
+    --target {mnist,svhn,usps,synth,synth-small}
+                            Target Dataset. Choose mnist or svhn
+    --sourcebatch SOURCEBATCH
+                            Batch size of Source
+    --targetbatch TARGETBATCH
+                            Batch size of Target
+    --seed SEED           Random Seed
+    --print
+    --null
+    --adv                 Train a model with Adversarial Domain Regularization
+    --vada                Train a model with Virtual Adversarial Domain
+                            Adaptation
+    --dann                Train a model with Domain Adversarial Training
+    --assoc               Train a model with Associative Domain Adaptation
+    --coral               Train a model with Deep Correlation Alignment
+    --teach               Train a model with Self-Ensembling
+
 
 
 Reasons for using solver abstractions

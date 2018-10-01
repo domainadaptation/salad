@@ -21,6 +21,14 @@ class ComparisonConfig(config.DomainAdaptConfig):
     """
 
     _algorithms = ['adv', 'vada', 'dann', 'assoc', 'coral', 'teach']
+    _algo_names = [
+        "Adversarial Domain Regularization",
+        "Virtual Adversarial Domain Adaptation",
+        "Domain Adversarial Training",
+        "Associative Domain Adaptation",
+        "Deep Correlation Alignment",
+        "Self-Ensembling"
+    ]
 
     def _init(self):
         super()._init()
@@ -28,8 +36,8 @@ class ComparisonConfig(config.DomainAdaptConfig):
         self.add_argument('--print', action='store_true')
         self.add_argument('--null', action='store_true')
 
-        for arg in self._algorithms:
-            self.add_argument('--{}'.format(arg), action='store_true', help="Enable {}".format(arg))
+        for arg, name in zip(self._algorithms, self._algo_names):
+            self.add_argument('--{}'.format(arg), action='store_true', help="Train a model with {}".format(name))
 
 def print_experiments():
     import itertools
@@ -79,7 +87,7 @@ if __name__ == '__main__':
     from salad import solver
     import sys
 
-    parser = ComparisonConfig('Domain Adapt Comparison')
+    parser = ComparisonConfig('Domain Adaptation Comparision and Reproduction Study')
     args = parser.parse_args()
 
     if args.print:
