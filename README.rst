@@ -16,7 +16,51 @@ approaches are published.
 
 Contribute and explore the code on `Github <https://github.com/domainadaptation/salad>`__
 
-Currently implements the following techniques (in ``salad.solver``)
+📊 Benchmarking Results
+-----------------------
+
+One of salad's purposes is to constantly track the state of the art of a variety of domain
+adaptation algorithms. The latest results can be reproduced by the files in the ``scripts/``
+directory.
+
+.. figure:: img/benchmarks.svg
+    :alt:
+
+Code for reproducing these results can be found in the ``scripts/`` directory.
+Usage is outlined below.
+
+
+💻 Installation
+---------------
+
+Requirements can be found in ``requirement.txt`` and can be installed
+via
+
+.. code:: bash
+
+    pip install -r requirements.txt
+
+Install the package (recommended) via
+
+.. code:: bash
+
+    pip install torch-salad
+
+For the latest development version, install via
+
+.. code:: bash
+
+    pip install git+https://github.com/domainadaptation/salad
+
+
+📚 Using this library
+---------------------
+
+Along with the implementation of domain adaptation routines, this
+library comprises code to easily set up deep learning experiments in
+general. 
+
+The toolbox currently implements the following techniques (in ``salad.solver``) that can be easily run with the provided example script.
 
 -  VADA (``VADASolver``),
    `arxiv:1802.08735 <https://arxiv.org/abs/1802.08735>`__
@@ -87,49 +131,6 @@ Coming soon:
 -  Deep Joint Optimal Transport (``DJDOTSolver``),
    `arxiv:1803.10081 <https://arxiv.org/abs/1803.10081>`__
 -  Translation based approaches
-
-📊 Benchmarking Results
------------------------
-
-One of salad's purposes is to constantly track the state of the art of a variety of domain
-adaptation algorithms. The latest results can be reproduced by the files in the ``scripts/``
-directory.
-
-.. figure:: img/benchmarks.svg
-    :alt:
-
-
-💻 Installation
----------------
-
-Requirements can be found in ``requirement.txt`` and can be installed
-via
-
-.. code:: bash
-
-    pip install -r requirements.txt
-
-Install the package via
-
-.. code:: bash
-
-    pip install torch-salad
-
-For the latest development version, install via
-
-.. code:: bash
-
-    pip install git+https://github.com/bethgelab/domainadaptation
-
-
-📚 Using this library
----------------------
-
-Along with the implementation of domain adaptation routines, this
-library comprises code to easily set up deep learning experiments in
-general. 
-
-This section will be extended upon pre-release.
 
 Quick Start
 ~~~~~~~~~~~
