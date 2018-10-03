@@ -14,26 +14,64 @@ between algorithms and transfer them to real-world use cases. The
 toolbox is under active development and will extended when new
 approaches are published.
 
-Contribute on Github: `https://github.com/domainadaptation/salad`_
+Contribute and explore the code on `Github <https://github.com/domainadaptation/salad>`__
 
 Currently implements the following techniques (in ``salad.solver``)
 
 -  VADA (``VADASolver``),
    `arxiv:1802.08735 <https://arxiv.org/abs/1802.08735>`__
--  DIRT-T (``DIRTTSolver``),
-   `arxiv:1802.08735 <https://arxiv.org/abs/1802.08735>`__
+
+   .. code:: bash
+        
+        $ python scripts/train_digits.py --source svhn --target mnist  --vada
+
+-  Domain Adversarial Training (``DANNSolver``),
+   `jmlr:v17/15-239.html <http://jmlr.org/papers/v17/15-239.html>`__
+
+    .. code:: bash
+
+        $ python scripts/train_digits.py --source svhn --target mnist  --dann  
+    
+    
+-  Associative Domain Adaptation (``AssociativeSolver``),
+   `arxiv:1708.00938 <https://arxiv.org/pdf/1708.00938.pdf>`__
+
+    .. code:: bash
+
+        $ python scripts/train_digits.py --source svhn --target mnist  --assoc  
+    
+    
+- Deep Correlation Alignment
+
+    .. code:: bash
+
+        $ python scripts/train_digits.py --source svhn --target mnist  --coral  
+    
 -  Self-Ensembling for Visual Domain Adaptation
    (``SelfEnsemblingSolver``)
    `arxiv:1706.05208 <https://arxiv.org/abs/1706.05208>`__
--  Associative Domain Adaptation (``AssociativeSolver``),
-   `arxiv:1708.00938 <https://arxiv.org/pdf/1708.00938.pdf>`__
--  Domain Adversarial Training (``DANNSolver``),
-   `jmlr:v17/15-239.html <http://jmlr.org/papers/v17/15-239.html>`__
+
+    .. code:: bash
+
+        $ python scripts/train_digits.py --source svhn --target mnist    --teach
+
+-  Adversarial Dropout Regularization (``AdversarialDropoutSolver``),
+   `arxiv.org:1711.01575 <https://arxiv.org/abs/1711.01575>`__
+
+    .. code:: bash
+
+        $ python scripts/train_digits.py --source svhn --target mnist  --adv  
+
+Examples (already refer to the ``examples/`` subfolder) soon to be added for:
+
 -  Generalizing Across Domains via Cross-Gradient Training
    (``CrossGradSolver``),
    `arxiv:1708.00938 <http://arxiv.org/abs/1804.10745>`__
--  Adversarial Dropout Regularization (``AdversarialDropoutSolver``),
-   `arxiv.org:1711.01575 <https://arxiv.org/abs/1711.01575>`__
+   Example coming soon!
+
+-  DIRT-T (``DIRTTSolver``),
+   `arxiv:1802.08735 <https://arxiv.org/abs/1802.08735>`__
+
 
 Implements the following features (in ``salad.layers``):
 
@@ -51,7 +89,7 @@ Coming soon:
 -  Translation based approaches
 
 📊 Benchmarking Results
-----------------------
+-----------------------
 
 One of salad's purposes is to constantly track the state of the art of a variety of domain
 adaptation algorithms. The latest results can be reproduced by the files in the ``scripts/``

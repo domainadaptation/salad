@@ -8,11 +8,11 @@ with open("README.rst", "r", encoding = "utf8") as fh:
     long_description = fh.read()
 
 setup(name='torch-salad',
-      version='0.0.2',
+      version='0.2.1-alpha',
       description='Semi-supervised Adaptive Learning Across Domains',
       long_description=long_description,
-      long_description_content_type="text/markdown",
-      url='http://salad.domainadaptation.org',
+      long_description_content_type="text/x-rst",
+      url='https://domainadaptation.org',
       author='Steffen Schneider',
       author_email='steffen.schneider@tum.de',
       packages=setuptools.find_packages(),
