@@ -22,13 +22,13 @@ Currently implements the following techniques (in ``salad.solver``)
    `arxiv:1802.08735 <https://arxiv.org/abs/1802.08735>`__
 
    .. code:: bash
-        
+
         $ python scripts/train_digits.py --source svhn --target mnist  --vada
 
 -  Domain Adversarial Training (``DANNSolver``),
    `jmlr:v17/15-239.html <http://jmlr.org/papers/v17/15-239.html>`__
 
-    .. code:: bash
+   .. code:: bash
 
         $ python scripts/train_digits.py --source svhn --target mnist  --dann  
     
@@ -36,31 +36,31 @@ Currently implements the following techniques (in ``salad.solver``)
 -  Associative Domain Adaptation (``AssociativeSolver``),
    `arxiv:1708.00938 <https://arxiv.org/pdf/1708.00938.pdf>`__
 
-    .. code:: bash
+   .. code:: bash
 
         $ python scripts/train_digits.py --source svhn --target mnist  --assoc  
     
     
 - Deep Correlation Alignment
 
-    .. code:: bash
+  .. code:: bash
 
-        $ python scripts/train_digits.py --source svhn --target mnist  --coral  
+    $ python scripts/train_digits.py --source svhn --target mnist  --coral  
     
 -  Self-Ensembling for Visual Domain Adaptation
    (``SelfEnsemblingSolver``)
    `arxiv:1706.05208 <https://arxiv.org/abs/1706.05208>`__
 
-    .. code:: bash
+   .. code:: bash
 
-        $ python scripts/train_digits.py --source svhn --target mnist    --teach
+       $ python scripts/train_digits.py --source svhn --target mnist    --teach
 
 -  Adversarial Dropout Regularization (``AdversarialDropoutSolver``),
    `arxiv.org:1711.01575 <https://arxiv.org/abs/1711.01575>`__
 
-    .. code:: bash
+   .. code:: bash
 
-        $ python scripts/train_digits.py --source svhn --target mnist  --adv  
+       $ python scripts/train_digits.py --source svhn --target mnist  --adv  
 
 Examples (already refer to the ``examples/`` subfolder) soon to be added for:
 
