@@ -1,0 +1,1252 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Awesome Transfer Learning &mdash; salad 0.2.0-alpha documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Domain Adaptation Benchmarks" href="benchmarks.html" />
+    <link rel="prev" title="Transfer Learning and Domain Adaptation Reading List" href="reading.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> salad
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="README.html">Package Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="README.html#benchmarking-results">📊 Benchmarking Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#installation">💻 Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#using-this-library">📚 Using this library</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="README.html#quick-start">Quick Start</a></li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#reasons-for-using-solver-abstractions">Reasons for using solver abstractions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#quickstart-mnist-experiment">Quickstart: MNIST Experiment</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#domain-adaptation-problems">💡 Domain Adaptation Problems</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="README.html#vision">📷 Vision</a></li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#audio">🎤 Audio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#neuroscience">፨ Neuroscience</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#references-to-open-source-software">🔗 References to open source software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#contact">👤 Contact</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="whitepaper.html">Whitepaper</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="reading.html">Reading List</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="reading.html#awesome-transfer-learning">Awesome Transfer Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reading.html#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reading.html#tutorials-and-blogs">Tutorials and Blogs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reading.html#papers">Papers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reading.html#surveys">Surveys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reading.html#deep-transfer-learning">Deep Transfer Learning</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#fine-tuning-approach">Fine-tuning approach</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#feature-extraction-embedding-approach">Feature extraction (embedding) approach</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#multi-task-learning">Multi-task learning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#policy-transfer-for-rl">Policy transfer for RL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#few-shot-transfer-learning">Few-shot transfer learning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#meta-transfer-learning">Meta transfer learning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#applications">Applications</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="reading.html#unsupervised-domain-adaptation">Unsupervised Domain Adaptation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#theory">Theory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#adversarial-methods">Adversarial methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#optimal-transport">Optimal Transport</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#embedding-methods">Embedding methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#kernel-methods">Kernel methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#autoencoder-approach">Autoencoder approach</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#subspace-learning">Subspace Learning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#self-ensembling-methods">Self-Ensembling methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#other">Other</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="reading.html#semi-supervised-domain-adaptation">Semi-supervised Domain Adaptation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#general-methods">General methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#id6">Subspace learning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#copulas-methods">Copulas methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="reading.html#few-shot-supervised-domain-adaptation">Few-shot Supervised Domain Adaptation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#id7">Adversarial methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#id8">Embedding methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="reading.html#applied-domain-adaptation">Applied Domain Adaptation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#physics">Physics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#audio-processing">Audio Processing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reading.html#datasets">Datasets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reading.html#image-to-image">Image-to-image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reading.html#text-to-text">Text-to-text</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reading.html#results">Results</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reading.html#digits-transfer-unsupervised">Digits transfer (unsupervised)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reading.html#challenges">Challenges</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="reading.html#libraries">Libraries</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Awesome Transfer Learning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tutorials-and-blogs">Tutorials and Blogs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#papers">Papers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#surveys">Surveys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deep-transfer-learning">Deep Transfer Learning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#unsupervised-domain-adaptation">Unsupervised Domain Adaptation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#semi-supervised-domain-adaptation">Semi-supervised Domain Adaptation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#few-shot-supervised-domain-adaptation">Few-shot Supervised Domain Adaptation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#applied-domain-adaptation">Applied Domain Adaptation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#datasets">Datasets</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#image-to-image">Image-to-image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#text-to-text">Text-to-text</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#results">Results</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#digits-transfer-unsupervised">Digits transfer (unsupervised)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#challenges">Challenges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#libraries">Libraries</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="benchmarks.html">Benchmarks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="benchmarks.html#digit-benchmarks">Digit Benchmarks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarks.html#visda-benchmark-and-task-cv">VisDA Benchmark and TASK-CV</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="demos/salad.solver.html">Solvers   (salad.solver)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demos/salad.datasets.html">Datasets  (salad.datasets)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="demos/salad.datasets.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demos/salad.datasets.html#digits-datasets">Digits Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demos/salad.datasets.html#toy-datasets">Toy Datasets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="demos/salad.models.html">Models    (salad.models)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="demos/salad.models.html#introduction">Introduction</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="demos/salad.layers.html">Layers    (salad.layers)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="demos/salad.layers.html#introduction">Introduction</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="demos/salad.utils.html">Utilities (salad.utils)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="demos/salad.utils.html#introduction">Introduction</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Scripts and Paper Implementations</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dummy.html">Domain Adversarial Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dummy.html">Cross Gradient Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dummy.html">Adversarial Dropout Regularization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dummy.html">Virtual Adversarial Domain Adaptation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dummy.html">Self-Ensembling</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/salad.solver.html">Solvers   (salad.solver)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.solver.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/salad.solver.da.html">salad.solver.da package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.solver.da.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.solver.da.html#module-salad.solver.da.advdrop">salad.solver.da.advdrop module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.solver.da.html#module-salad.solver.da.advdrop_refactor">salad.solver.da.advdrop_refactor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.solver.da.html#module-salad.solver.da.association">salad.solver.da.association module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.solver.da.html#module-salad.solver.da.base">salad.solver.da.base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.solver.da.html#module-salad.solver.da.coral">salad.solver.da.coral module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.solver.da.html#module-salad.solver.da.crossgrad">salad.solver.da.crossgrad module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.solver.da.html#module-salad.solver.da.dann">salad.solver.da.dann module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.solver.da.html#module-salad.solver.da.dirtt">salad.solver.da.dirtt module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.solver.da.html#module-salad.solver.da.dirtt_re">salad.solver.da.dirtt_re module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.solver.da.html#module-salad.solver.da.djdot">salad.solver.da.djdot module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.solver.da.html#module-salad.solver.da.ensembling">salad.solver.da.ensembling module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.solver.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.solver.html#module-salad.solver.base">salad.solver.base module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.solver.html#module-salad.solver.classification">salad.solver.classification module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.solver.html#module-salad.solver.gan">salad.solver.gan module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.solver.html#module-salad.solver.openset">salad.solver.openset module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/salad.datasets.html">Datasets  (salad.datasets)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.datasets.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/salad.datasets.da.html">salad.datasets.da package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.da.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.da.html#module-salad.datasets.da.base">salad.datasets.da.base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.da.html#module-salad.datasets.da.digits">salad.datasets.da.digits module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.da.html#module-salad.datasets.da.toy">salad.datasets.da.toy module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/salad.datasets.digits.html">salad.datasets.digits package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.digits.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.digits.html#module-salad.datasets.digits.base">salad.datasets.digits.base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.digits.html#module-salad.datasets.digits.mnist">salad.datasets.digits.mnist module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.digits.html#module-salad.datasets.digits.openset">salad.datasets.digits.openset module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.digits.html#module-salad.datasets.digits.synth">salad.datasets.digits.synth module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.digits.html#module-salad.datasets.digits.usps">salad.datasets.digits.usps module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/salad.datasets.transforms.html">salad.datasets.transforms package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.transforms.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.transforms.html#module-salad.datasets.transforms.digits">salad.datasets.transforms.digits module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.transforms.html#module-salad.datasets.transforms.ensembling">salad.datasets.transforms.ensembling module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.transforms.html#module-salad.datasets.transforms.noise">salad.datasets.transforms.noise module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.transforms.html#module-salad.datasets.transforms.noisy">salad.datasets.transforms.noisy module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/salad.datasets.visda.html">salad.datasets.visda package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.visda.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.visda.html#module-salad.datasets.visda.detection">salad.datasets.visda.detection module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.visda.html#module-salad.datasets.visda.openset">salad.datasets.visda.openset module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.visda.html#module-salad.datasets.visda.utils">salad.datasets.visda.utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.visda.html#module-salad.datasets.visda.visda">salad.datasets.visda.visda module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/salad.models.html">Models    (salad.models)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.models.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/salad.models.audio.html">salad.models.audio package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/salad.models.digits.html">salad.models.digits package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.models.digits.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.models.digits.html#module-salad.models.digits.adv">salad.models.digits.adv module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.models.digits.html#module-salad.models.digits.assoc">salad.models.digits.assoc module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.models.digits.html#module-salad.models.digits.corr">salad.models.digits.corr module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.models.digits.html#module-salad.models.digits.dirtt">salad.models.digits.dirtt module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.models.digits.html#module-salad.models.digits.ensemble">salad.models.digits.ensemble module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.models.digits.html#salad-models-digits-fan-module">salad.models.digits.fan module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/salad.models.vision.html">salad.models.vision package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.models.vision.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.models.vision.html#module-salad.models.vision.unet">salad.models.vision.unet module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.models.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.models.html#module-salad.models.base">salad.models.base module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.models.html#module-salad.models.gan">salad.models.gan module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.models.html#salad-models-neural-module">salad.models.neural module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.models.html#salad-models-resnet-module">salad.models.resnet module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.models.html#salad-models-sensorimotor-module">salad.models.sensorimotor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.models.html#module-salad.models.transfer">salad.models.transfer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.models.html#module-salad.models.utils">salad.models.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/salad.layers.html">Layers    (salad.layers)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.layers.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.layers.html#module-salad.layers.association">salad.layers.association module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.layers.html#module-salad.layers.base">salad.layers.base module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.layers.html#module-salad.layers.coral">salad.layers.coral module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.layers.html#module-salad.layers.da">salad.layers.da module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.layers.html#module-salad.layers.funcs">salad.layers.funcs module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.layers.html#module-salad.layers.mat">salad.layers.mat module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.layers.html#module-salad.layers.vat">salad.layers.vat module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/salad.utils.html">Utilities (salad.utils)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.utils.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.utils.html#module-salad.utils.augment">salad.utils.augment module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.utils.html#module-salad.utils.base">salad.utils.base module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.utils.html#module-salad.utils.config">salad.utils.config module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.utils.html#module-salad.utils.evaluate">salad.utils.evaluate module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.utils.html#module-salad.utils.finetune">salad.utils.finetune module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">salad</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="reading.html">Transfer Learning and Domain Adaptation Reading List</a> &raquo;</li>
+        
+      <li>Awesome Transfer Learning</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/readinglist_gen.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="awesome-transfer-learning">
+<h1>Awesome Transfer Learning<a class="headerlink" href="#awesome-transfer-learning" title="Permalink to this headline">¶</a></h1>
+<p>A list of awesome papers and cool resources on transfer learning, domain
+adaptation and domain-to-domain translation in general! As you will
+notice, this list is currently mostly focused on domain adaptation (DA)
+and domain-to-domain translation, but don’t hesitate to suggest
+resources in other subfields of transfer learning. I accept pull
+requests.</p>
+</div>
+<div class="section" id="table-of-contents">
+<h1>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference external" href="#tutorials-and-blogs">Tutorial and Blogs</a></li>
+<li><a class="reference external" href="#papers">Papers</a></li>
+<li><a class="reference external" href="#surveys">Surveys</a></li>
+<li><a class="reference external" href="#deep-transfer-learning">Deep Transfer Learning</a><ul>
+<li><a class="reference external" href="#fine-tuning-approach">Fine-tuning approach</a></li>
+<li><a class="reference external" href="#feature-extraction-embedding-approach">Feature extraction (embedding)
+approach</a></li>
+<li><a class="reference external" href="#policy-transfer-for-rl">Policy transfer for RL</a></li>
+<li><a class="reference external" href="#few-shot-transfer-learning">Few-shot transfer learning</a></li>
+<li><a class="reference external" href="#meta-transfer-learning">Meta transfer learning</a></li>
+<li><a class="reference external" href="#applications">Applications</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#unsupervised-domain-adaptation">Unsupervised Domain Adaptation</a><ul>
+<li><a class="reference external" href="#theory">Theory</a></li>
+<li><a class="reference external" href="#adversarial-methods">Adversarial methods</a></li>
+<li><a class="reference external" href="#optimal-transport">Optimal Transport</a></li>
+<li><a class="reference external" href="#embedding-methods">Embedding methods</a></li>
+<li><a class="reference external" href="#kernel-methods">Kernel methods</a></li>
+<li><a class="reference external" href="#autoencoder-approach">Autoencoder approach</a></li>
+<li><a class="reference external" href="#subspace-learning">Subspace learning</a></li>
+<li><a class="reference external" href="#self-ensembling-methods">Self-ensembling methods</a></li>
+<li><a class="reference external" href="#other">Other</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#semi-supervised-domain-adaptation">Semi-supervised Domain
+Adaptation</a><ul>
+<li><a class="reference external" href="#general-methods">General methods</a></li>
+<li><a class="reference external" href="#subspace-learning">Subspace learning</a></li>
+<li><a class="reference external" href="#copulas-methods">Copulas methods</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#few-shot-supervised-domain-adaptation">Few-shot Supervised Domain
+Adaptation</a><ul>
+<li><a class="reference external" href="#adversarial-methods">Adversarial methods</a></li>
+<li><a class="reference external" href="#embedding-methods">Embedding methods</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#applied-domain-adaptation">Applied Domain Adaptation</a><ul>
+<li><a class="reference external" href="#physics">Physics</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#datasets">Datasets</a></li>
+<li><a class="reference external" href="#image-to-image">Image-to-image</a></li>
+<li><a class="reference external" href="#text-to-text">Text-to-text</a></li>
+<li><a class="reference external" href="#results">Results</a></li>
+<li><a class="reference external" href="digits-transfer">Digits transfer</a></li>
+<li><a class="reference external" href="#challenges">Challenges</a></li>
+<li><a class="reference external" href="#libraries">Libraries</a></li>
+</ul>
+</div>
+<div class="section" id="tutorials-and-blogs">
+<h1>Tutorials and Blogs<a class="headerlink" href="#tutorials-and-blogs" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference external" href="http://ruder.io/transfer-learning/index.html">Transfer Learning − Machine Learning’s Next
+Frontier</a></li>
+<li><a class="reference external" href="https://artix41.github.io/static/domain-adaptation-in-2017/">A Little Review of Domain Adaptation in
+2017</a></li>
+</ul>
+</div>
+<div class="section" id="papers">
+<h1>Papers<a class="headerlink" href="#papers" title="Permalink to this headline">¶</a></h1>
+<p>Papers are ordered by theme and inside each theme by publication date
+(submission date for arXiv papers). If the network or algorithm is given
+a name in a paper, this one is written in bold before the paper’s name.</p>
+<div class="section" id="surveys">
+<h2>Surveys<a class="headerlink" href="#surveys" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://www.cse.ust.hk/~qyang/Docs/2009/tkde_transfer_learning.pdf">A Survey on Transfer
+Learning</a>
+(2009)</li>
+<li><a class="reference external" href="http://www.jmlr.org/papers/volume10/taylor09a/taylor09a.pdf">Transfer Learning for Reinforcement Learning Domains: A
+Survey</a>
+(2009)</li>
+<li><a class="reference external" href="https://link.springer.com/article/10.1186/s40537-016-0043-6">A Survey of transfer
+learning</a>
+(2016)</li>
+<li><a class="reference external" href="https://arxiv.org/pdf/1702.05374.pdf">Domain Adaptation for Visual Applications: A Comprehensive
+Survey</a> (2017)</li>
+<li><a class="reference external" href="https://arxiv.org/pdf/1802.03601.pdf">Deep Visual Domain Adaptation: A
+Survey</a> (2018)</li>
+</ul>
+</div>
+<div class="section" id="deep-transfer-learning">
+<h2>Deep Transfer Learning<a class="headerlink" href="#deep-transfer-learning" title="Permalink to this headline">¶</a></h2>
+<p>Transfer of deep learning models.</p>
+<div class="section" id="fine-tuning-approach">
+<h3>Fine-tuning approach<a class="headerlink" href="#fine-tuning-approach" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://arxiv.org/pdf/1805.08974.pdf">Do Better ImageNet Models Transfer
+Better?</a> (2018)</li>
+</ul>
+</div>
+<div class="section" id="feature-extraction-embedding-approach">
+<h3>Feature extraction (embedding) approach<a class="headerlink" href="#feature-extraction-embedding-approach" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://www.cv-foundation.org//openaccess/content_cvpr_workshops_2014/W15/papers/Razavian_CNN_Features_Off-the-Shelf_2014_CVPR_paper.pdf">CNN Features off-the-shelf: an Astounding Baseline for
+Recognition</a>
+(2014)</li>
+<li><a class="reference external" href="https://arxiv.org/pdf/1804.08328v1.pdf">Taskonomy: Disentangling Task Transfer
+Learning</a> (2018)</li>
+</ul>
+</div>
+<div class="section" id="multi-task-learning">
+<h3>Multi-task learning<a class="headerlink" href="#multi-task-learning" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://arxiv.org/pdf/1606.09282">Learning without forgetting</a>
+(2016)</li>
+</ul>
+</div>
+<div class="section" id="policy-transfer-for-rl">
+<h3>Policy transfer for RL<a class="headerlink" href="#policy-transfer-for-rl" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://www.rug.nl/research/portal/files/19535198/MS_PACMAN_RL.pdf">Reinforcement Learning to Train Ms. Pac-Man Using Higher-order
+Action-relative
+Inputs</a>
+(2013)</li>
+</ul>
+</div>
+<div class="section" id="few-shot-transfer-learning">
+<h3>Few-shot transfer learning<a class="headerlink" href="#few-shot-transfer-learning" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://arxiv.org/pdf/1707.01066.pdf">Zero-Shot Transfer Learning for Event
+Extraction</a> (2017)</li>
+<li><a class="reference external" href="https://www.eecs.qmul.ac.uk/~sgg/papers/ZhangEtAl_CVPR2017.pdf">Learning a Deep Embedding Model for Zero-Shot
+Learning</a>
+(2017)</li>
+</ul>
+</div>
+<div class="section" id="meta-transfer-learning">
+<h3>Meta transfer learning<a class="headerlink" href="#meta-transfer-learning" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://proceedings.mlr.press/v80/wei18a/wei18a.pdf">Transfer Learning via Learning to
+Transfer</a>
+(2018)</li>
+</ul>
+</div>
+<div class="section" id="applications">
+<h3>Applications<a class="headerlink" href="#applications" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="medical-imaging">
+<h4>Medical imaging:<a class="headerlink" href="#medical-imaging" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><a class="reference external" href="https://arxiv.org/pdf/1602.03409">Deep Convolutional Neural Networks forComputer-Aided Detection: CNN
+Architectures, Dataset Characteristics and Transfer
+Learning</a> (2016)</li>
+<li><a class="reference external" href="https://arxiv.org/pdf/1706.00712.pdf">Convolutional Neural Networks for Medical Image Analysis: Full
+Training or Fine Tuning?</a>
+(2017)</li>
+<li><a class="reference external" href="https://orbi.uliege.be/bitstreaom/2268/222511/1/mormont2018-comparison.pdf">Comparison of deep transfer learning strategies for digital
+pathology</a>
+(2018)</li>
+</ul>
+</div>
+<div class="section" id="robotics">
+<h4>Robotics<a class="headerlink" href="#robotics" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><a class="reference external" href="http://www.ai.rug.nl/~mwiering/GROUP/ARTICLES/ICPRAM_CNN_LOCALIZATION_2018.pdf">A Deep Convolutional Neural Network for Location Recognition and
+Geometry Based
+Information</a>
+(2018)</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="unsupervised-domain-adaptation">
+<h2>Unsupervised Domain Adaptation<a class="headerlink" href="#unsupervised-domain-adaptation" title="Permalink to this headline">¶</a></h2>
+<p>Transfer between a source and a target domain. In unsupervised domain
+adaptation, only the source domain can have labels.</p>
+<div class="section" id="theory">
+<h3>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="general">
+<h4>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><a class="reference external" href="http://www.alexkulesza.com/pubs/adapt_mlj10.pdf">A theory of learning from different
+domains</a> (2010)</li>
+</ul>
+</div>
+<div class="section" id="multi-source">
+<h4>Multi-source<a class="headerlink" href="#multi-source" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><a class="reference external" href="https://papers.nips.cc/paper/3550-domain-adaptation-with-multiple-sources.pdf">Domain Adaptation with Multiple
+Sources</a>
+(2008)</li>
+<li><a class="reference external" href="https://arxiv.org/pdf/1805.08727.pdf">Algorithms and Theory for Multiple-Source
+Adaptation</a> (2018)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="adversarial-methods">
+<h3>Adversarial methods<a class="headerlink" href="#adversarial-methods" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="learning-a-latent-space">
+<h4>Learning a latent space<a class="headerlink" href="#learning-a-latent-space" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><strong>DANN</strong>: <a class="reference external" href="https://arxiv.org/pdf/1505.07818.pdf">Domain-Adversarial Training of Neural
+Networks</a> (2015)</li>
+<li><strong>JAN</strong>: <a class="reference external" href="https://arxiv.org/pdf/1605.06636.pdf">Deep Transfer Learning with Joint Adaptation
+Networks</a> (2016)</li>
+<li><strong>CoGAN</strong>: <a class="reference external" href="https://arxiv.org/pdf/1606.07536.pdf">Coupled Generative Adversarial
+Networks</a> (2016)</li>
+<li><strong>DRCN</strong>: <a class="reference external" href="https://arxiv.org/pdf/1607.03516.pdf">Deep Reconstruction-Classification Networks for
+Unsupervised Domain
+Adaptation</a> (2016)</li>
+<li><strong>DSN</strong>: <a class="reference external" href="https://arxiv.org/pdf/1608.06019.pdf">Domain Separation
+Networks</a> (2016)</li>
+<li><strong>ADDA</strong>: <a class="reference external" href="https://arxiv.org/pdf/1702.05464.pdf">Adaptative Discriminative Domain
+Adaptation</a> (2017)</li>
+<li><strong>GenToAdapt</strong>: <a class="reference external" href="https://arxiv.org/pdf/1704.01705.pdf">Generate To Adapt: Aligning Domains using Generative
+Adversarial Networks</a> (2017)</li>
+<li><strong>WDGRL</strong>: <a class="reference external" href="https://arxiv.org/pdf/1707.01217.pdf">Wasserstein Distance Guided Representation Learning for
+Domain Adaptation</a> (2017)</li>
+<li><strong>CyCADA</strong>: <a class="reference external" href="http://proceedings.mlr.press/v80/hoffman18a/hoffman18a.pdf">CyCADA: Cycle-Consistent Adversarial Domain
+Adaptation</a>
+(2017)</li>
+<li><strong>DIRT-T</strong>: <a class="reference external" href="https://arxiv.org/pdf/1802.08735.pdf">A DIRT-T Approach to Unsupervised Domain
+Adaptation</a> (2017)</li>
+<li><strong>DupGAN</strong>: <a class="reference external" href="http://openaccess.thecvf.com/content_cvpr_2018/papers/Hu_Duplex_Generative_Adversarial_CVPR_2018_paper.pdf">Duplex Generative Adversarial Network for Unsupervised
+Domain
+Adaptation</a>
+(2018)</li>
+<li><strong>MSTN</strong>: <a class="reference external" href="http://proceedings.mlr.press/v80/xie18c/xie18c.pdf">Learning Semantic Representations for Unsupervised Domain
+Adaptation</a>
+(2018)</li>
+</ul>
+</div>
+<div class="section" id="image-to-image-translation">
+<h4>Image-to-Image translation<a class="headerlink" href="#image-to-image-translation" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><strong>DIAT</strong>: <a class="reference external" href="https://arxiv.org/pdf/1610.05586.pdf">Deep Identity-aware Transfer of Facial
+Attributes</a> (2016)</li>
+<li><strong>Pix2pix</strong>: <a class="reference external" href="https://arxiv.org/pdf/1611.07004.pdf">Image-to-Image Translation with Conditional Adversarial
+Networks</a> (2016)</li>
+<li><strong>DTN</strong>: <a class="reference external" href="https://arxiv.org/pdf/1611.02200.pdf">Unsupervised Cross-domain Image
+Generation</a> (2016)</li>
+<li><strong>SimGAN</strong>: <a class="reference external" href="https://arxiv.org/pdf/1612.07828.pdf">Learning from Simulated and Unsupervised Images through
+Adversarial Training (2016)</a>
+(2016)</li>
+<li><strong>PixelDA</strong>: <a class="reference external" href="https://arxiv.org/pdf/1612.05424.pdf">Unsupervised Pixel–Level Domain Adaptation with
+Generative Adversarial
+Networks</a> (2016)</li>
+<li><strong>UNIT</strong>: <a class="reference external" href="https://arxiv.org/pdf/1703.00848.pdf">Unsupervised Image-to-Image Translation
+Networks</a> (2017)</li>
+<li><strong>CycleGAN</strong>: <a class="reference external" href="https://arxiv.org/pdf/1703.10593">Unpaired Image-to-Image Translation using
+Cycle-Consistent Adversarial
+Networks</a> (2017)</li>
+<li><strong>DiscoGAN</strong>: <a class="reference external" href="https://arxiv.org/pdf/1703.05192.pdf">Learning to Discover Cross-Domain Relations with
+Generative Adversarial
+Networks</a> (2017)</li>
+<li><strong>DualGAN</strong>: <a class="reference external" href="https://arxiv.org/pdf/1704.02510.pdf">DualGAN: Unsupervised Dual Learning for Image-to-Image
+Translation</a> (2017)</li>
+<li><strong>SBADA-GAN</strong>: <a class="reference external" href="https://arxiv.org/pdf/1705.08824.pdf">From source to target and back: symmetric
+bi-directional adaptive GAN</a>
+(2017)</li>
+<li><strong>DistanceGAN</strong>: <a class="reference external" href="https://arxiv.org/pdf/1706.00826.pdf">One-Sided Unsupervised Domain
+Mapping</a> (2017)</li>
+<li><strong>pix2pixHD</strong>: <a class="reference external" href="https://arxiv.org/pdf/1711.11585.pdf">High-Resolution Image Synthesis and Semantic
+Manipulation with Conditional
+GANs</a> (2018)</li>
+<li><strong>I2I</strong>: <a class="reference external" href="https://arxiv.org/pdf/1712.00479.pdf">Image to Image Translation for Domain
+Adaptation</a> (2017)</li>
+<li><strong>MUNIT</strong>: <a class="reference external" href="https://arxiv.org/abs/1804.04732">Multimodal Unsupervised Image-to-Image
+Translation</a> (2018)</li>
+</ul>
+</div>
+<div class="section" id="multi-source-adaptation">
+<h4>Multi-source adaptation<a class="headerlink" href="#multi-source-adaptation" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><strong>StarGAN</strong>: <a class="reference external" href="https://arxiv.org/pdf/1711.09020.pdf">StarGAN: Unified Generative Adversarial Networks for
+Multi-Domain Image-to-Image
+Translation</a> (2017)</li>
+<li><strong>XGAN</strong>: <a class="reference external" href="https://arxiv.org/pdf/1711.05139.pdf">XGAN: Unsupervised Image-to-Image Translation for
+Many-to-Many Mappings</a>
+(2017)</li>
+<li><strong>BicycleGAN</strong> : <a class="reference external" href="https://arxiv.org/pdf/1711.11586.pdf">Toward Multimodal Image-to-Image
+Translation</a> (2017)</li>
+<li><a class="reference external" href="https://arxiv.org/pdf/1712.00123.pdf">Label Efficient Learning of Transferable Representations across
+Domains and Tasks</a> (2017)</li>
+<li><strong>ComboGAN</strong>: <a class="reference external" href="https://arxiv.org/pdf/1712.06909.pdf">ComboGAN: Unrestrained Scalability for Image Domain
+Translation</a> (2017)</li>
+<li><strong>AugCGAN</strong>: <a class="reference external" href="https://arxiv.org/abs/1802.10151">Augmented CycleGAN: Learning Many-to-Many Mappings from
+Unpaired Data</a> (2018)</li>
+<li><strong>RadialGAN</strong>: <a class="reference external" href="https://arxiv.org/abs/1802.06403">RadialGAN: Leveraging multiple datasets to improve
+target-specific predictive models using Generative Adversarial
+Networks</a> (2018)</li>
+<li><strong>MADA</strong>: <a class="reference external" href="https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/viewFile/17067/16644">Multi-Adversarial Domain
+Adaptation</a>
+(2018)</li>
+<li><strong>MDAN</strong>: <a class="reference external" href="https://arxiv.org/pdf/1705.09684.pdf">Multiple Source Domain Adaptation with Adversarial
+Learning</a> (2018)</li>
+</ul>
+</div>
+<div class="section" id="temporal-models-videos">
+<h4>Temporal models (videos)<a class="headerlink" href="#temporal-models-videos" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><strong>Model F</strong>: <a class="reference external" href="https://arxiv.org/pdf/1708.02191.pdf">Unsupervised Domain Adaptation for Face Recognition in
+Unlabeled Videos</a> (2017)</li>
+<li><strong>RecycleGAN</strong>: <a class="reference external" href="https://arxiv.org/pdf/1808.05174.pdf">Recycle-GAN: Unsupervised Video
+Retargeting</a> (2018)</li>
+<li><strong>Vid2vid</strong>: <a class="reference external" href="https://arxiv.org/pdf/1808.06601.pdf">Video-to-Video
+Synthesis</a> (2018)</li>
+<li><strong>Temporal Smoothing (TS)</strong>: <a class="reference external" href="https://arxiv.org/pdf/1808.07371.pdf">Everybody Dance
+Now</a> (2018)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="optimal-transport">
+<h3>Optimal Transport<a class="headerlink" href="#optimal-transport" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>OT</strong>: <a class="reference external" href="https://arxiv.org/pdf/1507.00504.pdf">Optimal Transport for Domain
+Adaptation</a> (2015)</li>
+<li><a class="reference external" href="https://arxiv.org/pdf/1610.04420.pdf">Theoretical Analysis of Domain Adaptation with Optimal
+Transport</a> (2016)</li>
+<li><strong>JDOT</strong>: <a class="reference external" href="https://arxiv.org/pdf/1705.08848.pdf">Joint distribution optimal transportation for domain
+adaptation</a> (2017)</li>
+<li><strong>Monge map learning</strong>: <a class="reference external" href="https://arxiv.org/pdf/1711.02283.pdf">Large Scale Optimal Transport and Mapping
+Estimation</a> (2017)</li>
+<li><strong>JCPOT</strong>: <a class="reference external" href="https://arxiv.org/pdf/1803.04899.pdf">Optimal Transport for Multi-source Domain Adaptation
+under Target Shift</a> (2018)</li>
+<li><strong>DeepJDOT</strong>: <a class="reference external" href="https://arxiv.org/pdf/1803.10081.pdf">DeepJDOT: Deep Joint distribution optimal transport
+for unsupervised domain
+adaptation</a> (2018)</li>
+</ul>
+</div>
+<div class="section" id="embedding-methods">
+<h3>Embedding methods<a class="headerlink" href="#embedding-methods" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://www.cv-foundation.org/openaccess/content_iccv_2015/papers/Kodirov_Unsupervised_Domain_Adaptation_ICCV_2015_paper.pdf">Unsupervised Domain Adaptation for Zero-Shot
+Learning</a>
+(2015)</li>
+<li><strong>DAassoc</strong> : <a class="reference external" href="https://arxiv.org/pdf/1708.00938.pdf">Associative Domain
+Adaptation</a> (2017)</li>
+</ul>
+</div>
+<div class="section" id="kernel-methods">
+<h3>Kernel methods<a class="headerlink" href="#kernel-methods" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>SurK</strong>: <a class="reference external" href="https://pdfs.semanticscholar.org/edb8/be020e228153163428e8b698aef1af4c5cad.pdf">Covariate Shift in Hilbert Space: A Solution via Surrogate
+Kernels</a>
+(2015)</li>
+<li><strong>DAN</strong>: <a class="reference external" href="https://arxiv.org/pdf/1502.02791.pdf">Learning Transferable Features with Deep Adaptation
+Networks</a> (2015)</li>
+<li><strong>RTN</strong>: <a class="reference external" href="https://arxiv.org/pdf/1602.04433.pdf">Unsupervised Domain Adaptation with Residual Transfer
+Networks</a> (2016)</li>
+<li><strong>Easy DA</strong>: <a class="reference external" href="http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=7899860">A Simple Approach for Unsupervised Domain
+Adaptation</a>
+(2016)</li>
+</ul>
+</div>
+<div class="section" id="autoencoder-approach">
+<h3>Autoencoder approach<a class="headerlink" href="#autoencoder-approach" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>MCAE</strong>: <a class="reference external" href="https://arxiv.org/pdf/1503.03163.pdf">Learning Classifiers from Synthetic Data Using a
+Multichannel Autoencoder</a>
+(2015)</li>
+<li><strong>SMCAE</strong>: <a class="reference external" href="https://arxiv.org/pdf/1509.05463.pdf">Learning from Synthetic Data Using a Stacked Multichannel
+Autoencoder</a> (2015)</li>
+</ul>
+</div>
+<div class="section" id="subspace-learning">
+<h3>Subspace Learning<a class="headerlink" href="#subspace-learning" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>SGF</strong>: <a class="reference external" href="https://pdfs.semanticscholar.org/d3ed/bfee56884d2b6d9aa51a6c525f9a05248802.pdf">Domain Adaptation for Object Recognition: An Unsupervised
+Approach</a>
+(2011)</li>
+<li><strong>GFK</strong>: <a class="reference external" href="https://pdfs.semanticscholar.org/0a59/337568cbf74e7371fb543f7ca34bbc2153ac.pdf">Geodesic Flow Kernel for Unsupervised Domain
+Adaptation</a>
+(2012)</li>
+<li><strong>SA</strong>: <a class="reference external" href="https://pdfs.semanticscholar.org/51a4/d658c93c5169eef7568d3d1cf53e8e495087.pdf">Unsupervised Visual Domain Adaptation Using Subspace
+Alignment</a>
+(2015)</li>
+<li><strong>CORAL</strong>: <a class="reference external" href="https://arxiv.org/pdf/1511.05547.pdf">Return of Frustratingly Easy Domain
+Adaptation</a> (2015)</li>
+<li><strong>Deep CORAL</strong>: <a class="reference external" href="https://arxiv.org/pdf/1607.01719.pdf">Deep CORAL: Correlation Alignment for Deep Domain
+Adaptation</a> (2016)</li>
+<li><strong>ILS</strong>: <a class="reference external" href="https://arxiv.org/pdf/1611.08350.pdf">Learning an Invariant Hilbert Space for Domain
+Adaptation</a> (2016)</li>
+<li><strong>Log D-CORAL</strong>: <a class="reference external" href="https://arxiv.org/pdf/1705.08180.pdf">Correlation Alignment by Riemannian Metric for
+Domain Adaptation</a> (2017)</li>
+</ul>
+</div>
+<div class="section" id="self-ensembling-methods">
+<h3>Self-Ensembling methods<a class="headerlink" href="#self-ensembling-methods" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>MT</strong>: <a class="reference external" href="https://arxiv.org/pdf/1706.05208.pdf">Self-ensembling for domain
+adaptation</a> (2017)</li>
+</ul>
+</div>
+<div class="section" id="other">
+<h3>Other<a class="headerlink" href="#other" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://scalable.mpi-inf.mpg.de/files/2013/04/saenko_eccv_2010.pdf">Adapting Visual Category Models to New
+Domains</a>
+(2010)</li>
+<li><strong>AdaBN</strong>: <a class="reference external" href="https://arxiv.org/pdf/1603.04779.pdf">Revisiting Batch Normalization for Practical Domain
+Adaptation</a> (2016)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="semi-supervised-domain-adaptation">
+<h2>Semi-supervised Domain Adaptation<a class="headerlink" href="#semi-supervised-domain-adaptation" title="Permalink to this headline">¶</a></h2>
+<p>All the source points are labelled, but only few target points are.</p>
+<div class="section" id="general-methods">
+<h3>General methods<a class="headerlink" href="#general-methods" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>da+lap-sim</strong> : <a class="reference external" href="http://jeffdonahue.com/papers/DAInstanceConstraintsCVPR2013.pdf">Semi-Supervised Domain Adaptation with Instance
+Constraints</a>
+(2013)</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h3>Subspace learning<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>EA++</strong>: <a class="reference external" href="https://papers.nips.cc/paper/4009-co-regularization-based-semi-supervised-domain-adaptation.pdf">Co-regularization Based Semi-supervised Domain
+Adaptation</a>
+(2010)</li>
+<li><strong>SDASL</strong>: <a class="reference external" href="https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Yao_Semi-Supervised_Domain_Adaptation_2015_CVPR_paper.pdf">Semi-supervised Domain Adaptation with Subspace Learning
+for Visual
+Recognition</a>
+(2015)</li>
+</ul>
+</div>
+<div class="section" id="copulas-methods">
+<h3>Copulas methods<a class="headerlink" href="#copulas-methods" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>NPRV</strong>: <a class="reference external" href="https://papers.nips.cc/paper/4802-semi-supervised-domain-adaptation-with-non-parametric-copulas.pdf">Semi-Supervised Domain Adaptation with Non-Parametric
+Copulas</a>
+(2013)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="few-shot-supervised-domain-adaptation">
+<h2>Few-shot Supervised Domain Adaptation<a class="headerlink" href="#few-shot-supervised-domain-adaptation" title="Permalink to this headline">¶</a></h2>
+<p>Only a few target examples are available, but they are labelled</p>
+<div class="section" id="id2">
+<h3>Adversarial methods<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>FADA</strong>: <a class="reference external" href="https://arxiv.org/pdf/1711.02536.pdf">Few-Shot Adversarial Domain
+Adaptation</a> (2017)</li>
+<li><strong>Augmented-Cyc</strong>: <a class="reference external" href="https://arxiv.org/pdf/1807.00374.pdf">Augmented Cyclic Adversarial Learning for Domain
+Adaptation</a> (2018)</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3>Embedding methods<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>CCSA</strong>: <a class="reference external" href="https://arxiv.org/pdf/1709.10190.pdf">Unified Deep Supervised Domain Adaptation and
+Generalization</a> (2017)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="applied-domain-adaptation">
+<h2>Applied Domain Adaptation<a class="headerlink" href="#applied-domain-adaptation" title="Permalink to this headline">¶</a></h2>
+<p>Domain adaptation applied to other fields</p>
+<div class="section" id="physics">
+<h3>Physics<a class="headerlink" href="#physics" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://papers.nips.cc/paper/6699-learning-to-pivot-with-adversarial-networks.pdf">Learning to Pivot with Adversarial
+Networks</a>
+(2016)</li>
+<li><a class="reference external" href="https://arxiv.org/pdf/1710.08382.pdf">Adversarial Domain Adaptation for Identifying Phase
+Transitions</a> (2017)</li>
+<li><a class="reference external" href="https://arxiv.org/abs/1710.08382">Identifying Quantum Phase Transitions with Adversarial Neural
+Networks</a> (2017)</li>
+<li><a class="reference external" href="https://arxiv.org/abs/1806.00419">Automated discovery of characteristic features of phase transitions
+in many-body localization</a>
+(2017)</li>
+</ul>
+</div>
+<div class="section" id="audio-processing">
+<h3>Audio Processing<a class="headerlink" href="#audio-processing" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=6817520">Autoencoder-based Unsupervised Domain Adaptation for Speech Emotion
+Recognition</a>
+(2014)</li>
+<li><a class="reference external" href="https://arxiv.org/pdf/1804.00644.pdf">Adversarial Teacher-Student Learning for Unsupervised Domain
+Adaptation</a> (2018)</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="datasets">
+<h1>Datasets<a class="headerlink" href="#datasets" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="image-to-image">
+<h2>Image-to-image<a class="headerlink" href="#image-to-image" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://yann.lecun.com/exdb/mnist/">MNIST</a> vs
+<a class="reference external" href="https://drive.google.com/file/d/0B9Z4d7lAwbnTNDdNeFlERWRGNVk/view">MNIST-M</a>
+vs <a class="reference external" href="http://ufldl.stanford.edu/housenumbers/">SVHN</a> vs
+<a class="reference external" href="https://drive.google.com/file/d/0B9Z4d7lAwbnTSVR1dEFSRUFxOUU/view">Synth</a>
+vs
+<a class="reference external" href="http://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/multiclass.html#usps">USPS</a>:
+digit images</li>
+<li><a class="reference external" href="http://benchmark.ini.rub.de/?section=gtsrb&amp;subsection=news">GTSRB</a>
+vs <a class="reference external" href="http://graphics.cs.msu.ru/en/node/1337">Syn Signs</a> : traffic
+sign recognition datasets, transfer between real and synthetic signs.</li>
+<li><a class="reference external" href="http://cs.nyu.edu/~silberman/datasets/nyu_depth_v2.html">NYU Depth Dataset
+V2</a>:
+labeled paired images taken with two different cameras (normal and
+depth)</li>
+<li><a class="reference external" href="http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html">CelebA</a>: faces
+of celebrities, offering the possibility to perform gender or hair
+color translation for instance</li>
+<li><a class="reference external" href="https://people.eecs.berkeley.edu/~jhoffman//domainadapt/">Office-Caltech
+dataset</a>:
+images of office objects from 10 common categories shared by the
+Office-31 and Caltech-256 datasets. There are in total four domains:
+Amazon, Webcam, DSLR and Caltech.</li>
+<li><a class="reference external" href="https://www.cityscapes-dataset.com/">Cityscapes dataset</a>: street
+scene photos (source) and their annoted version (target)</li>
+<li><a class="reference external" href="http://www.cl.cam.ac.uk/research/rainbow/projects/unityeyes/">UnityEyes</a>
+vs
+<a class="reference external" href="https://www.mpi-inf.mpg.de/departments/computer-vision-and-multimodal-computing/research/gaze-based-human-computer-interaction/appearance-based-gaze-estimation-in-the-wild-mpiigaze/">MPIIGaze</a>:
+simulated vs real gaze images (eyes)</li>
+<li><a class="reference external" href="https://people.eecs.berkeley.edu/~taesung_park/CycleGAN/datasets/">CycleGAN
+datasets</a>:
+horse2zebra, apple2orange, cezanne2photo, monet2photo, ukiyoe2photo,
+vangogh2photo, summer2winter</li>
+<li><a class="reference external" href="https://people.eecs.berkeley.edu/~tinghuiz/projects/pix2pix/datasets/">pix2pix
+dataset</a>:
+edges2handbags, edges2shoes, facade, maps</li>
+<li><a class="reference external" href="http://www.socsci.ru.nl:8180/RaFD2/RaFD?p=main">RaFD</a>: facial
+images with 8 different emotions (anger, disgust, fear, happiness,
+sadness, surprise, contempt, and neutral). You can transfer a face
+from one emotion to another.</li>
+<li><a class="reference external" href="http://ai.bu.edu/visda-2017/#browse">VisDA 2017 classification
+dataset</a>: 12 categories of
+object images in 2 domains: 3D-models and real images.</li>
+<li><a class="reference external" href="http://hemanthdv.org/OfficeHome-Dataset/">Office-Home dataset</a>:
+images of objects in 4 domains: art, clipart, product and real-world.</li>
+</ul>
+</div>
+<div class="section" id="text-to-text">
+<h2>Text-to-text<a class="headerlink" href="#text-to-text" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://www.cs.jhu.edu/~mdredze/datasets/sentiment/">Amazon review benchmark
+dataset</a>:
+sentiment analysis for four kinds (domains) of reviews: books, DVDs,
+electronics, kitchen</li>
+<li><a class="reference external" href="http://www.ecmlpkdd2006.org/challenge.html#download">ECML/PKDD Spam
+Filtering</a>:
+emails from 3 different inboxes, that can represent the 3 domains.</li>
+<li><a class="reference external" href="http://qwone.com/~jason/20Newsgroups/">20 Newsgroup</a>: collection
+of newsgroup documents across 6 top categories and 20 subcategories.
+Subcategories can play the role of the domains, as describe in <a class="reference external" href="https://arxiv.org/pdf/1707.01217.pdf">this
+article</a>.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="results">
+<h1>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h1>
+<p>The results are indicated as the prediction accuracy (in %) in the
+target domain after adapting the source to the target. For the moment,
+they only correspond to the results given in the original papers, so the
+methodology may vary between each paper and these results must be taken
+with a grain of salt.</p>
+<div class="section" id="digits-transfer-unsupervised">
+<h2>Digits transfer (unsupervised)<a class="headerlink" href="#digits-transfer-unsupervised" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Sour
+ceTa
+rget</th>
+<th class="head">MNIS
+TMNI
+ST-M</th>
+<th class="head">Synt
+hSVH
+N</th>
+<th class="head">MNIS
+TSVH
+N</th>
+<th class="head">SVHN
+MNIS
+T</th>
+<th class="head">MNIS
+TUSP
+S</th>
+<th class="head">USPS
+MNIS
+T</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>SA</td>
+<td>56.9
+0</td>
+<td>86.4
+4</td>
+<td>?</td>
+<td>59.3
+2</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr class="row-odd"><td>DANN</td>
+<td>76.6
+6</td>
+<td>91.0
+9</td>
+<td>?</td>
+<td>73.8
+5</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr class="row-even"><td>CoGA
+N</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+<td>91.2</td>
+<td>89.1</td>
+</tr>
+<tr class="row-odd"><td>DRCN</td>
+<td>?</td>
+<td>?</td>
+<td>40.0
+5</td>
+<td>81.9
+7</td>
+<td>91.8
+0</td>
+<td>73.6
+7</td>
+</tr>
+<tr class="row-even"><td>DSN</td>
+<td>83.2</td>
+<td>91.2</td>
+<td>?</td>
+<td>82.7</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr class="row-odd"><td>DTN</td>
+<td>?</td>
+<td>?</td>
+<td>90.6
+6</td>
+<td>79.7
+2</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr class="row-even"><td>Pixe
+lDA</td>
+<td>98.2</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+<td>95.9</td>
+<td>?</td>
+</tr>
+<tr class="row-odd"><td>ADDA</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+<td>76.0</td>
+<td>89.4</td>
+<td>90.1</td>
+</tr>
+<tr class="row-even"><td>UNIT</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+<td>90.5
+3</td>
+<td>95.9
+7</td>
+<td>93.5
+8</td>
+</tr>
+<tr class="row-odd"><td>GenT
+oAda
+pt</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+<td>92.4</td>
+<td>95.3</td>
+<td>90.8</td>
+</tr>
+<tr class="row-even"><td>SBAD
+A-GA
+N</td>
+<td>99.4</td>
+<td>?</td>
+<td>61.1</td>
+<td>76.1</td>
+<td>97.6</td>
+<td>95.0</td>
+</tr>
+<tr class="row-odd"><td>DAas
+soc</td>
+<td>89.4
+7</td>
+<td>91.8
+6</td>
+<td>?</td>
+<td>97.6
+0</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr class="row-even"><td>CyCA
+DA</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+<td>90.4</td>
+<td>95.6</td>
+<td>96.5</td>
+</tr>
+<tr class="row-odd"><td>I2I</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+<td>92.1</td>
+<td>95.1</td>
+<td>92.2</td>
+</tr>
+<tr class="row-even"><td>DIRT
+-T</td>
+<td>98.7</td>
+<td>?</td>
+<td>76.5</td>
+<td>99.4</td>
+<td>?</td>
+<td>?</td>
+</tr>
+<tr class="row-odd"><td>Deep
+JDOT</td>
+<td>92.4</td>
+<td>?</td>
+<td>?</td>
+<td>96.7</td>
+<td>95.7</td>
+<td>96.4</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="challenges">
+<h1>Challenges<a class="headerlink" href="#challenges" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference external" href="http://ai.bu.edu/visda-2017/">Visual Domain Adaptation Challenge
+(VisDA)</a></li>
+<li><a class="reference external" href="https://blog.openai.com/retro-contest/">Open AI Retro Contest</a></li>
+</ul>
+</div>
+<div class="section" id="libraries">
+<h1>Libraries<a class="headerlink" href="#libraries" title="Permalink to this headline">¶</a></h1>
+<p>No good library for the moment (as far as I know). If you’re interested
+in a project of creating a generic transfer learning/domain adaptation
+library, please let me know.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="benchmarks.html" class="btn btn-neutral float-right" title="Domain Adaptation Benchmarks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="reading.html" class="btn btn-neutral" title="Transfer Learning and Domain Adaptation Reading List" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Steffen Schneider.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.2.0-alpha',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

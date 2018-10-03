@@ -1,0 +1,755 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>salad.datasets.transforms package &mdash; salad 0.2.0-alpha documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="salad.datasets.visda package" href="salad.datasets.visda.html" />
+    <link rel="prev" title="salad.datasets.digits package" href="salad.datasets.digits.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> salad
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Package Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../README.html#benchmarking-results">📊 Benchmarking Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../README.html#installation">💻 Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../README.html#using-this-library">📚 Using this library</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../README.html#quick-start">Quick Start</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../README.html#reasons-for-using-solver-abstractions">Reasons for using solver abstractions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../README.html#quickstart-mnist-experiment">Quickstart: MNIST Experiment</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../README.html#domain-adaptation-problems">💡 Domain Adaptation Problems</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../README.html#vision">📷 Vision</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../README.html#audio">🎤 Audio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../README.html#neuroscience">፨ Neuroscience</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../README.html#references-to-open-source-software">🔗 References to open source software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../README.html#contact">👤 Contact</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../whitepaper.html">Whitepaper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reading.html">Reading List</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../reading.html#awesome-transfer-learning">Awesome Transfer Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reading.html#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reading.html#tutorials-and-blogs">Tutorials and Blogs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reading.html#papers">Papers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../reading.html#surveys">Surveys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reading.html#deep-transfer-learning">Deep Transfer Learning</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#fine-tuning-approach">Fine-tuning approach</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#feature-extraction-embedding-approach">Feature extraction (embedding) approach</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#multi-task-learning">Multi-task learning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#policy-transfer-for-rl">Policy transfer for RL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#few-shot-transfer-learning">Few-shot transfer learning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#meta-transfer-learning">Meta transfer learning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#applications">Applications</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reading.html#unsupervised-domain-adaptation">Unsupervised Domain Adaptation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#theory">Theory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#adversarial-methods">Adversarial methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#optimal-transport">Optimal Transport</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#embedding-methods">Embedding methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#kernel-methods">Kernel methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#autoencoder-approach">Autoencoder approach</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#subspace-learning">Subspace Learning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#self-ensembling-methods">Self-Ensembling methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#other">Other</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reading.html#semi-supervised-domain-adaptation">Semi-supervised Domain Adaptation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#general-methods">General methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#id6">Subspace learning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#copulas-methods">Copulas methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reading.html#few-shot-supervised-domain-adaptation">Few-shot Supervised Domain Adaptation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#id7">Adversarial methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#id8">Embedding methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reading.html#applied-domain-adaptation">Applied Domain Adaptation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#physics">Physics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#audio-processing">Audio Processing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../reading.html#datasets">Datasets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../reading.html#image-to-image">Image-to-image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reading.html#text-to-text">Text-to-text</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../reading.html#results">Results</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../reading.html#digits-transfer-unsupervised">Digits transfer (unsupervised)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../reading.html#challenges">Challenges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reading.html#libraries">Libraries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../readinglist_gen.html">Awesome Transfer Learning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../readinglist_gen.html#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../readinglist_gen.html#tutorials-and-blogs">Tutorials and Blogs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../readinglist_gen.html#papers">Papers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../readinglist_gen.html#surveys">Surveys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../readinglist_gen.html#deep-transfer-learning">Deep Transfer Learning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../readinglist_gen.html#unsupervised-domain-adaptation">Unsupervised Domain Adaptation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../readinglist_gen.html#semi-supervised-domain-adaptation">Semi-supervised Domain Adaptation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../readinglist_gen.html#few-shot-supervised-domain-adaptation">Few-shot Supervised Domain Adaptation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../readinglist_gen.html#applied-domain-adaptation">Applied Domain Adaptation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../readinglist_gen.html#datasets">Datasets</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../readinglist_gen.html#image-to-image">Image-to-image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../readinglist_gen.html#text-to-text">Text-to-text</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../readinglist_gen.html#results">Results</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../readinglist_gen.html#digits-transfer-unsupervised">Digits transfer (unsupervised)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../readinglist_gen.html#challenges">Challenges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../readinglist_gen.html#libraries">Libraries</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmarks.html">Benchmarks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../benchmarks.html#digit-benchmarks">Digit Benchmarks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../benchmarks.html#visda-benchmark-and-task-cv">VisDA Benchmark and TASK-CV</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../demos/salad.solver.html">Solvers   (salad.solver)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demos/salad.datasets.html">Datasets  (salad.datasets)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../demos/salad.datasets.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../demos/salad.datasets.html#digits-datasets">Digits Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../demos/salad.datasets.html#toy-datasets">Toy Datasets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../demos/salad.models.html">Models    (salad.models)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../demos/salad.models.html#introduction">Introduction</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../demos/salad.layers.html">Layers    (salad.layers)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../demos/salad.layers.html#introduction">Introduction</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../demos/salad.utils.html">Utilities (salad.utils)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../demos/salad.utils.html#introduction">Introduction</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Scripts and Paper Implementations</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dummy.html">Domain Adversarial Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dummy.html">Cross Gradient Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dummy.html">Adversarial Dropout Regularization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dummy.html">Virtual Adversarial Domain Adaptation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dummy.html">Self-Ensembling</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="salad.solver.html">Solvers   (salad.solver)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="salad.solver.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="salad.solver.da.html">salad.solver.da package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.advdrop">salad.solver.da.advdrop module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.advdrop_refactor">salad.solver.da.advdrop_refactor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.association">salad.solver.da.association module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.base">salad.solver.da.base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.coral">salad.solver.da.coral module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.crossgrad">salad.solver.da.crossgrad module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.dann">salad.solver.da.dann module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.dirtt">salad.solver.da.dirtt module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.dirtt_re">salad.solver.da.dirtt_re module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.djdot">salad.solver.da.djdot module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.ensembling">salad.solver.da.ensembling module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="salad.solver.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.solver.html#module-salad.solver.base">salad.solver.base module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.solver.html#module-salad.solver.classification">salad.solver.classification module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.solver.html#module-salad.solver.gan">salad.solver.gan module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.solver.html#module-salad.solver.openset">salad.solver.openset module</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="salad.datasets.html">Datasets  (salad.datasets)</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="salad.datasets.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="salad.datasets.da.html">salad.datasets.da package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.da.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.da.html#module-salad.datasets.da.base">salad.datasets.da.base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.da.html#module-salad.datasets.da.digits">salad.datasets.da.digits module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.da.html#module-salad.datasets.da.toy">salad.datasets.da.toy module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="salad.datasets.digits.html">salad.datasets.digits package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.digits.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.digits.html#module-salad.datasets.digits.base">salad.datasets.digits.base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.digits.html#module-salad.datasets.digits.mnist">salad.datasets.digits.mnist module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.digits.html#module-salad.datasets.digits.openset">salad.datasets.digits.openset module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.digits.html#module-salad.datasets.digits.synth">salad.datasets.digits.synth module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.digits.html#module-salad.datasets.digits.usps">salad.datasets.digits.usps module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">salad.datasets.transforms package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-salad.datasets.transforms.digits">salad.datasets.transforms.digits module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-salad.datasets.transforms.ensembling">salad.datasets.transforms.ensembling module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-salad.datasets.transforms.noise">salad.datasets.transforms.noise module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-salad.datasets.transforms.noisy">salad.datasets.transforms.noisy module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="salad.datasets.visda.html">salad.datasets.visda package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.visda.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.visda.html#module-salad.datasets.visda.detection">salad.datasets.visda.detection module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.visda.html#module-salad.datasets.visda.openset">salad.datasets.visda.openset module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.visda.html#module-salad.datasets.visda.utils">salad.datasets.visda.utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.visda.html#module-salad.datasets.visda.visda">salad.datasets.visda.visda module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="salad.models.html">Models    (salad.models)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="salad.models.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="salad.models.audio.html">salad.models.audio package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="salad.models.digits.html">salad.models.digits package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="salad.models.digits.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.models.digits.html#module-salad.models.digits.adv">salad.models.digits.adv module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.models.digits.html#module-salad.models.digits.assoc">salad.models.digits.assoc module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.models.digits.html#module-salad.models.digits.corr">salad.models.digits.corr module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.models.digits.html#module-salad.models.digits.dirtt">salad.models.digits.dirtt module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.models.digits.html#module-salad.models.digits.ensemble">salad.models.digits.ensemble module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.models.digits.html#salad-models-digits-fan-module">salad.models.digits.fan module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="salad.models.vision.html">salad.models.vision package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="salad.models.vision.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.models.vision.html#module-salad.models.vision.unet">salad.models.vision.unet module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="salad.models.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.models.html#module-salad.models.base">salad.models.base module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.models.html#module-salad.models.gan">salad.models.gan module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.models.html#salad-models-neural-module">salad.models.neural module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.models.html#salad-models-resnet-module">salad.models.resnet module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.models.html#salad-models-sensorimotor-module">salad.models.sensorimotor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.models.html#module-salad.models.transfer">salad.models.transfer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.models.html#module-salad.models.utils">salad.models.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="salad.layers.html">Layers    (salad.layers)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="salad.layers.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.layers.html#module-salad.layers.association">salad.layers.association module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.layers.html#module-salad.layers.base">salad.layers.base module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.layers.html#module-salad.layers.coral">salad.layers.coral module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.layers.html#module-salad.layers.da">salad.layers.da module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.layers.html#module-salad.layers.funcs">salad.layers.funcs module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.layers.html#module-salad.layers.mat">salad.layers.mat module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.layers.html#module-salad.layers.vat">salad.layers.vat module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="salad.utils.html">Utilities (salad.utils)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="salad.utils.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.utils.html#module-salad.utils.augment">salad.utils.augment module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.utils.html#module-salad.utils.base">salad.utils.base module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.utils.html#module-salad.utils.config">salad.utils.config module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.utils.html#module-salad.utils.evaluate">salad.utils.evaluate module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.utils.html#module-salad.utils.finetune">salad.utils.finetune module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">salad</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="salad.datasets.html">salad.datasets package</a> &raquo;</li>
+        
+      <li>salad.datasets.transforms package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/salad.datasets.transforms.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-salad.datasets.transforms">
+<span id="salad-datasets-transforms-package"></span><h1>salad.datasets.transforms package<a class="headerlink" href="#module-salad.datasets.transforms" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="salad.datasets.transforms.tensor">
+<code class="descclassname">salad.datasets.transforms.</code><code class="descname">tensor</code><span class="sig-paren">(</span><em>data</em>, <em>dtype=None</em>, <em>device=None</em>, <em>requires_grad=False</em><span class="sig-paren">)</span> &#x2192; Tensor<a class="headerlink" href="#salad.datasets.transforms.tensor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs a tensor with <code class="xref py py-attr docutils literal notranslate"><span class="pre">data</span></code>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><code class="xref py py-func docutils literal notranslate"><span class="pre">torch.tensor()</span></code> always copies <code class="xref py py-attr docutils literal notranslate"><span class="pre">data</span></code>. If you have a Tensor
+<code class="docutils literal notranslate"><span class="pre">data</span></code> and want to avoid a copy, use <code class="xref py py-func docutils literal notranslate"><span class="pre">torch.Tensor.requires_grad_()</span></code>
+or <code class="xref py py-func docutils literal notranslate"><span class="pre">torch.Tensor.detach()</span></code>.
+If you have a NumPy <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> and want to avoid a copy, use
+<code class="xref py py-func docutils literal notranslate"><span class="pre">torch.from_numpy()</span></code>.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>data</strong> (<em>array_like</em>) – Initial data for the tensor. Can be a list, tuple,
+NumPy <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>, scalar, and other types.</li>
+<li><strong>dtype</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">torch.dtype</span></code>, optional) – the desired data type of returned tensor.
+Default: if None, infers data type from <code class="xref py py-attr docutils literal notranslate"><span class="pre">data</span></code>.</li>
+<li><strong>device</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">torch.device</span></code>, optional) – the desired device of returned tensor.
+Default: if None, uses the current device for the default tensor type
+(see <code class="xref py py-func docutils literal notranslate"><span class="pre">torch.set_default_tensor_type()</span></code>). <code class="xref py py-attr docutils literal notranslate"><span class="pre">device</span></code> will be the CPU
+for CPU tensor types and the current CUDA device for CUDA tensor types.</li>
+<li><strong>requires_grad</strong> (<em>bool</em><em>, </em><em>optional</em>) – If autograd should record operations on the
+returned tensor. Default: <code class="docutils literal notranslate"><span class="pre">False</span></code>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">],</span> <span class="p">[</span><span class="mf">2.2</span><span class="p">,</span> <span class="mf">3.1</span><span class="p">],</span> <span class="p">[</span><span class="mf">4.9</span><span class="p">,</span> <span class="mf">5.2</span><span class="p">]])</span>
+<span class="go">tensor([[ 0.1000,  1.2000],</span>
+<span class="go">        [ 2.2000,  3.1000],</span>
+<span class="go">        [ 4.9000,  5.2000]])</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>  <span class="c1"># Type inference on data</span>
+<span class="go">tensor([ 0,  1])</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([[</span><span class="mf">0.11111</span><span class="p">,</span> <span class="mf">0.222222</span><span class="p">,</span> <span class="mf">0.3333333</span><span class="p">]],</span>
+<span class="go">                 dtype=torch.float64,</span>
+<span class="go">                 device=torch.device(&#39;cuda:0&#39;))  # creates a torch.cuda.DoubleTensor</span>
+<span class="go">tensor([[ 0.1111,  0.2222,  0.3333]], dtype=torch.float64, device=&#39;cuda:0&#39;)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="mf">3.14159</span><span class="p">)</span>  <span class="c1"># Create a scalar (zero-dimensional tensor)</span>
+<span class="go">tensor(3.1416)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([])</span>  <span class="c1"># Create an empty tensor (of size (0,))</span>
+<span class="go">tensor([])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-salad.datasets.transforms.digits">
+<span id="salad-datasets-transforms-digits-module"></span><h2>salad.datasets.transforms.digits module<a class="headerlink" href="#module-salad.datasets.transforms.digits" title="Permalink to this headline">¶</a></h2>
+<p>Standard Transformations for Digit datasets</p>
+<dl class="function">
+<dt id="salad.datasets.transforms.digits.default_normalization">
+<code class="descclassname">salad.datasets.transforms.digits.</code><code class="descname">default_normalization</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.datasets.transforms.digits.default_normalization" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="salad.datasets.transforms.digits.default_transforms">
+<code class="descclassname">salad.datasets.transforms.digits.</code><code class="descname">default_transforms</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.datasets.transforms.digits.default_transforms" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="salad.datasets.transforms.digits.tensor">
+<code class="descclassname">salad.datasets.transforms.digits.</code><code class="descname">tensor</code><span class="sig-paren">(</span><em>data</em>, <em>dtype=None</em>, <em>device=None</em>, <em>requires_grad=False</em><span class="sig-paren">)</span> &#x2192; Tensor<a class="headerlink" href="#salad.datasets.transforms.digits.tensor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs a tensor with <code class="xref py py-attr docutils literal notranslate"><span class="pre">data</span></code>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><code class="xref py py-func docutils literal notranslate"><span class="pre">torch.tensor()</span></code> always copies <code class="xref py py-attr docutils literal notranslate"><span class="pre">data</span></code>. If you have a Tensor
+<code class="docutils literal notranslate"><span class="pre">data</span></code> and want to avoid a copy, use <code class="xref py py-func docutils literal notranslate"><span class="pre">torch.Tensor.requires_grad_()</span></code>
+or <code class="xref py py-func docutils literal notranslate"><span class="pre">torch.Tensor.detach()</span></code>.
+If you have a NumPy <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> and want to avoid a copy, use
+<code class="xref py py-func docutils literal notranslate"><span class="pre">torch.from_numpy()</span></code>.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>data</strong> (<em>array_like</em>) – Initial data for the tensor. Can be a list, tuple,
+NumPy <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>, scalar, and other types.</li>
+<li><strong>dtype</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">torch.dtype</span></code>, optional) – the desired data type of returned tensor.
+Default: if None, infers data type from <code class="xref py py-attr docutils literal notranslate"><span class="pre">data</span></code>.</li>
+<li><strong>device</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">torch.device</span></code>, optional) – the desired device of returned tensor.
+Default: if None, uses the current device for the default tensor type
+(see <code class="xref py py-func docutils literal notranslate"><span class="pre">torch.set_default_tensor_type()</span></code>). <code class="xref py py-attr docutils literal notranslate"><span class="pre">device</span></code> will be the CPU
+for CPU tensor types and the current CUDA device for CUDA tensor types.</li>
+<li><strong>requires_grad</strong> (<em>bool</em><em>, </em><em>optional</em>) – If autograd should record operations on the
+returned tensor. Default: <code class="docutils literal notranslate"><span class="pre">False</span></code>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">],</span> <span class="p">[</span><span class="mf">2.2</span><span class="p">,</span> <span class="mf">3.1</span><span class="p">],</span> <span class="p">[</span><span class="mf">4.9</span><span class="p">,</span> <span class="mf">5.2</span><span class="p">]])</span>
+<span class="go">tensor([[ 0.1000,  1.2000],</span>
+<span class="go">        [ 2.2000,  3.1000],</span>
+<span class="go">        [ 4.9000,  5.2000]])</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>  <span class="c1"># Type inference on data</span>
+<span class="go">tensor([ 0,  1])</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([[</span><span class="mf">0.11111</span><span class="p">,</span> <span class="mf">0.222222</span><span class="p">,</span> <span class="mf">0.3333333</span><span class="p">]],</span>
+<span class="go">                 dtype=torch.float64,</span>
+<span class="go">                 device=torch.device(&#39;cuda:0&#39;))  # creates a torch.cuda.DoubleTensor</span>
+<span class="go">tensor([[ 0.1111,  0.2222,  0.3333]], dtype=torch.float64, device=&#39;cuda:0&#39;)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="mf">3.14159</span><span class="p">)</span>  <span class="c1"># Create a scalar (zero-dimensional tensor)</span>
+<span class="go">tensor(3.1416)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([])</span>  <span class="c1"># Create an empty tensor (of size (0,))</span>
+<span class="go">tensor([])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-salad.datasets.transforms.ensembling">
+<span id="salad-datasets-transforms-ensembling-module"></span><h2>salad.datasets.transforms.ensembling module<a class="headerlink" href="#module-salad.datasets.transforms.ensembling" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="salad.datasets.transforms.ensembling.Augmentation">
+<em class="property">class </em><code class="descclassname">salad.datasets.transforms.ensembling.</code><code class="descname">Augmentation</code><span class="sig-paren">(</span><em>dataset</em>, <em>n_samples=1</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.datasets.transforms.ensembling.Augmentation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.datasets.transforms.ensembling.ImageAugmentation">
+<em class="property">class </em><code class="descclassname">salad.datasets.transforms.ensembling.</code><code class="descname">ImageAugmentation</code><span class="sig-paren">(</span><em>hflip</em>, <em>xlat_range</em>, <em>affine_std</em>, <em>rot_std=0.0</em>, <em>intens_flip=False</em>, <em>intens_scale_range_lower=None</em>, <em>intens_scale_range_upper=None</em>, <em>intens_offset_range_lower=None</em>, <em>intens_offset_range_upper=None</em>, <em>scale_x_range=None</em>, <em>scale_y_range=None</em>, <em>scale_u_range=None</em>, <em>gaussian_noise_std=0.0</em>, <em>blur_range=None</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.datasets.transforms.ensembling.ImageAugmentation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="salad.datasets.transforms.ensembling.ImageAugmentation.augment">
+<code class="descname">augment</code><span class="sig-paren">(</span><em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.datasets.transforms.ensembling.ImageAugmentation.augment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="salad.datasets.transforms.ensembling.ImageAugmentation.augment_pair">
+<code class="descname">augment_pair</code><span class="sig-paren">(</span><em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.datasets.transforms.ensembling.ImageAugmentation.augment_pair" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="salad.datasets.transforms.ensembling.cat_nx2x3">
+<code class="descclassname">salad.datasets.transforms.ensembling.</code><code class="descname">cat_nx2x3</code><span class="sig-paren">(</span><em>a</em>, <em>b</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.datasets.transforms.ensembling.cat_nx2x3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Multiply the N 2x3 transformations stored in <cite>a</cite> with those in <cite>b</cite>
+:param a: transformation matrices, (N,2,3) array
+:param b: transformation matrices, (N,2,3) array
+:return: <cite>a . b</cite></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="salad.datasets.transforms.ensembling.centre_xf">
+<code class="descclassname">salad.datasets.transforms.ensembling.</code><code class="descname">centre_xf</code><span class="sig-paren">(</span><em>xf</em>, <em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.datasets.transforms.ensembling.centre_xf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Centre the transformations in <cite>xf</cite> around (0,0), where the current centre is assumed to be at the
+centre of an image of shape <cite>size</cite>
+:param xf: transformation matrices, (N,2,3) array
+:param size: image size
+:return: centred transformation matrices, (N,2,3) array</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="salad.datasets.transforms.ensembling.identity_xf">
+<code class="descclassname">salad.datasets.transforms.ensembling.</code><code class="descname">identity_xf</code><span class="sig-paren">(</span><em>N</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.datasets.transforms.ensembling.identity_xf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct N identity 2x3 transformation matrices
+:return: array of shape (N, 2, 3)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="salad.datasets.transforms.ensembling.inv_nx2x2">
+<code class="descclassname">salad.datasets.transforms.ensembling.</code><code class="descname">inv_nx2x2</code><span class="sig-paren">(</span><em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.datasets.transforms.ensembling.inv_nx2x2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Invert the N 2x2 transformation matrices stored in X; a (N,2,2) array
+:param X: transformation matrices to invert, (N,2,2) array
+:return: inverse of X</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="salad.datasets.transforms.ensembling.inv_nx2x3">
+<code class="descclassname">salad.datasets.transforms.ensembling.</code><code class="descname">inv_nx2x3</code><span class="sig-paren">(</span><em>m</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.datasets.transforms.ensembling.inv_nx2x3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Invert the N 2x3 transformation matrices stored in X; a (N,2,3) array
+:param X: transformation matrices to invert, (N,2,3) array
+:return: inverse of X</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="salad.datasets.transforms.ensembling.rotation_matrices">
+<code class="descclassname">salad.datasets.transforms.ensembling.</code><code class="descname">rotation_matrices</code><span class="sig-paren">(</span><em>thetas</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.datasets.transforms.ensembling.rotation_matrices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate rotation matrices
+:param thetas: rotation angles in radians as a (N,) array
+:return: rotation matrices, (N,2,3) array</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-salad.datasets.transforms.noise">
+<span id="salad-datasets-transforms-noise-module"></span><h2>salad.datasets.transforms.noise module<a class="headerlink" href="#module-salad.datasets.transforms.noise" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="salad.datasets.transforms.noise.DomainConfusion">
+<em class="property">class </em><code class="descclassname">salad.datasets.transforms.noise.</code><code class="descname">DomainConfusion</code><span class="sig-paren">(</span><em>transform_list</em>, <em>intermediate</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.datasets.transforms.noise.DomainConfusion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Given x and a set of possible transforms, applies a random
+transform on x and returns a pair (x, d)</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.datasets.transforms.noise.DomainLabel">
+<em class="property">class </em><code class="descclassname">salad.datasets.transforms.noise.</code><code class="descname">DomainLabel</code><span class="sig-paren">(</span><em>domain</em>, <em>n_domains</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.datasets.transforms.noise.DomainLabel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>concats a domain label to the dataset</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.datasets.transforms.noise.Gaussian">
+<em class="property">class </em><code class="descclassname">salad.datasets.transforms.noise.</code><code class="descname">Gaussian</code><span class="sig-paren">(</span><em>mu=0.0</em>, <em>sigma=0.1</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.datasets.transforms.noise.Gaussian" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Add gaussian noise</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.datasets.transforms.noise.InvertContrast">
+<em class="property">class </em><code class="descclassname">salad.datasets.transforms.noise.</code><code class="descname">InvertContrast</code><a class="headerlink" href="#salad.datasets.transforms.noise.InvertContrast" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.datasets.transforms.noise.SaltAndPepper">
+<em class="property">class </em><code class="descclassname">salad.datasets.transforms.noise.</code><code class="descname">SaltAndPepper</code><span class="sig-paren">(</span><em>p=0.05</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.datasets.transforms.noise.SaltAndPepper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Adds salt and pepper noise with probability <em>p</em> to a given image
+or batch of images</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.datasets.transforms.noise.Shift">
+<em class="property">class </em><code class="descclassname">salad.datasets.transforms.noise.</code><code class="descname">Shift</code><span class="sig-paren">(</span><em>w=5</em>, <em>h=5</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.datasets.transforms.noise.Shift" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.datasets.transforms.noise.Uniform">
+<em class="property">class </em><code class="descclassname">salad.datasets.transforms.noise.</code><code class="descname">Uniform</code><span class="sig-paren">(</span><em>p=0.05</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.datasets.transforms.noise.Uniform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Add uniform noise</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-salad.datasets.transforms.noisy">
+<span id="salad-datasets-transforms-noisy-module"></span><h2>salad.datasets.transforms.noisy module<a class="headerlink" href="#module-salad.datasets.transforms.noisy" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="salad.datasets.transforms.noisy.clean_transform">
+<code class="descclassname">salad.datasets.transforms.noisy.</code><code class="descname">clean_transform</code><span class="sig-paren">(</span><em>img_size=64</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.datasets.transforms.noisy.clean_transform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="salad.datasets.transforms.noisy.load_noisy_mnist">
+<code class="descclassname">salad.datasets.transforms.noisy.</code><code class="descname">load_noisy_mnist</code><span class="sig-paren">(</span><em>path</em>, <em>train=True</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.datasets.transforms.noisy.load_noisy_mnist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="salad.datasets.transforms.noisy.noisy_transform">
+<code class="descclassname">salad.datasets.transforms.noisy.</code><code class="descname">noisy_transform</code><span class="sig-paren">(</span><em>img_size=64</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.datasets.transforms.noisy.noisy_transform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="salad.datasets.transforms.noisy.transform">
+<code class="descclassname">salad.datasets.transforms.noisy.</code><code class="descname">transform</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.datasets.transforms.noisy.transform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="salad.datasets.visda.html" class="btn btn-neutral float-right" title="salad.datasets.visda package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="salad.datasets.digits.html" class="btn btn-neutral" title="salad.datasets.digits package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Steffen Schneider.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.2.0-alpha',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

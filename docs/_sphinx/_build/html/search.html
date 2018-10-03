@@ -1,0 +1,480 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Search &mdash; salad 0.2.0-alpha documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="#" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> salad
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="#" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="README.html">Package Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="README.html#benchmarking-results">📊 Benchmarking Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#installation">💻 Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#using-this-library">📚 Using this library</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="README.html#quick-start">Quick Start</a></li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#reasons-for-using-solver-abstractions">Reasons for using solver abstractions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#quickstart-mnist-experiment">Quickstart: MNIST Experiment</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#domain-adaptation-problems">💡 Domain Adaptation Problems</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="README.html#vision">📷 Vision</a></li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#audio">🎤 Audio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="README.html#neuroscience">፨ Neuroscience</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#references-to-open-source-software">🔗 References to open source software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#contact">👤 Contact</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="whitepaper.html">Whitepaper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reading.html">Reading List</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reading.html#awesome-transfer-learning">Awesome Transfer Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reading.html#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reading.html#tutorials-and-blogs">Tutorials and Blogs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reading.html#papers">Papers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reading.html#surveys">Surveys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reading.html#deep-transfer-learning">Deep Transfer Learning</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#fine-tuning-approach">Fine-tuning approach</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#feature-extraction-embedding-approach">Feature extraction (embedding) approach</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#multi-task-learning">Multi-task learning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#policy-transfer-for-rl">Policy transfer for RL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#few-shot-transfer-learning">Few-shot transfer learning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#meta-transfer-learning">Meta transfer learning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#applications">Applications</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="reading.html#unsupervised-domain-adaptation">Unsupervised Domain Adaptation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#theory">Theory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#adversarial-methods">Adversarial methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#optimal-transport">Optimal Transport</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#embedding-methods">Embedding methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#kernel-methods">Kernel methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#autoencoder-approach">Autoencoder approach</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#subspace-learning">Subspace Learning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#self-ensembling-methods">Self-Ensembling methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#other">Other</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="reading.html#semi-supervised-domain-adaptation">Semi-supervised Domain Adaptation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#general-methods">General methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#id6">Subspace learning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#copulas-methods">Copulas methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="reading.html#few-shot-supervised-domain-adaptation">Few-shot Supervised Domain Adaptation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#id7">Adversarial methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#id8">Embedding methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="reading.html#applied-domain-adaptation">Applied Domain Adaptation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#physics">Physics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reading.html#audio-processing">Audio Processing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reading.html#datasets">Datasets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reading.html#image-to-image">Image-to-image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reading.html#text-to-text">Text-to-text</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reading.html#results">Results</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reading.html#digits-transfer-unsupervised">Digits transfer (unsupervised)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reading.html#challenges">Challenges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reading.html#libraries">Libraries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="readinglist_gen.html">Awesome Transfer Learning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="readinglist_gen.html#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="readinglist_gen.html#tutorials-and-blogs">Tutorials and Blogs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="readinglist_gen.html#papers">Papers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="readinglist_gen.html#surveys">Surveys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="readinglist_gen.html#deep-transfer-learning">Deep Transfer Learning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="readinglist_gen.html#unsupervised-domain-adaptation">Unsupervised Domain Adaptation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="readinglist_gen.html#semi-supervised-domain-adaptation">Semi-supervised Domain Adaptation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="readinglist_gen.html#few-shot-supervised-domain-adaptation">Few-shot Supervised Domain Adaptation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="readinglist_gen.html#applied-domain-adaptation">Applied Domain Adaptation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="readinglist_gen.html#datasets">Datasets</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="readinglist_gen.html#image-to-image">Image-to-image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="readinglist_gen.html#text-to-text">Text-to-text</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="readinglist_gen.html#results">Results</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="readinglist_gen.html#digits-transfer-unsupervised">Digits transfer (unsupervised)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="readinglist_gen.html#challenges">Challenges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="readinglist_gen.html#libraries">Libraries</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="benchmarks.html">Benchmarks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="benchmarks.html#digit-benchmarks">Digit Benchmarks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarks.html#visda-benchmark-and-task-cv">VisDA Benchmark and TASK-CV</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="demos/salad.solver.html">Solvers   (salad.solver)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demos/salad.datasets.html">Datasets  (salad.datasets)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="demos/salad.datasets.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demos/salad.datasets.html#digits-datasets">Digits Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demos/salad.datasets.html#toy-datasets">Toy Datasets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="demos/salad.models.html">Models    (salad.models)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="demos/salad.models.html#introduction">Introduction</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="demos/salad.layers.html">Layers    (salad.layers)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="demos/salad.layers.html#introduction">Introduction</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="demos/salad.utils.html">Utilities (salad.utils)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="demos/salad.utils.html#introduction">Introduction</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Scripts and Paper Implementations</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dummy.html">Domain Adversarial Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dummy.html">Cross Gradient Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dummy.html">Adversarial Dropout Regularization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dummy.html">Virtual Adversarial Domain Adaptation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dummy.html">Self-Ensembling</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/salad.solver.html">Solvers   (salad.solver)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.solver.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/salad.solver.da.html">salad.solver.da package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.solver.da.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.solver.da.html#module-salad.solver.da.advdrop">salad.solver.da.advdrop module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.solver.da.html#module-salad.solver.da.advdrop_refactor">salad.solver.da.advdrop_refactor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.solver.da.html#module-salad.solver.da.association">salad.solver.da.association module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.solver.da.html#module-salad.solver.da.base">salad.solver.da.base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.solver.da.html#module-salad.solver.da.coral">salad.solver.da.coral module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.solver.da.html#module-salad.solver.da.crossgrad">salad.solver.da.crossgrad module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.solver.da.html#module-salad.solver.da.dann">salad.solver.da.dann module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.solver.da.html#module-salad.solver.da.dirtt">salad.solver.da.dirtt module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.solver.da.html#module-salad.solver.da.dirtt_re">salad.solver.da.dirtt_re module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.solver.da.html#module-salad.solver.da.djdot">salad.solver.da.djdot module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.solver.da.html#module-salad.solver.da.ensembling">salad.solver.da.ensembling module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.solver.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.solver.html#module-salad.solver.base">salad.solver.base module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.solver.html#module-salad.solver.classification">salad.solver.classification module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.solver.html#module-salad.solver.gan">salad.solver.gan module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.solver.html#module-salad.solver.openset">salad.solver.openset module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/salad.datasets.html">Datasets  (salad.datasets)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.datasets.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/salad.datasets.da.html">salad.datasets.da package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.da.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.da.html#module-salad.datasets.da.base">salad.datasets.da.base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.da.html#module-salad.datasets.da.digits">salad.datasets.da.digits module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.da.html#module-salad.datasets.da.toy">salad.datasets.da.toy module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/salad.datasets.digits.html">salad.datasets.digits package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.digits.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.digits.html#module-salad.datasets.digits.base">salad.datasets.digits.base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.digits.html#module-salad.datasets.digits.mnist">salad.datasets.digits.mnist module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.digits.html#module-salad.datasets.digits.openset">salad.datasets.digits.openset module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.digits.html#module-salad.datasets.digits.synth">salad.datasets.digits.synth module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.digits.html#module-salad.datasets.digits.usps">salad.datasets.digits.usps module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/salad.datasets.transforms.html">salad.datasets.transforms package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.transforms.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.transforms.html#module-salad.datasets.transforms.digits">salad.datasets.transforms.digits module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.transforms.html#module-salad.datasets.transforms.ensembling">salad.datasets.transforms.ensembling module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.transforms.html#module-salad.datasets.transforms.noise">salad.datasets.transforms.noise module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.transforms.html#module-salad.datasets.transforms.noisy">salad.datasets.transforms.noisy module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/salad.datasets.visda.html">salad.datasets.visda package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.visda.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.visda.html#module-salad.datasets.visda.detection">salad.datasets.visda.detection module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.visda.html#module-salad.datasets.visda.openset">salad.datasets.visda.openset module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.visda.html#module-salad.datasets.visda.utils">salad.datasets.visda.utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.datasets.visda.html#module-salad.datasets.visda.visda">salad.datasets.visda.visda module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/salad.models.html">Models    (salad.models)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.models.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/salad.models.audio.html">salad.models.audio package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/salad.models.digits.html">salad.models.digits package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.models.digits.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.models.digits.html#module-salad.models.digits.adv">salad.models.digits.adv module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.models.digits.html#module-salad.models.digits.assoc">salad.models.digits.assoc module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.models.digits.html#module-salad.models.digits.corr">salad.models.digits.corr module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.models.digits.html#module-salad.models.digits.dirtt">salad.models.digits.dirtt module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.models.digits.html#module-salad.models.digits.ensemble">salad.models.digits.ensemble module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.models.digits.html#salad-models-digits-fan-module">salad.models.digits.fan module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/salad.models.vision.html">salad.models.vision package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.models.vision.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/salad.models.vision.html#module-salad.models.vision.unet">salad.models.vision.unet module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.models.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.models.html#module-salad.models.base">salad.models.base module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.models.html#module-salad.models.gan">salad.models.gan module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.models.html#salad-models-neural-module">salad.models.neural module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.models.html#salad-models-resnet-module">salad.models.resnet module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.models.html#salad-models-sensorimotor-module">salad.models.sensorimotor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.models.html#module-salad.models.transfer">salad.models.transfer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.models.html#module-salad.models.utils">salad.models.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/salad.layers.html">Layers    (salad.layers)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.layers.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.layers.html#module-salad.layers.association">salad.layers.association module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.layers.html#module-salad.layers.base">salad.layers.base module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.layers.html#module-salad.layers.coral">salad.layers.coral module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.layers.html#module-salad.layers.da">salad.layers.da module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.layers.html#module-salad.layers.funcs">salad.layers.funcs module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.layers.html#module-salad.layers.mat">salad.layers.mat module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.layers.html#module-salad.layers.vat">salad.layers.vat module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/salad.utils.html">Utilities (salad.utils)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.utils.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.utils.html#module-salad.utils.augment">salad.utils.augment module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.utils.html#module-salad.utils.base">salad.utils.base module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.utils.html#module-salad.utils.config">salad.utils.config module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.utils.html#module-salad.utils.evaluate">salad.utils.evaluate module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/salad.utils.html#module-salad.utils.finetune">salad.utils.finetune module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">salad</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Search</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <noscript>
+  <div id="fallback" class="admonition warning">
+    <p class="last">
+      Please activate JavaScript to enable the search
+      functionality.
+    </p>
+  </div>
+  </noscript>
+
+  
+  <div id="search-results">
+  
+  </div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Steffen Schneider.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.2.0-alpha',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="_static/searchtools.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+  <script type="text/javascript">
+    jQuery(function() { Search.loadIndex("searchindex.js"); });
+  </script>
+  
+  <script type="text/javascript" id="searchindexloader"></script>
+   
+
+
+</body>
+</html>

@@ -1,0 +1,875 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>salad.solver package &mdash; salad 0.2.0-alpha documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="salad.solver.da package" href="salad.solver.da.html" />
+    <link rel="prev" title="Page under construction" href="../dummy.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> salad
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Package Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../README.html#benchmarking-results">📊 Benchmarking Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../README.html#installation">💻 Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../README.html#using-this-library">📚 Using this library</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../README.html#quick-start">Quick Start</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../README.html#reasons-for-using-solver-abstractions">Reasons for using solver abstractions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../README.html#quickstart-mnist-experiment">Quickstart: MNIST Experiment</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../README.html#domain-adaptation-problems">💡 Domain Adaptation Problems</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../README.html#vision">📷 Vision</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../README.html#audio">🎤 Audio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../README.html#neuroscience">፨ Neuroscience</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../README.html#references-to-open-source-software">🔗 References to open source software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../README.html#contact">👤 Contact</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../whitepaper.html">Whitepaper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reading.html">Reading List</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../reading.html#awesome-transfer-learning">Awesome Transfer Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reading.html#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reading.html#tutorials-and-blogs">Tutorials and Blogs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reading.html#papers">Papers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../reading.html#surveys">Surveys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reading.html#deep-transfer-learning">Deep Transfer Learning</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#fine-tuning-approach">Fine-tuning approach</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#feature-extraction-embedding-approach">Feature extraction (embedding) approach</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#multi-task-learning">Multi-task learning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#policy-transfer-for-rl">Policy transfer for RL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#few-shot-transfer-learning">Few-shot transfer learning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#meta-transfer-learning">Meta transfer learning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#applications">Applications</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reading.html#unsupervised-domain-adaptation">Unsupervised Domain Adaptation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#theory">Theory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#adversarial-methods">Adversarial methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#optimal-transport">Optimal Transport</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#embedding-methods">Embedding methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#kernel-methods">Kernel methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#autoencoder-approach">Autoencoder approach</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#subspace-learning">Subspace Learning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#self-ensembling-methods">Self-Ensembling methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#other">Other</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reading.html#semi-supervised-domain-adaptation">Semi-supervised Domain Adaptation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#general-methods">General methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#id6">Subspace learning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#copulas-methods">Copulas methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reading.html#few-shot-supervised-domain-adaptation">Few-shot Supervised Domain Adaptation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#id7">Adversarial methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#id8">Embedding methods</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reading.html#applied-domain-adaptation">Applied Domain Adaptation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#physics">Physics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reading.html#audio-processing">Audio Processing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../reading.html#datasets">Datasets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../reading.html#image-to-image">Image-to-image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reading.html#text-to-text">Text-to-text</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../reading.html#results">Results</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../reading.html#digits-transfer-unsupervised">Digits transfer (unsupervised)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../reading.html#challenges">Challenges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reading.html#libraries">Libraries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../readinglist_gen.html">Awesome Transfer Learning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../readinglist_gen.html#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../readinglist_gen.html#tutorials-and-blogs">Tutorials and Blogs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../readinglist_gen.html#papers">Papers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../readinglist_gen.html#surveys">Surveys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../readinglist_gen.html#deep-transfer-learning">Deep Transfer Learning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../readinglist_gen.html#unsupervised-domain-adaptation">Unsupervised Domain Adaptation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../readinglist_gen.html#semi-supervised-domain-adaptation">Semi-supervised Domain Adaptation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../readinglist_gen.html#few-shot-supervised-domain-adaptation">Few-shot Supervised Domain Adaptation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../readinglist_gen.html#applied-domain-adaptation">Applied Domain Adaptation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../readinglist_gen.html#datasets">Datasets</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../readinglist_gen.html#image-to-image">Image-to-image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../readinglist_gen.html#text-to-text">Text-to-text</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../readinglist_gen.html#results">Results</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../readinglist_gen.html#digits-transfer-unsupervised">Digits transfer (unsupervised)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../readinglist_gen.html#challenges">Challenges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../readinglist_gen.html#libraries">Libraries</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmarks.html">Benchmarks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../benchmarks.html#digit-benchmarks">Digit Benchmarks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../benchmarks.html#visda-benchmark-and-task-cv">VisDA Benchmark and TASK-CV</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../demos/salad.solver.html">Solvers   (salad.solver)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demos/salad.datasets.html">Datasets  (salad.datasets)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../demos/salad.datasets.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../demos/salad.datasets.html#digits-datasets">Digits Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../demos/salad.datasets.html#toy-datasets">Toy Datasets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../demos/salad.models.html">Models    (salad.models)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../demos/salad.models.html#introduction">Introduction</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../demos/salad.layers.html">Layers    (salad.layers)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../demos/salad.layers.html#introduction">Introduction</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../demos/salad.utils.html">Utilities (salad.utils)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../demos/salad.utils.html#introduction">Introduction</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Scripts and Paper Implementations</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dummy.html">Domain Adversarial Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dummy.html">Cross Gradient Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dummy.html">Adversarial Dropout Regularization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dummy.html">Virtual Adversarial Domain Adaptation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dummy.html">Self-Ensembling</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Solvers   (salad.solver)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="salad.solver.da.html">salad.solver.da package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.advdrop">salad.solver.da.advdrop module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.advdrop_refactor">salad.solver.da.advdrop_refactor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.association">salad.solver.da.association module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.base">salad.solver.da.base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.coral">salad.solver.da.coral module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.crossgrad">salad.solver.da.crossgrad module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.dann">salad.solver.da.dann module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.dirtt">salad.solver.da.dirtt module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.dirtt_re">salad.solver.da.dirtt_re module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.djdot">salad.solver.da.djdot module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.ensembling">salad.solver.da.ensembling module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-salad.solver.base">salad.solver.base module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-salad.solver.classification">salad.solver.classification module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-salad.solver.gan">salad.solver.gan module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-salad.solver.openset">salad.solver.openset module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="salad.datasets.html">Datasets  (salad.datasets)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="salad.datasets.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="salad.datasets.da.html">salad.datasets.da package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.da.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.da.html#module-salad.datasets.da.base">salad.datasets.da.base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.da.html#module-salad.datasets.da.digits">salad.datasets.da.digits module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.da.html#module-salad.datasets.da.toy">salad.datasets.da.toy module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="salad.datasets.digits.html">salad.datasets.digits package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.digits.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.digits.html#module-salad.datasets.digits.base">salad.datasets.digits.base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.digits.html#module-salad.datasets.digits.mnist">salad.datasets.digits.mnist module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.digits.html#module-salad.datasets.digits.openset">salad.datasets.digits.openset module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.digits.html#module-salad.datasets.digits.synth">salad.datasets.digits.synth module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.digits.html#module-salad.datasets.digits.usps">salad.datasets.digits.usps module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="salad.datasets.transforms.html">salad.datasets.transforms package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.transforms.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.transforms.html#module-salad.datasets.transforms.digits">salad.datasets.transforms.digits module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.transforms.html#module-salad.datasets.transforms.ensembling">salad.datasets.transforms.ensembling module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.transforms.html#module-salad.datasets.transforms.noise">salad.datasets.transforms.noise module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.transforms.html#module-salad.datasets.transforms.noisy">salad.datasets.transforms.noisy module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="salad.datasets.visda.html">salad.datasets.visda package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.visda.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.visda.html#module-salad.datasets.visda.detection">salad.datasets.visda.detection module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.visda.html#module-salad.datasets.visda.openset">salad.datasets.visda.openset module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.visda.html#module-salad.datasets.visda.utils">salad.datasets.visda.utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.datasets.visda.html#module-salad.datasets.visda.visda">salad.datasets.visda.visda module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="salad.models.html">Models    (salad.models)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="salad.models.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="salad.models.audio.html">salad.models.audio package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="salad.models.digits.html">salad.models.digits package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="salad.models.digits.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.models.digits.html#module-salad.models.digits.adv">salad.models.digits.adv module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.models.digits.html#module-salad.models.digits.assoc">salad.models.digits.assoc module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.models.digits.html#module-salad.models.digits.corr">salad.models.digits.corr module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.models.digits.html#module-salad.models.digits.dirtt">salad.models.digits.dirtt module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.models.digits.html#module-salad.models.digits.ensemble">salad.models.digits.ensemble module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.models.digits.html#salad-models-digits-fan-module">salad.models.digits.fan module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="salad.models.vision.html">salad.models.vision package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="salad.models.vision.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="salad.models.vision.html#module-salad.models.vision.unet">salad.models.vision.unet module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="salad.models.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.models.html#module-salad.models.base">salad.models.base module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.models.html#module-salad.models.gan">salad.models.gan module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.models.html#salad-models-neural-module">salad.models.neural module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.models.html#salad-models-resnet-module">salad.models.resnet module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.models.html#salad-models-sensorimotor-module">salad.models.sensorimotor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.models.html#module-salad.models.transfer">salad.models.transfer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.models.html#module-salad.models.utils">salad.models.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="salad.layers.html">Layers    (salad.layers)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="salad.layers.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.layers.html#module-salad.layers.association">salad.layers.association module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.layers.html#module-salad.layers.base">salad.layers.base module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.layers.html#module-salad.layers.coral">salad.layers.coral module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.layers.html#module-salad.layers.da">salad.layers.da module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.layers.html#module-salad.layers.funcs">salad.layers.funcs module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.layers.html#module-salad.layers.mat">salad.layers.mat module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.layers.html#module-salad.layers.vat">salad.layers.vat module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="salad.utils.html">Utilities (salad.utils)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="salad.utils.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.utils.html#module-salad.utils.augment">salad.utils.augment module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.utils.html#module-salad.utils.base">salad.utils.base module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.utils.html#module-salad.utils.config">salad.utils.config module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.utils.html#module-salad.utils.evaluate">salad.utils.evaluate module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.utils.html#module-salad.utils.finetune">salad.utils.finetune module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">salad</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>salad.solver package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/salad.solver.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-salad.solver">
+<span id="salad-solver-package"></span><h1>salad.solver package<a class="headerlink" href="#module-salad.solver" title="Permalink to this headline">¶</a></h1>
+<p>Model optimization by stochastic gradient descent and variants
+The general structure:</p>
+<ul class="simple">
+<li>Each experiment configuration is a subclass of Solver or some derivative
+loss functions</li>
+<li>Solvers only specify how data and models are used to generate the losses</li>
+<li>Similarities between deep learning experiments (checkpointing, logging, …)
+are implemented in the Solver class.</li>
+</ul>
+<p>In general, for many experiments, it makes sense to set up a solver as a
+subclass of a specific other solver; i.e. when the general problem is concerned
+with classifcation, a <cite>CrossEntropySolver</cite> would be a natural choice.</p>
+<p>Classes where designed with the possibility of re-use in mind. The goal is to
+exploit the particular structure most deep learning experiments share.</p>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="salad.solver.da.html">salad.solver.da package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="salad.solver.da.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.advdrop">salad.solver.da.advdrop module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.advdrop_refactor">salad.solver.da.advdrop_refactor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.association">salad.solver.da.association module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.base">salad.solver.da.base module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.coral">salad.solver.da.coral module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.crossgrad">salad.solver.da.crossgrad module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.dann">salad.solver.da.dann module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.dirtt">salad.solver.da.dirtt module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.dirtt_re">salad.solver.da.dirtt_re module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.djdot">salad.solver.da.djdot module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.ensembling">salad.solver.da.ensembling module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-salad.solver.base">
+<span id="salad-solver-base-module"></span><h2>salad.solver.base module<a class="headerlink" href="#module-salad.solver.base" title="Permalink to this headline">¶</a></h2>
+<p>Base classes for solvers</p>
+<p>This module contains abstract base classes for the solvers used in <code class="docutils literal notranslate"><span class="pre">salad</span></code>.</p>
+<dl class="class">
+<dt id="salad.solver.base.EventBasedSolver">
+<em class="property">class </em><code class="descclassname">salad.solver.base.</code><code class="descname">EventBasedSolver</code><a class="headerlink" href="#salad.solver.base.EventBasedSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Event handling for solvers</p>
+<p>All solvers derived from the <code class="docutils literal notranslate"><span class="pre">EventBasedSolver</span></code> are extended with event handlers, currently
+for the following events:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">start_epoch</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">start_batch</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">finish_batch</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">stop_epoch</span></code></li>
+</ul>
+<dl class="method">
+<dt id="salad.solver.base.EventBasedSolver.finish_batch">
+<code class="descname">finish_batch</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.base.EventBasedSolver.finish_batch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="salad.solver.base.EventBasedSolver.finish_epoch">
+<code class="descname">finish_epoch</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.base.EventBasedSolver.finish_epoch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="salad.solver.base.EventBasedSolver.start_batch">
+<code class="descname">start_batch</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.base.EventBasedSolver.start_batch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="salad.solver.base.EventBasedSolver.start_epoch">
+<code class="descname">start_epoch</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.base.EventBasedSolver.start_epoch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.solver.base.Solver">
+<em class="property">class </em><code class="descclassname">salad.solver.base.</code><code class="descname">Solver</code><span class="sig-paren">(</span><em>dataset</em>, <em>n_epochs=1</em>, <em>savedir='./log'</em>, <em>gpu=None</em>, <em>dryrun=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.base.Solver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#salad.solver.base.EventBasedSolver" title="salad.solver.base.EventBasedSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">salad.solver.base.EventBasedSolver</span></code></a>, <a class="reference internal" href="#salad.solver.base.StructuredInit" title="salad.solver.base.StructuredInit"><code class="xref py py-class docutils literal notranslate"><span class="pre">salad.solver.base.StructuredInit</span></code></a></p>
+<p>General gradient descent solver for deep learning experiments</p>
+<p>This is a helper class for training of PyTorch models that makes very little assumptions
+about the structure of a deep learning experiment.
+Solvers are generally constructed to take one or several models (<cite>torch.nn.Module</cite>) and <em>one</em>
+DataLoader instance that provides a (possibly nested) tuple of examples for training.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Solver</span></code> implements the following features:</p>
+<ul class="simple">
+<li>Logging of losses and model checkpoints</li>
+</ul>
+<p>While offering these functionality in the background, this class implementation aims at being very
+flexible when it comes to designing any kind of deep learning experiment.</p>
+<p>When defining your own solver class, you should first</p>
+<ul class="simple">
+<li>register models [register_model]</li>
+<li>register loss functions [register_loss]</li>
+<li>register optimizers [register_optimizer]</li>
+</ul>
+<p>The abstraction goes as follows:</p>
+<ul class="simple">
+<li>An experiment is fully characterized by its Solver class</li>
+<li>An experiment can have multiple models</li>
+<li>Parameters of the models are processed by optimizers</li>
+<li>Optimizers have a functions to derive losses</li>
+</ul>
+<p>In the optimization process, the following algorithm is used:</p>
+<dl class="docutils">
+<dt>for opt in optimizers:</dt>
+<dd>losses = L(opt)
+grad_losses = grad(losses)
+opt.step(grad_losses)</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dataset</strong> (<em>Dataset</em>) – Dataset used for training</li>
+<li><strong>n_epochs</strong> (<em>int</em>) – Number of epochs (defined as full passes through the <code class="docutils literal notranslate"><span class="pre">DataLoader</span></code>)</li>
+<li><strong>savedir</strong> (<em>str</em>) – log directory for saving model checkpoints and the loss history</li>
+<li><strong>gpu</strong> (<em>int</em>) – Number of GPU to be used. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, use CPU training instead</li>
+<li><strong>dryrun</strong> (<em>bool</em>) – Train only for the first batch. Useful for testing a new solver</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>After initializing all internal dictionaries, the constructor makes calls to the
+<code class="docutils literal notranslate"><span class="pre">_init_models</span></code>,
+<code class="docutils literal notranslate"><span class="pre">_init_optims</span></code> and
+<code class="docutils literal notranslate"><span class="pre">_init_losses</span></code>
+functions. If these functions should make use of any additional keyword arguments
+you passed in your class, make sure that you initialize them prior to calling
+<code class="docutils literal notranslate"><span class="pre">super().__init__</span></code> in your constructor.</p>
+<dl class="method">
+<dt id="salad.solver.base.Solver.compute_loss_dict">
+<code class="descname">compute_loss_dict</code><span class="sig-paren">(</span><em>loss_args</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.base.Solver.compute_loss_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="salad.solver.base.Solver.cuda">
+<code class="descname">cuda</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.base.Solver.cuda" title="Permalink to this definition">¶</a></dt>
+<dd><p>Move nested iterables between CUDA or CPU</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="salad.solver.base.Solver.format_summary_report">
+<code class="descname">format_summary_report</code><span class="sig-paren">(</span><em>losses</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.base.Solver.format_summary_report" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="salad.solver.base.Solver.format_train_report">
+<code class="descname">format_train_report</code><span class="sig-paren">(</span><em>losses</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.base.Solver.format_train_report" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="salad.solver.base.Solver.optimize">
+<code class="descname">optimize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.base.Solver.optimize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the optimization process</p>
+<p class="rubric">Notes</p>
+<p>Prior to the optimization process, all models will be set to training
+mode by a call to <code class="docutils literal notranslate"><span class="pre">model.train(True)</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="salad.solver.base.Solver.register_loss">
+<code class="descname">register_loss</code><span class="sig-paren">(</span><em>func</em>, <em>weight=1.0</em>, <em>name=None</em>, <em>display=True</em>, <em>override=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.base.Solver.register_loss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register a new loss function</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>func</strong> – pass</li>
+<li><strong>weight</strong> (<em>float</em>) – </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="salad.solver.base.Solver.register_model">
+<code class="descname">register_model</code><span class="sig-paren">(</span><em>model</em>, <em>name=''</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.base.Solver.register_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a model to the solver</p>
+<p>This method will also move the model directly to the correct device you specified
+when constructin the solver.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>model</strong> (<em>torch.nn.Module</em>) – The model to be optimized. Should return a non-empty iterable when the
+<code class="docutils literal notranslate"><span class="pre">paramters()</span></code> method is called</li>
+<li><strong>name</strong> (<em>str</em><em>, </em><em>optional</em>) – Name for the model. Useful for checkpoints when multiple models are optimized.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="salad.solver.base.Solver.register_optimizer">
+<code class="descname">register_optimizer</code><span class="sig-paren">(</span><em>optimizer</em>, <em>loss_func</em>, <em>retain_graph=False</em>, <em>name=''</em>, <em>n_steps=1</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.base.Solver.register_optimizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add an optimizer to the solver</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>optimizer</strong> (<em>Optimizer</em>) – A function used for updating model weights during training</li>
+<li><strong>loss_func</strong> (<em>LossFunction</em>) – A function (or callable object) that, given the current batch passed by the Solver’s data
+loader, returns a dictionary containing either a dictionary mapping loss function names
+to arguments, or a dictionary mapping loss function names to the loss.</li>
+<li><strong>retain_graph</strong> (<em>bool</em>) – <code class="docutils literal notranslate"><span class="pre">True</span></code> if the computational graph should be retained after calling the loss function
+associated to the optimizer. This is usually not needed.</li>
+<li><strong>name</strong> (<em>str</em>) – Optimizer name. Useful for logging</li>
+<li><strong>n_steps</strong> (<em>int</em>) – Number of consecutive steps the optimizer is exectued. Usually set to 1.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="salad.solver.base.Solver.remove_loss">
+<code class="descname">remove_loss</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.base.Solver.remove_loss" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.solver.base.StructuredInit">
+<em class="property">class </em><code class="descclassname">salad.solver.base.</code><code class="descname">StructuredInit</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.base.StructuredInit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Structured Initialization of Solvers</p>
+<p>Initializes the components of a solver and passes arguments.
+Initialization is done in the following order:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">_init_models</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">_init_losses</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">_init_optims</span></code></li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>kwargs</strong> (<em>Keyword arguments</em>) – Pass arguments for <strong>all</strong> initialization functions. Keyword arguments
+are passed through the functions in the order specified above. Unused
+keyword arguments will be printed afterwards.
+In general, solvers should be designed in a way that ensure that all keyword
+argumnets are used.</li>
+<li><strong>note</strong> (<em>.</em>) – Don’t instantiate or subclass this class directly.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-salad.solver.classification">
+<span id="salad-solver-classification-module"></span><h2>salad.solver.classification module<a class="headerlink" href="#module-salad.solver.classification" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="salad.solver.classification.BCESolver">
+<em class="property">class </em><code class="descclassname">salad.solver.classification.</code><code class="descname">BCESolver</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.classification.BCESolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#salad.solver.classification.BaseClassSolver" title="salad.solver.classification.BaseClassSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">salad.solver.classification.BaseClassSolver</span></code></a></p>
+<p>Solver for a classification experiment</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.solver.classification.BaseClassSolver">
+<em class="property">class </em><code class="descclassname">salad.solver.classification.</code><code class="descname">BaseClassSolver</code><span class="sig-paren">(</span><em>model</em>, <em>dataset</em>, <em>multiclass=True</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.classification.BaseClassSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#salad.solver.base.Solver" title="salad.solver.base.Solver"><code class="xref py py-class docutils literal notranslate"><span class="pre">salad.solver.base.Solver</span></code></a></p>
+<p>Base Solver for classification experiments</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>model</strong> (<em>nn.Module</em>) – A model to train on a classification target</li>
+<li><strong>dataset</strong> (<em>torch.utils.data.Dataset</em>) – The dataset providing training samples</li>
+<li><strong>multiclass</strong> (<em>bool</em>) – If True, <code class="docutils literal notranslate"><span class="pre">CrossEntropyLoss</span></code> is used, <code class="docutils literal notranslate"><span class="pre">BCEWithLogitsLoss</span></code> otherwise.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.solver.classification.ClassificationLoss">
+<em class="property">class </em><code class="descclassname">salad.solver.classification.</code><code class="descname">ClassificationLoss</code><span class="sig-paren">(</span><em>solver</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.classification.ClassificationLoss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.solver.classification.FinetuneSolver">
+<em class="property">class </em><code class="descclassname">salad.solver.classification.</code><code class="descname">FinetuneSolver</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.classification.FinetuneSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#salad.solver.classification.BaseClassSolver" title="salad.solver.classification.BaseClassSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">salad.solver.classification.BaseClassSolver</span></code></a></p>
+<p>Finetune a pre-trained deep learning models</p>
+<p>Given a model with separable feature extractor and classifier, use different learning
+rates and regularization settings. Useful for fine-tuning pre-trained ImageNet models
+or finetuning of saved model checkpoints</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>model</strong> (<em>nn.Module</em>) – Module with two separate parts</li>
+<li><strong>dataset</strong> (<em>Dataset</em>) – The dataset used for training</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.solver.classification.MultiDomainClassificationLoss">
+<em class="property">class </em><code class="descclassname">salad.solver.classification.</code><code class="descname">MultiDomainClassificationLoss</code><span class="sig-paren">(</span><em>solver</em>, <em>domain</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.classification.MultiDomainClassificationLoss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.solver.classification.MultidomainBCESolver">
+<em class="property">class </em><code class="descclassname">salad.solver.classification.</code><code class="descname">MultidomainBCESolver</code><span class="sig-paren">(</span><em>model</em>, <em>dataset</em>, <em>learningrate</em>, <em>multiclass=True</em>, <em>loss_weights=None</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.classification.MultidomainBCESolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#salad.solver.base.Solver" title="salad.solver.base.Solver"><code class="xref py py-class docutils literal notranslate"><span class="pre">salad.solver.base.Solver</span></code></a></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-salad.solver.gan">
+<span id="salad-solver-gan-module"></span><h2>salad.solver.gan module<a class="headerlink" href="#module-salad.solver.gan" title="Permalink to this headline">¶</a></h2>
+<p>Tools for training Generative Adversarial Networks (GANs)</p>
+<p>The class is primarily used to train conditional networks (CGANs).</p>
+<p class="rubric">Notes</p>
+<p>Contributions for extensions wanted!</p>
+<dl class="class">
+<dt id="salad.solver.gan.CGANLoss">
+<em class="property">class </em><code class="descclassname">salad.solver.gan.</code><code class="descname">CGANLoss</code><span class="sig-paren">(</span><em>solver</em>, <em>G</em>, <em>Ds</em>, <em>train_G</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.gan.CGANLoss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Loss Derivation for a Conditional GAN</p>
+<dl class="method">
+<dt id="salad.solver.gan.CGANLoss.derive_losses">
+<code class="descname">derive_losses</code><span class="sig-paren">(</span><em>batch</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.gan.CGANLoss.derive_losses" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.solver.gan.ConditionalGANSolver">
+<em class="property">class </em><code class="descclassname">salad.solver.gan.</code><code class="descname">ConditionalGANSolver</code><span class="sig-paren">(</span><em>model</em>, <em>dataset</em>, <em>learningrate=0.0002</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.gan.ConditionalGANSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#salad.solver.base.Solver" title="salad.solver.base.Solver"><code class="xref py py-class docutils literal notranslate"><span class="pre">salad.solver.base.Solver</span></code></a></p>
+<dl class="method">
+<dt id="salad.solver.gan.ConditionalGANSolver.format_train_report">
+<code class="descname">format_train_report</code><span class="sig-paren">(</span><em>losses</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.gan.ConditionalGANSolver.format_train_report" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="salad.solver.gan.ConditionalGANSolver.n_classes">
+<code class="descname">n_classes</code><em class="property"> = [1, 11, 3]</em><a class="headerlink" href="#salad.solver.gan.ConditionalGANSolver.n_classes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="salad.solver.gan.ConditionalGANSolver.names">
+<code class="descname">names</code><em class="property"> = ['D_GAN', 'D_CL', 'D_CON']</em><a class="headerlink" href="#salad.solver.gan.ConditionalGANSolver.names" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.solver.gan.GANSolver">
+<em class="property">class </em><code class="descclassname">salad.solver.gan.</code><code class="descname">GANSolver</code><span class="sig-paren">(</span><em>dataset</em>, <em>n_epochs=1</em>, <em>savedir='./log'</em>, <em>gpu=None</em>, <em>dryrun=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.gan.GANSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#salad.solver.base.Solver" title="salad.solver.base.Solver"><code class="xref py py-class docutils literal notranslate"><span class="pre">salad.solver.base.Solver</span></code></a></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-salad.solver.openset">
+<span id="salad-solver-openset-module"></span><h2>salad.solver.openset module<a class="headerlink" href="#module-salad.solver.openset" title="Permalink to this headline">¶</a></h2>
+<p>Routines for open set classification</p>
+<dl class="class">
+<dt id="salad.solver.openset.BaseOpensetSolver">
+<em class="property">class </em><code class="descclassname">salad.solver.openset.</code><code class="descname">BaseOpensetSolver</code><span class="sig-paren">(</span><em>model</em>, <em>dataset</em>, <em>multiclass=True</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.openset.BaseOpensetSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#salad.solver.classification.BaseClassSolver" title="salad.solver.classification.BaseClassSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">salad.solver.classification.BaseClassSolver</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.solver.openset.VADAOpenset">
+<em class="property">class </em><code class="descclassname">salad.solver.openset.</code><code class="descname">VADAOpenset</code><span class="sig-paren">(</span><em>G</em>, <em>D</em>, <em>train_G=True</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.openset.VADAOpenset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="salad.solver.da.html#salad.solver.da.dann.AdversarialLoss" title="salad.solver.da.dann.AdversarialLoss"><code class="xref py py-class docutils literal notranslate"><span class="pre">salad.solver.da.dann.AdversarialLoss</span></code></a></p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="salad.solver.da.html" class="btn btn-neutral float-right" title="salad.solver.da package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../dummy.html" class="btn btn-neutral" title="Page under construction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Steffen Schneider.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.2.0-alpha',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
