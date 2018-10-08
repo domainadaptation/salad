@@ -256,8 +256,20 @@ Legend: Implemented (✓), Under Construction (🚧)
 -  White Noise ↔ Gratings ↔ Natural Images (🚧)
 -  `Deep Lab Cut Tracking <https://github.com/AlexEMG/DeepLabCut>`__ (🚧)
 
-🔗 References to open source software
--------------------------------------
+🔗 References
+--------------
+
+If you use salad in your publications, please cite
+
+.. code:: bibtex
+
+  @misc{schneider2018salad,
+     title={Salad: A Toolbox for Semi-supervised Adaptive Learning Across Domains},
+     author={Schneider, Steffen and Ecker, Alexander S. and Macke, Jakob H. and Bethge, Matthias},
+     year={2018},
+     url={https://openreview.net/forum?id=S1lTifykqm}
+  }
+   
 
 Part of the code in this repository is inspired or borrowed from
 original implementations, especially:
