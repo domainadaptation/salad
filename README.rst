@@ -282,8 +282,13 @@ original implementations, especially:
 -  https://github.com/haeusser/learning\_by\_association
 -  https://mil-tokyo.github.io/adr\_da/
 
-Excellent list of domain adaptation ressources: -
-https://github.com/artix41/awesome-transfer-learning
+Excellent list of domain adaptation ressources:
+
+- https://github.com/artix41/awesome-transfer-learning
+
+Further transfer learning ressources:
+
+- http://transferlearning.xyz
 
 👤 Contact
 ----------
