@@ -285,6 +285,8 @@ original implementations, especially:
 Excellent list of domain adaptation ressources: -
 https://github.com/artix41/awesome-transfer-learning
 
+http://transferlearning.xyz
+
 👤 Contact
 ----------
 
