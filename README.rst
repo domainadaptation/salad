@@ -270,6 +270,8 @@ If you use salad in your publications, please cite
      year={2018},
      url={https://openreview.net/forum?id=S1lTifykqm}
   }
+
+along with the references to the original papers that are implemented here.
    
 
 Part of the code in this repository is inspired or borrowed from

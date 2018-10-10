@@ -14,7 +14,8 @@ between algorithms and transfer them to real-world use cases. The
 toolbox is under active development and will extended when new
 approaches are published.
 
-Contribute and explore the code on `Github <https://github.com/domainadaptation/salad>`__
+Contribute and explore the code on `Github <https://github.com/domainadaptation/salad>`__.
+For commonly asked questions, head to our `FAQ <https://github.com/domainadaptation/salad/wiki/FAQ>`_.
 
 📊 Benchmarking Results
 -----------------------
@@ -256,8 +257,22 @@ Legend: Implemented (✓), Under Construction (🚧)
 -  White Noise ↔ Gratings ↔ Natural Images (🚧)
 -  `Deep Lab Cut Tracking <https://github.com/AlexEMG/DeepLabCut>`__ (🚧)
 
-🔗 References to open source software
--------------------------------------
+🔗 References
+--------------
+
+If you use salad in your publications, please cite
+
+.. code:: bibtex
+
+  @misc{schneider2018salad,
+     title={Salad: A Toolbox for Semi-supervised Adaptive Learning Across Domains},
+     author={Schneider, Steffen and Ecker, Alexander S. and Macke, Jakob H. and Bethge, Matthias},
+     year={2018},
+     url={https://openreview.net/forum?id=S1lTifykqm}
+  }
+
+along with the references to the original papers that are implemented here.
+   
 
 Part of the code in this repository is inspired or borrowed from
 original implementations, especially:
@@ -270,8 +285,13 @@ original implementations, especially:
 -  https://github.com/haeusser/learning\_by\_association
 -  https://mil-tokyo.github.io/adr\_da/
 
-Excellent list of domain adaptation ressources: -
-https://github.com/artix41/awesome-transfer-learning
+Excellent list of domain adaptation ressources:
+
+- https://github.com/artix41/awesome-transfer-learning
+
+Further transfer learning ressources:
+
+- http://transferlearning.xyz
 
 👤 Contact
 ----------

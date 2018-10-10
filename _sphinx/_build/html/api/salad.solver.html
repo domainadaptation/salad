@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="salad.solver.da package" href="salad.solver.da.html" />
+    <link rel="next" title="salad.datasets package" href="salad.datasets.html" />
     <link rel="prev" title="Page under construction" href="../dummy.html" /> 
 
   
@@ -98,7 +98,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../README.html#neuroscience">፨ Neuroscience</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../README.html#references-to-open-source-software">🔗 References to open source software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../README.html#references">🔗 References</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../README.html#contact">👤 Contact</a></li>
 </ul>
 </li>
@@ -226,26 +226,18 @@
 <p class="caption"><span class="caption-text">API Reference</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Solvers   (salad.solver)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="salad.solver.da.html">salad.solver.da package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#submodules">Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.advdrop">salad.solver.da.advdrop module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.advdrop_refactor">salad.solver.da.advdrop_refactor module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.association">salad.solver.da.association module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.base">salad.solver.da.base module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.coral">salad.solver.da.coral module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.crossgrad">salad.solver.da.crossgrad module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.dann">salad.solver.da.dann module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.dirtt">salad.solver.da.dirtt module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.dirtt_re">salad.solver.da.dirtt_re module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.djdot">salad.solver.da.djdot module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.ensembling">salad.solver.da.ensembling module</a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-salad.solver.base">salad.solver.base module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-salad.solver.da.base">salad.solver.da.base module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-salad.solver.da.advdrop">salad.solver.da.advdrop module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-salad.solver.da.association">salad.solver.da.association module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-salad.solver.da.coral">salad.solver.da.coral module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-salad.solver.da.crossgrad">salad.solver.da.crossgrad module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-salad.solver.da.dann">salad.solver.da.dann module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-salad.solver.da.dirtt">salad.solver.da.dirtt module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-salad.solver.da.dirtt_re">salad.solver.da.dirtt_re module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-salad.solver.da.djdot">salad.solver.da.djdot module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-salad.solver.da.ensembling">salad.solver.da.ensembling module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-salad.solver.classification">salad.solver.classification module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-salad.solver.gan">salad.solver.gan module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-salad.solver.openset">salad.solver.openset module</a></li>
@@ -419,28 +411,6 @@ subclass of a specific other solver; i.e. when the general problem is concerned
 with classifcation, a <cite>CrossEntropySolver</cite> would be a natural choice.</p>
 <p>Classes where designed with the possibility of re-use in mind. The goal is to
 exploit the particular structure most deep learning experiments share.</p>
-<div class="section" id="subpackages">
-<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="salad.solver.da.html">salad.solver.da package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="salad.solver.da.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.advdrop">salad.solver.da.advdrop module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.advdrop_refactor">salad.solver.da.advdrop_refactor module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.association">salad.solver.da.association module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.base">salad.solver.da.base module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.coral">salad.solver.da.coral module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.crossgrad">salad.solver.da.crossgrad module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.dann">salad.solver.da.dann module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.dirtt">salad.solver.da.dirtt module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.dirtt_re">salad.solver.da.dirtt_re module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.djdot">salad.solver.da.djdot module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="salad.solver.da.html#module-salad.solver.da.ensembling">salad.solver.da.ensembling module</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
@@ -672,6 +642,519 @@ argumnets are used.</li>
 </dd></dl>
 
 </div>
+<div class="section" id="module-salad.solver.da.base">
+<span id="salad-solver-da-base-module"></span><h2>salad.solver.da.base module<a class="headerlink" href="#module-salad.solver.da.base" title="Permalink to this headline">¶</a></h2>
+<p>Solver classes for domain adaptation experiments</p>
+<dl class="class">
+<dt id="salad.solver.da.base.BaselineDASolver">
+<em class="property">class </em><code class="descclassname">salad.solver.da.base.</code><code class="descname">BaselineDASolver</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.base.BaselineDASolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="salad.solver.da.html#salad.solver.da.base.DABaseSolver" title="salad.solver.da.base.DABaseSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">salad.solver.da.base.DABaseSolver</span></code></a></p>
+<p>A domain adaptation solver that actually does not run any adaptation algorithm</p>
+<p>This is useful to establish baseline results for the case of no adaptation, for measurement
+of the domain shift between datasets.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.solver.da.base.DABaseSolver">
+<em class="property">class </em><code class="descclassname">salad.solver.da.base.</code><code class="descname">DABaseSolver</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.base.DABaseSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#salad.solver.classification.BaseClassSolver" title="salad.solver.classification.BaseClassSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">salad.solver.classification.BaseClassSolver</span></code></a></p>
+<p>Base Class for Unsupervised Domain Adaptation Approaches</p>
+<p>Unsupervised DA assumes the presence of a single source domain <span class="math notranslate nohighlight">\(\mathcal S\)</span>
+along with a target domain <span class="math notranslate nohighlight">\(\mathcal T\)</span> known at training time.
+Given a labeled sample of points drawn from <span class="math notranslate nohighlight">\(\mathcal S\)</span>, <span class="math notranslate nohighlight">\(\{x^s_i, y^s_i\}_{i}^{N_s}\)</span>,
+and an unlabeled sample drawn from <span class="math notranslate nohighlight">\(\mathcal T\)</span>, <span class="math notranslate nohighlight">\(\{x^t_i\}_{i}^{N_t}\)</span>, unsupervised
+adaptation aims at minimizing the</p>
+<div class="math notranslate nohighlight">
+\[\min_\theta \mathcal{R}^l_{\mathcal S} (\theta) +  \lambda \mathcal{R}^u_{\mathcal {S \times T}} (\theta),\]</div>
+<p>leveraging an unsupervised risk term <span class="math notranslate nohighlight">\(\mathcal{R}^u_{\mathcal {S \times T}} (\theta)\)</span> that depends on
+feature representations <span class="math notranslate nohighlight">\(f_\theta(x^s,s)\)</span> and <span class="math notranslate nohighlight">\(f_\theta(x^t,t)\)</span>,
+classifier labels <span class="math notranslate nohighlight">\(h_\theta(x^s,s), h_\theta(x^t,t)\)</span> as well as source labels <span class="math notranslate nohighlight">\(y^s\)</span>.
+The full model <span class="math notranslate nohighlight">\(h = g \circ f\)</span> is a composition of a feature extractor <span class="math notranslate nohighlight">\(f\)</span> and classifier <span class="math notranslate nohighlight">\(g\)</span>, both of which
+can possibly depend on the domain label <span class="math notranslate nohighlight">\(s\)</span> or <span class="math notranslate nohighlight">\(t\)</span> for domain-specific computations.</p>
+<p class="rubric">Notes</p>
+<p>This solver adds two accuracies with keys <code class="docutils literal notranslate"><span class="pre">acc_s</span></code> and <code class="docutils literal notranslate"><span class="pre">acc_t</span></code> for the source and target domain, respectively.
+Make sure to include derivation of these accuracy in your loss computation.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.solver.da.base.DABaselineLoss">
+<em class="property">class </em><code class="descclassname">salad.solver.da.base.</code><code class="descname">DABaselineLoss</code><span class="sig-paren">(</span><em>solver</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.base.DABaselineLoss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.solver.da.base.DATeacher">
+<em class="property">class </em><code class="descclassname">salad.solver.da.base.</code><code class="descname">DATeacher</code><span class="sig-paren">(</span><em>model</em>, <em>teacher</em>, <em>dataset</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.base.DATeacher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#salad.solver.base.Solver" title="salad.solver.base.Solver"><code class="xref py py-class docutils literal notranslate"><span class="pre">salad.solver.base.Solver</span></code></a></p>
+<p>Base Class for Unsupervised Domain Adaptation Approaches using a teacher model</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.solver.da.base.DGBaseSolver">
+<em class="property">class </em><code class="descclassname">salad.solver.da.base.</code><code class="descname">DGBaseSolver</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.base.DGBaseSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#salad.solver.classification.BaseClassSolver" title="salad.solver.classification.BaseClassSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">salad.solver.classification.BaseClassSolver</span></code></a></p>
+<p>Base Class for Domain Generalization Approaches</p>
+<p>Domain generalization assumes the presence of multiple source domains alongside
+a target domain unknown at training time.
+Following cite{Shankar2018}, this setting requires a dataset of training examples
+<span class="math notranslate nohighlight">\(\{x_i, y_i, d_i\}_{i}^{N}\)</span> with class and domain labels.
+Importantly, the domains present at training time should reflect the kind of variability
+that can be expected during inference.
+The ERM problem is then approached as</p>
+<div class="math notranslate nohighlight">
+\[\min_\theta \sum_d \mathcal{R}^l_{\mathcal S_d} (\theta)
+= \sum_d \lambda_d \mathbb{E}_{x,y \sim \mathcal S_d }[\ell ( f_\theta(x), h_\theta(x), y, d) ].\]</div>
+<p>In contrast to the unsupervised setting, samples are now presented in a single batch
+comprised of inputs <span class="math notranslate nohighlight">\(x\)</span>, labels <span class="math notranslate nohighlight">\(y\)</span> and domains <span class="math notranslate nohighlight">\(d\)</span>.
+In a addition to a feature extractor <span class="math notranslate nohighlight">\(f_\theta\)</span> and classifier <span class="math notranslate nohighlight">\(g_\theta\)</span>, models should
+also provide a feature extractor <span class="math notranslate nohighlight">\(f^d_\theta\)</span> to derive domain features along with a domain
+classifier <span class="math notranslate nohighlight">\(g^d_\theta\)</span>, with possibly shared parameters.</p>
+<p>In contrast to unsupervised DA, this training setting leverages information from multiple labeled
+source domains with the goal of generalizing well on data from a previously unseen domain during
+test time.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-salad.solver.da.advdrop">
+<span id="salad-solver-da-advdrop-module"></span><h2>salad.solver.da.advdrop module<a class="headerlink" href="#module-salad.solver.da.advdrop" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="salad.solver.da.advdrop.AdversarialDropoutLoss">
+<em class="property">class </em><code class="descclassname">salad.solver.da.advdrop.</code><code class="descname">AdversarialDropoutLoss</code><span class="sig-paren">(</span><em>model</em>, <em>step=1</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.advdrop.AdversarialDropoutLoss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Loss Derivation for Adversarial Dropout Regularization</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><code class="xref py py-class docutils literal notranslate"><span class="pre">salad.solver.AdversarialDropoutSolver</span></code></p>
+</div>
+<dl class="method">
+<dt id="salad.solver.da.advdrop.AdversarialDropoutLoss.step1">
+<code class="descname">step1</code><span class="sig-paren">(</span><em>batch</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.advdrop.AdversarialDropoutLoss.step1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="salad.solver.da.advdrop.AdversarialDropoutLoss.step2">
+<code class="descname">step2</code><span class="sig-paren">(</span><em>batch</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.advdrop.AdversarialDropoutLoss.step2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="salad.solver.da.advdrop.AdversarialDropoutLoss.step3">
+<code class="descname">step3</code><span class="sig-paren">(</span><em>batch</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.advdrop.AdversarialDropoutLoss.step3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.solver.da.advdrop.AdversarialDropoutSolver">
+<em class="property">class </em><code class="descclassname">salad.solver.da.advdrop.</code><code class="descname">AdversarialDropoutSolver</code><span class="sig-paren">(</span><em>model</em>, <em>dataset</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.advdrop.AdversarialDropoutSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="salad.solver.da.html#salad.solver.da.base.DABaseSolver" title="salad.solver.da.base.DABaseSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">salad.solver.da.base.DABaseSolver</span></code></a></p>
+<p>Implementation of “Adversarial Dropout Regularization”</p>
+<p>Adversarial Dropout Regulariation <a class="footnote-reference" href="#id3" id="id1">[1]</a> estimates uncertainties about the classification process
+by sampling different models using dropout.
+On the source domain, a standard cross entropy loss is employed.
+On the target domain, two predictions are sampled from the model.</p>
+<p>Both network parts are jointly trained on the source domain using the standard cross entropy loss,</p>
+<p>..math:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">min_</span><span class="p">{</span><span class="n">C</span><span class="p">,</span> <span class="n">G</span><span class="p">}</span> <span class="o">-</span> \<span class="n">sum_k</span> <span class="n">p</span><span class="o">^</span><span class="n">s_k</span> \<span class="n">log</span> <span class="n">y</span><span class="o">^</span><span class="n">s_k</span>
+</pre></div>
+</div>
+<p>The classifier part of the network is trained to maximize the symmetric KL distance between
+two predictions. This distance is one option for measuring uncertainty in a network. In other
+words, the classifier aims at maximizing uncertainty given two noisy estimates of the current
+feature vector.</p>
+<p>..math:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">min_</span><span class="p">{</span><span class="n">C</span><span class="p">}</span> <span class="o">-</span> \<span class="n">sum_k</span> <span class="n">p</span><span class="o">^</span><span class="n">s_k</span> \<span class="n">log</span> <span class="n">y</span><span class="o">^</span><span class="n">s_k</span> <span class="o">+</span> \<span class="n">frac</span><span class="p">{</span><span class="n">p</span><span class="o">^</span><span class="n">t_k</span> <span class="o">-</span> <span class="n">q</span><span class="o">^</span><span class="n">t_k</span><span class="p">}{</span><span class="mi">2</span><span class="p">}</span> \<span class="n">log</span> \<span class="n">frac</span><span class="p">{</span><span class="n">p</span><span class="o">^</span><span class="n">t_k</span><span class="p">}{</span><span class="n">q</span><span class="o">^</span><span class="n">t_k</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>In contrast, the feature extrator aims at minimizing the uncertainty between two noisy samples
+given a fixed target classifier.</p>
+<p>..math:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">min_</span><span class="p">{</span><span class="n">G</span><span class="p">}</span> \<span class="n">frac</span><span class="p">{</span><span class="n">p</span><span class="o">^</span><span class="n">t_k</span> <span class="o">-</span> <span class="n">q</span><span class="o">^</span><span class="n">t_k</span><span class="p">}{</span><span class="mi">2</span><span class="p">}</span> \<span class="n">log</span> \<span class="n">frac</span><span class="p">{</span><span class="n">p</span><span class="o">^</span><span class="n">t_k</span><span class="p">}{</span><span class="n">q</span><span class="o">^</span><span class="n">t_k</span><span class="p">}</span>
+</pre></div>
+</div>
+<p class="rubric">References</p>
+<p>[1] Adversarial Dropout Regularization, Saito et al., ICLR 2018</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.solver.da.advdrop.SymmetricKL">
+<em class="property">class </em><code class="descclassname">salad.solver.da.advdrop.</code><code class="descname">SymmetricKL</code><a class="headerlink" href="#salad.solver.da.advdrop.SymmetricKL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<dl class="method">
+<dt id="salad.solver.da.advdrop.SymmetricKL.forward">
+<code class="descname">forward</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.advdrop.SymmetricKL.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="salad.solver.da.advdrop.pack">
+<code class="descclassname">salad.solver.da.advdrop.</code><code class="descname">pack</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.advdrop.pack" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="salad.solver.da.advdrop.unpack">
+<code class="descclassname">salad.solver.da.advdrop.</code><code class="descname">unpack</code><span class="sig-paren">(</span><em>arg</em>, <em>n_tensors</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.advdrop.unpack" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-salad.solver.da.association">
+<span id="salad-solver-da-association-module"></span><h2>salad.solver.da.association module<a class="headerlink" href="#module-salad.solver.da.association" title="Permalink to this headline">¶</a></h2>
+<p>Associative Domain Adaptation</p>
+<p>[Hausser et al., CVPR 2017](#)</p>
+<dl class="class">
+<dt id="salad.solver.da.association.AssociationLoss">
+<em class="property">class </em><code class="descclassname">salad.solver.da.association.</code><code class="descname">AssociationLoss</code><span class="sig-paren">(</span><em>model</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.association.AssociationLoss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Loss function for associative domain adaptation</p>
+<p>Given a model, derive a function that computes arguments for the association loss.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.solver.da.association.AssociativeSolver">
+<em class="property">class </em><code class="descclassname">salad.solver.da.association.</code><code class="descname">AssociativeSolver</code><span class="sig-paren">(</span><em>model</em>, <em>dataset</em>, <em>learningrate</em>, <em>walker_weight=1.0</em>, <em>visit_weight=0.1</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.association.AssociativeSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="salad.solver.da.html#salad.solver.da.base.DABaseSolver" title="salad.solver.da.base.DABaseSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">salad.solver.da.base.DABaseSolver</span></code></a></p>
+<p>Implementation of “Associative Domain Adaptation”</p>
+<p>Associative Domain Adaptation [1] leverages a random walk based on feature similarity as a distance between source and
+target feature correlations.
+The algorithm is based on two loss functions that are added to the standard cross entropy loss on the source domain.</p>
+<p>Given features for source and target domain, a kernel function is used to measure similiarity between both domains.
+The original implementation uses the scalar product between feature vectors, scaled by an exponential,</p>
+<div class="math notranslate nohighlight">
+\[K_{ij} = k(x^s_i, x^t_j) = \exp(\langle x^s_i, x^t_j \rangle)\]</div>
+<p>This kernel is then used to compute transition probabilities</p>
+<div class="math notranslate nohighlight">
+\[p(x^t_j | x^s_i) = \frac{K_{ij}}{\sum_{l} K_{lj}}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[p(x^s_k | x^t_j) = \frac{K_{jk}}{\sum_{l} K_{kl}}\]</div>
+<p>to compute the roundtrip</p>
+<div class="math notranslate nohighlight">
+\[p(x^s_k | x^s_i) =  \sum_{j} p(x^s_k | x^t_j) p(x^t_j | x^s_i)\]</div>
+<p>It is then required that</p>
+<ol class="arabic simple">
+<li><cite>WalkerLoss</cite> The roundtrip ends at a sample with the same class label, i.e., $y^s_i = y^s_k$</li>
+<li><cite>VisitLoss</cite>  Each target sample is visited with a certain probability</li>
+</ol>
+<p>As one possible modification, different kernel functions could be used to measure similarity between
+the domains.
+With this solver, it is advised to use large sample sizes for the target domain and ensure that a
+sufficient number of source samples is available for each batch.</p>
+<p>TODO: Possibly in the solver class, implement a functionality to aggregate batches to avoid memory issues.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>model</strong> (<em>torch.nn.Module</em>) – A pytorch model to be trained by association</li>
+<li><strong>dataset</strong> (<em>StackedDataset</em>) – A dataset suitable for an unsupervised solver</li>
+<li><strong>learningrate</strong> (<em>int</em>) – TODO</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<p>[1] Associative Domain Adaptation, Häusser et al., CVPR 2017, <a class="reference external" href="https://arxiv.org/abs/1708.00938">https://arxiv.org/abs/1708.00938</a></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-salad.solver.da.coral">
+<span id="salad-solver-da-coral-module"></span><h2>salad.solver.da.coral module<a class="headerlink" href="#module-salad.solver.da.coral" title="Permalink to this headline">¶</a></h2>
+<p>Losses for Correlatin Alignment</p>
+<p>Deep CORAL: Correlation Alignment for Deep Domain Adaptation
+Paper: <a class="reference external" href="https://arxiv.org/pdf/1607.01719.pdf">https://arxiv.org/pdf/1607.01719.pdf</a></p>
+<p>Minimal Entropy Correlation Alignment for Unsupervised Domain Adaptation
+Paper: <a class="reference external" href="https://openreview.net/pdf?id=rJWechg0Z">https://openreview.net/pdf?id=rJWechg0Z</a></p>
+<dl class="class">
+<dt id="salad.solver.da.coral.CentroidDistanceLossSolver">
+<em class="property">class </em><code class="descclassname">salad.solver.da.coral.</code><code class="descname">CentroidDistanceLossSolver</code><span class="sig-paren">(</span><em>model</em>, <em>dataset</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.coral.CentroidDistanceLossSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="salad.solver.da.html#salad.solver.da.coral.CorrelationDistanceSolver" title="salad.solver.da.coral.CorrelationDistanceSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">salad.solver.da.coral.CorrelationDistanceSolver</span></code></a></p>
+<p>Minimal Entropy Correlation Alignment for Unsupervised Domain Adaptation
+Paper: <a class="reference external" href="https://openreview.net/pdf?id=rJWechg0Z">https://openreview.net/pdf?id=rJWechg0Z</a>
+and: <a class="reference external" href="https://arxiv.org/pdf/1705.08180.pdf">https://arxiv.org/pdf/1705.08180.pdf</a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.solver.da.coral.CentroidLoss">
+<em class="property">class </em><code class="descclassname">salad.solver.da.coral.</code><code class="descname">CentroidLoss</code><span class="sig-paren">(</span><em>model</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.coral.CentroidLoss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.solver.da.coral.CorrDistanceSolver">
+<em class="property">class </em><code class="descclassname">salad.solver.da.coral.</code><code class="descname">CorrDistanceSolver</code><span class="sig-paren">(</span><em>model</em>, <em>dataset</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.coral.CorrDistanceSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="salad.solver.da.html#salad.solver.da.coral.CorrelationDistanceSolver" title="salad.solver.da.coral.CorrelationDistanceSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">salad.solver.da.coral.CorrelationDistanceSolver</span></code></a></p>
+<p>Minimal Entropy Correlation Alignment for Unsupervised Domain Adaptation
+Paper: <a class="reference external" href="https://openreview.net/pdf?id=rJWechg0Z">https://openreview.net/pdf?id=rJWechg0Z</a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.solver.da.coral.CorrelationDistanceLoss">
+<em class="property">class </em><code class="descclassname">salad.solver.da.coral.</code><code class="descname">CorrelationDistanceLoss</code><span class="sig-paren">(</span><em>model</em>, <em>n_steps_recompute=10</em>, <em>nullspace=False</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.coral.CorrelationDistanceLoss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.solver.da.coral.CorrelationDistanceSolver">
+<em class="property">class </em><code class="descclassname">salad.solver.da.coral.</code><code class="descname">CorrelationDistanceSolver</code><span class="sig-paren">(</span><em>model</em>, <em>dataset</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.coral.CorrelationDistanceSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="salad.solver.da.html#salad.solver.da.base.DABaseSolver" title="salad.solver.da.base.DABaseSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">salad.solver.da.base.DABaseSolver</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.solver.da.coral.DeepCoralSolver">
+<em class="property">class </em><code class="descclassname">salad.solver.da.coral.</code><code class="descname">DeepCoralSolver</code><span class="sig-paren">(</span><em>model</em>, <em>dataset</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.coral.DeepCoralSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="salad.solver.da.html#salad.solver.da.coral.CorrelationDistanceSolver" title="salad.solver.da.coral.CorrelationDistanceSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">salad.solver.da.coral.CorrelationDistanceSolver</span></code></a></p>
+<p>Deep CORAL: Correlation Alignment for Deep Domain Adaptation
+Paper: [<a class="reference external" href="https://arxiv.org/pdf/1607.01719.pdf](https://arxiv.org/pdf/1607.01719.pdf">https://arxiv.org/pdf/1607.01719.pdf](https://arxiv.org/pdf/1607.01719.pdf</a>)</p>
+<p>Loss Functions:</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}(x^s, x^t) = \frac{1}{4d^2} \| C_s - C_t \|\]</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.solver.da.coral.DeepLogCoralSolver">
+<em class="property">class </em><code class="descclassname">salad.solver.da.coral.</code><code class="descname">DeepLogCoralSolver</code><span class="sig-paren">(</span><em>model</em>, <em>dataset</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.coral.DeepLogCoralSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="salad.solver.da.html#salad.solver.da.coral.CorrelationDistanceSolver" title="salad.solver.da.coral.CorrelationDistanceSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">salad.solver.da.coral.CorrelationDistanceSolver</span></code></a></p>
+<p>Minimal Entropy Correlation Alignment for Unsupervised Domain Adaptation
+Paper: <a class="reference external" href="https://openreview.net/pdf?id=rJWechg0Z">https://openreview.net/pdf?id=rJWechg0Z</a></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-salad.solver.da.crossgrad">
+<span id="salad-solver-da-crossgrad-module"></span><h2>salad.solver.da.crossgrad module<a class="headerlink" href="#module-salad.solver.da.crossgrad" title="Permalink to this headline">¶</a></h2>
+<p>Cross Gradient Training</p>
+<p>ICLR 2018</p>
+<dl class="class">
+<dt id="salad.solver.da.crossgrad.CrossGradLoss">
+<em class="property">class </em><code class="descclassname">salad.solver.da.crossgrad.</code><code class="descname">CrossGradLoss</code><span class="sig-paren">(</span><em>solver</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.crossgrad.CrossGradLoss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Cross Gradient Training</p>
+<p><a class="reference external" href="http://arxiv.org/abs/1804.10745">http://arxiv.org/abs/1804.10745</a></p>
+<dl class="method">
+<dt id="salad.solver.da.crossgrad.CrossGradLoss.pertub">
+<code class="descname">pertub</code><span class="sig-paren">(</span><em>x</em>, <em>loss</em>, <em>eps=1e-05</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.crossgrad.CrossGradLoss.pertub" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.solver.da.crossgrad.CrossGradSolver">
+<em class="property">class </em><code class="descclassname">salad.solver.da.crossgrad.</code><code class="descname">CrossGradSolver</code><span class="sig-paren">(</span><em>model</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.crossgrad.CrossGradSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="salad.solver.da.html#salad.solver.da.base.DGBaseSolver" title="salad.solver.da.base.DGBaseSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">salad.solver.da.base.DGBaseSolver</span></code></a></p>
+<p>Cross Gradient Optimizer</p>
+<p>A domain generalization solver based on Cross Gradient Training <a class="footnote-reference" href="#id3" id="id2">[1]</a>.</p>
+<dl class="docutils">
+<dt>..math:</dt>
+<dd>p(y | x) = int_d p(y|x,d) p(d|x) dd</dd>
+<dt>..math:</dt>
+<dd>x_d = x + eps Nabla_y L(y) \
+x_y = x + eps Nabla_d L(d)</dd>
+</dl>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> Shankar et al., Generalizing Across Domains via Cross-Gradient Training, ICLR 2018</td></tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.solver.da.crossgrad.Model">
+<em class="property">class </em><code class="descclassname">salad.solver.da.crossgrad.</code><code class="descname">Model</code><span class="sig-paren">(</span><em>n_classes</em>, <em>n_domains</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.crossgrad.Model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<dl class="method">
+<dt id="salad.solver.da.crossgrad.Model.forward">
+<code class="descname">forward</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.crossgrad.Model.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="salad.solver.da.crossgrad.Model.forward_domain">
+<code class="descname">forward_domain</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.crossgrad.Model.forward_domain" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="salad.solver.da.crossgrad.Model.parameters_classifier">
+<code class="descname">parameters_classifier</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.crossgrad.Model.parameters_classifier" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="salad.solver.da.crossgrad.Model.parameters_domain">
+<code class="descname">parameters_domain</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.crossgrad.Model.parameters_domain" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.solver.da.crossgrad.MultiDomainModule">
+<em class="property">class </em><code class="descclassname">salad.solver.da.crossgrad.</code><code class="descname">MultiDomainModule</code><span class="sig-paren">(</span><em>n_domains</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.crossgrad.MultiDomainModule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<dl class="method">
+<dt id="salad.solver.da.crossgrad.MultiDomainModule.forward">
+<code class="descname">forward</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.crossgrad.MultiDomainModule.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="salad.solver.da.crossgrad.MultiDomainModule.forward_domain">
+<code class="descname">forward_domain</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.crossgrad.MultiDomainModule.forward_domain" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="salad.solver.da.crossgrad.MultiDomainModule.parameters_classifier">
+<code class="descname">parameters_classifier</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.crossgrad.MultiDomainModule.parameters_classifier" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="salad.solver.da.crossgrad.MultiDomainModule.parameters_domain">
+<code class="descname">parameters_domain</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.crossgrad.MultiDomainModule.parameters_domain" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="salad.solver.da.crossgrad.concat">
+<code class="descclassname">salad.solver.da.crossgrad.</code><code class="descname">concat</code><span class="sig-paren">(</span><em>x</em>, <em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.crossgrad.concat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Concat 4D tensor with expanded 2D tensor</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="salad.solver.da.crossgrad.conv2d">
+<code class="descclassname">salad.solver.da.crossgrad.</code><code class="descname">conv2d</code><span class="sig-paren">(</span><em>m</em>, <em>n</em>, <em>k</em>, <em>act=True</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.crossgrad.conv2d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="salad.solver.da.crossgrad.features">
+<code class="descclassname">salad.solver.da.crossgrad.</code><code class="descname">features</code><span class="sig-paren">(</span><em>inp</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.crossgrad.features" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="salad.solver.da.crossgrad.get_dataset">
+<code class="descclassname">salad.solver.da.crossgrad.</code><code class="descname">get_dataset</code><span class="sig-paren">(</span><em>noisemodels</em>, <em>batch_size</em>, <em>shuffle=True</em>, <em>num_workers=0</em>, <em>which='train'</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.crossgrad.get_dataset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-salad.solver.da.dann">
+<span id="salad-solver-da-dann-module"></span><h2>salad.solver.da.dann module<a class="headerlink" href="#module-salad.solver.da.dann" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="salad.solver.da.dann.AdversarialLoss">
+<em class="property">class </em><code class="descclassname">salad.solver.da.dann.</code><code class="descname">AdversarialLoss</code><span class="sig-paren">(</span><em>G</em>, <em>D</em>, <em>train_G=True</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.dann.AdversarialLoss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.solver.da.dann.DANNSolver">
+<em class="property">class </em><code class="descclassname">salad.solver.da.dann.</code><code class="descname">DANNSolver</code><span class="sig-paren">(</span><em>model</em>, <em>discriminator</em>, <em>dataset</em>, <em>learningrate</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.dann.DANNSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="salad.solver.da.html#salad.solver.da.base.DABaseSolver" title="salad.solver.da.base.DABaseSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">salad.solver.da.base.DABaseSolver</span></code></a></p>
+<p>Domain Adversarial Neural Networks Solver</p>
+<p>This builds upon the normal classification solver that uses CrossEntropy or
+BinaryCrossEntropy for optimizing neural networks.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-salad.solver.da.dirtt">
+<span id="salad-solver-da-dirtt-module"></span><h2>salad.solver.da.dirtt module<a class="headerlink" href="#module-salad.solver.da.dirtt" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="salad.solver.da.dirtt.DIRTT">
+<em class="property">class </em><code class="descclassname">salad.solver.da.dirtt.</code><code class="descname">DIRTT</code><span class="sig-paren">(</span><em>model</em>, <em>teacher</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.dirtt.DIRTT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.solver.da.dirtt.DIRTTSolver">
+<em class="property">class </em><code class="descclassname">salad.solver.da.dirtt.</code><code class="descname">DIRTTSolver</code><span class="sig-paren">(</span><em>model</em>, <em>teacher</em>, <em>dataset</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.dirtt.DIRTTSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#salad.solver.base.Solver" title="salad.solver.base.Solver"><code class="xref py py-class docutils literal notranslate"><span class="pre">salad.solver.base.Solver</span></code></a></p>
+<p>Virtual Adversarial Domain Adaptation</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.solver.da.dirtt.VADA">
+<em class="property">class </em><code class="descclassname">salad.solver.da.dirtt.</code><code class="descname">VADA</code><span class="sig-paren">(</span><em>G</em>, <em>D</em>, <em>train_G=True</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.dirtt.VADA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="salad.solver.da.html#salad.solver.da.dann.AdversarialLoss" title="salad.solver.da.dann.AdversarialLoss"><code class="xref py py-class docutils literal notranslate"><span class="pre">salad.solver.da.dann.AdversarialLoss</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.solver.da.dirtt.VADASolver">
+<em class="property">class </em><code class="descclassname">salad.solver.da.dirtt.</code><code class="descname">VADASolver</code><span class="sig-paren">(</span><em>model</em>, <em>discriminator</em>, <em>dataset</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.dirtt.VADASolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="salad.solver.da.html#salad.solver.da.dann.DANNSolver" title="salad.solver.da.dann.DANNSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">salad.solver.da.dann.DANNSolver</span></code></a></p>
+<p>Virtual Adversarial Domain Adaptation</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-salad.solver.da.dirtt_re">
+<span id="salad-solver-da-dirtt-re-module"></span><h2>salad.solver.da.dirtt_re module<a class="headerlink" href="#module-salad.solver.da.dirtt_re" title="Permalink to this headline">¶</a></h2>
+<p>Self Ensembling for Visual Domain Adaptation</p>
+<dl class="class">
+<dt id="salad.solver.da.dirtt_re.DIRTT">
+<em class="property">class </em><code class="descclassname">salad.solver.da.dirtt_re.</code><code class="descname">DIRTT</code><span class="sig-paren">(</span><em>model</em>, <em>teacher</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.dirtt_re.DIRTT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.solver.da.dirtt_re.DIRTTSolver">
+<em class="property">class </em><code class="descclassname">salad.solver.da.dirtt_re.</code><code class="descname">DIRTTSolver</code><span class="sig-paren">(</span><em>model</em>, <em>teacher</em>, <em>dataset</em>, <em>learningrate</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.dirtt_re.DIRTTSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="salad.solver.da.html#salad.solver.da.base.DABaseSolver" title="salad.solver.da.base.DABaseSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">salad.solver.da.base.DABaseSolver</span></code></a></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-salad.solver.da.djdot">
+<span id="salad-solver-da-djdot-module"></span><h2>salad.solver.da.djdot module<a class="headerlink" href="#module-salad.solver.da.djdot" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="salad.solver.da.djdot.DJDOTSolver">
+<em class="property">class </em><code class="descclassname">salad.solver.da.djdot.</code><code class="descname">DJDOTSolver</code><span class="sig-paren">(</span><em>model</em>, <em>dataset</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.djdot.DJDOTSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#salad.solver.classification.BaseClassSolver" title="salad.solver.classification.BaseClassSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">salad.solver.classification.BaseClassSolver</span></code></a></p>
+<p>Deep Joint Optimal Transport solver</p>
+<p>TODO</p>
+<dl class="method">
+<dt id="salad.solver.da.djdot.DJDOTSolver.derive_losses">
+<code class="descname">derive_losses</code><span class="sig-paren">(</span><em>batch</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.djdot.DJDOTSolver.derive_losses" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-salad.solver.da.ensembling">
+<span id="salad-solver-da-ensembling-module"></span><h2>salad.solver.da.ensembling module<a class="headerlink" href="#module-salad.solver.da.ensembling" title="Permalink to this headline">¶</a></h2>
+<p>Self Ensembling for Visual Domain Adaptation</p>
+<dl class="class">
+<dt id="salad.solver.da.ensembling.EnsemblingLoss">
+<em class="property">class </em><code class="descclassname">salad.solver.da.ensembling.</code><code class="descname">EnsemblingLoss</code><span class="sig-paren">(</span><em>model</em>, <em>teacher</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.ensembling.EnsemblingLoss" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="salad.solver.da.ensembling.SelfEnsemblingSolver">
+<em class="property">class </em><code class="descclassname">salad.solver.da.ensembling.</code><code class="descname">SelfEnsemblingSolver</code><span class="sig-paren">(</span><em>model</em>, <em>teacher</em>, <em>dataset</em>, <em>learningrate</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#salad.solver.da.ensembling.SelfEnsemblingSolver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="salad.solver.da.html#salad.solver.da.base.DABaseSolver" title="salad.solver.da.base.DABaseSolver"><code class="xref py py-class docutils literal notranslate"><span class="pre">salad.solver.da.base.DABaseSolver</span></code></a></p>
+</dd></dl>
+
+</div>
 <div class="section" id="module-salad.solver.classification">
 <span id="salad-solver-classification-module"></span><h2>salad.solver.classification module<a class="headerlink" href="#module-salad.solver.classification" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
@@ -814,7 +1297,7 @@ or finetuning of saved model checkpoints</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="salad.solver.da.html" class="btn btn-neutral float-right" title="salad.solver.da package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="salad.datasets.html" class="btn btn-neutral float-right" title="salad.datasets package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../dummy.html" class="btn btn-neutral" title="Page under construction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
