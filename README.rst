@@ -14,7 +14,8 @@ between algorithms and transfer them to real-world use cases. The
 toolbox is under active development and will extended when new
 approaches are published.
 
-Contribute and explore the code on `Github <https://github.com/domainadaptation/salad>`__
+Contribute and explore the code on `Github <https://github.com/domainadaptation/salad>`__.
+For commonly asked questions, head to our `FAQ <https://github.com/domainadaptation/salad/wiki/FAQ>`_.
 
 📊 Benchmarking Results
 -----------------------
