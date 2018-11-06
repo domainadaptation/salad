@@ -129,7 +129,10 @@ class CrossGradLoss():
 
     """ Cross Gradient Training
 
-    http://arxiv.org/abs/1804.10745
+    References
+    ----------
+
+    ..[1]: http://arxiv.org/abs/1804.10745
     """
 
     def __init__(self, solver):
