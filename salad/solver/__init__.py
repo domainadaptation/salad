@@ -17,7 +17,7 @@ exploit the particular structure most deep learning experiments share.
 
 """
 
-from .base import *
-from .classification import *
-from .gan import *
+from .base import Solver
+from .classification import BCESolver, MultidomainBCESolver, BaseClassSolver
+from .gan import ConditionalGANSolver
 from .da import *

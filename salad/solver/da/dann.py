@@ -56,28 +56,9 @@ class DANNSolver(DABaseSolver):
 
     This builds upon the normal classification solver that uses CrossEntropy or
     BinaryCrossEntropy for optimizing neural networks.
-
-    Parameters
-    ----------
-
-    model : nn.Module
-        The model to train
-    discriminator : nn.Module
-        The domain discriminator. Feature dimension should match the values returned
-        by `model`
-    dataset : Dataset
-        A multi-domain dataset
-    lr_G : float
-        Model learning rate
-    lr_D : float
-        Discriminator learning rate
-    cl_weight : float
-        Classifier weight
-    d_weight : float
-        Discriminator weight
     """
 
-    def __init__(self, model, discriminator, dataset, *args, **kwargs):
+    def __init__(self, model, discriminator, dataset, learningrate, *args, **kwargs):
         self.discriminator = discriminator
         
         super().__init__(model, dataset, *args, **kwargs)

@@ -6,7 +6,7 @@ import argparse
 import torch
 from torch import nn
 
-from ... import solver, models, datasets
+from salad import solver, models, datasets
 
 from salad.datasets.transforms.ensembling import ImageAugmentation
 
@@ -123,7 +123,6 @@ class NoisyDigitFeatures(_ConditionalModel):
         x = self.pool1(F.relu(self.conv1_3_bn(self.conv1_3(x), d)))
         x = self.drop1_3(x)
 
-
         x = F.relu(self.conv2_1_bn(self.conv2_1(x), d))
         x = self.drop2_1(x)
         x = F.relu(self.conv2_2_bn(self.conv2_2(x), d))
@@ -149,7 +148,8 @@ class DigitFeatures(_ConditionalModel):
 
         super().__init__(n_domains)
 
-        self.norm = nn.InstanceNorm2d(3, affine=False,
+        self.norm = nn.InstanceNorm2d(3,
+                affine=False,
                 momentum=0,
                 track_running_stats=False)
 
@@ -201,18 +201,43 @@ class DigitFeatures(_ConditionalModel):
 
         return x
 
+
+class NullspaceDigitFeatures(DigitFeatures):
+
+    def __init__(self, linear):
+        super().__init__()
+        self.W = linear.weight
+
+    def _compute_nullspace(self):
+        with torch.no_grad():
+            u,s,vh = torch.svd(self.W)
+            N = vh.mm(vh.transpose(1,0))
+        return N
+
+    def forward(self, x, d):
+        x = super().forward(x)
+        N = self._compute_nullspace()
+
+        x_ = x.mm(N)
+
+        return x_
+
+
 class DigitModel(_ConditionalModel):
     
-    def __init__(self, n_classes=10, n_domains=2, noisy=False):
+    def __init__(self, n_classes=10, n_domains=2, noisy=False, nullspace = False):
         super().__init__(n_domains)
         
         self.n_domains = n_domains
+        self.classifier = nn.Linear(128, n_classes)
+
         if noisy:
             self.features   = NoisyDigitFeatures(n_domains = n_domains)
+        elif nullspace:
+            self.features = NullspaceDigitFeatures(self.classifier)
         else:
             self.features   = DigitFeatures(n_domains = n_domains)
 
-        self.classifier = nn.Linear(128, n_classes)
 
         self.conditional_layers.append(self.features)  
     
@@ -221,4 +246,3 @@ class DigitModel(_ConditionalModel):
         y = self.classifier(z)
 
         return z, y
-

@@ -23,12 +23,11 @@ class EnsemblingLoss(object):
         # TODO maybe write a wrapper to modify networks for this
         _, stud_ys  = self.model(x_stud_xs, 0)
         _, stud_yt  = self.model(x_stud_xt, 1)
-        with torch.no_grad():
-            _, teach_yt = self.teacher(x_teach_xt, 0)
+        _, teach_yt = self.teacher(x_teach_xt, 0)
 
         losses = {}
         losses['ce']         = (stud_ys, ys)
-        losses['ensemble']   = (stud_yt, teach_yt)
+        losses['ensemble']   = (stud_yt, teach_yt.detach())
         
         losses['acc_s']       = (stud_ys, ys)
         losses['acc_t']       = (stud_yt, yt)
@@ -37,43 +36,8 @@ class EnsemblingLoss(object):
         return losses
 
 class SelfEnsemblingSolver(DABaseSolver):
-    """ Self-Ensembling for Visual Domain Adaptation
 
-    A solver for self-ensembling techniques, using the implementation 
-    proposed in [1]_.
-    Note that the default hyperparameters are tuned to the small digit
-    benchmarks used by [1]_, and should be adapted when the solver
-    is used for new problem settings.
-
-    Parameters
-    ----------
-
-    model : nn.Module
-        The student model
-    teacher : nn.Module
-        The teacher model, should be equivalent to the student model
-        in terms of parameters
-    learningrate : float
-        Learningrate for the student model, for use with an Adam
-        optimizer
-    ensemble : float
-        Weight for the ensembling loss (default: 3)
-    confidence_threshold : float
-        Confidence threshold for the teacher model, between 0 and 1.
-        Values close to 1 are recommended (default: 0.96837722)
-    teacher_alpha : float
-        Decay parameter for the exponential moving average optimizer
-        used to determine the teacher weights. Values close to 1 are
-        desired
-
-    References
-    ----------
-
-    ..[1] French, Geoff, Michal Mackiewicz, and Mark Fisher. "Self-ensembling for visual domain adaptation." (2018).
-           https://arxiv.org/abs/1706.05208
-    """
-
-    def __init__(self, model, teacher, dataset, *args, **kwargs):
+    def __init__(self, model, teacher, dataset, learningrate, *args, **kwargs):
         self.teacher = teacher
         super(SelfEnsemblingSolver, self).__init__(model, dataset, *args, **kwargs)
 

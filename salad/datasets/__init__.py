@@ -30,6 +30,6 @@ In **stack** mode, the dataset returns tuples (of possible different sizes):
 
 from .da import *
 from .visda import *
-from .digits import *
+from .digits import MNIST, SVHN, USPS, Synth, SynthSmall
 from .utils import *
-# from .instance import *
+from .instance import MNISTInstanceDataset, SVHNInstanceDataset

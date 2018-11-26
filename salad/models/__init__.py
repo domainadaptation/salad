@@ -1,4 +1,4 @@
-from .gan import *
-from .vision.unet import *
+from .gan import ConditionalGAN, Discriminator
+from .vision.unet import UNet
 from .fan import *
 from .digits import *

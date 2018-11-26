@@ -10,8 +10,6 @@ from ...optim import JointOptimizer
 from ...solver import Solver
 from ...layers import AccuracyScore, MeanAccuracyScore
 
-from .base import DGBaseSolver
-
 def conv2d(m,n,k,act=True):
     layers =  [nn.Conv2d(m,n,k,padding=1)]
     if act: layers += [nn.ELU()]
@@ -129,10 +127,7 @@ class CrossGradLoss():
 
     """ Cross Gradient Training
 
-    References
-    ----------
-
-    ..[1]: http://arxiv.org/abs/1804.10745
+    http://arxiv.org/abs/1804.10745
     """
 
     def __init__(self, solver):
@@ -175,11 +170,9 @@ class CrossGradLoss():
         })
         return losses
 
-class CrossGradSolver(DGBaseSolver):
+class CrossGradSolver(Solver):
 
     r""" Cross Gradient Optimizer
-
-    A domain generalization solver based on Cross Gradient Training [1]_.
 
     ..math:
         p(y | x) = \int_d p(y|x,d) p(d|x) dd
@@ -187,11 +180,6 @@ class CrossGradSolver(DGBaseSolver):
     ..math:
         x_d = x + \eps \Nabla_y L(y) \\
         x_y = x + \eps \Nabla_d L(d)
-
-    References
-    ----------
-
-    .. [1] Shankar et al., Generalizing Across Domains via Cross-Gradient Training, ICLR 2018
 
     """
 
