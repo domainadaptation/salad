@@ -92,6 +92,11 @@ class CGANLoss():
 
 class ConditionalGANSolver(Solver):
 
+    """ Train a class conditional GAN model
+
+
+    """
+
     names     = ['D_GAN', 'D_CL', 'D_CON']
     n_classes = [1, 11, 3]
 
@@ -125,12 +130,12 @@ class ConditionalGANSolver(Solver):
             D.weight_init(mean=0.0, std=0.02)
             self.register_model(D, name)
 
-    def _init_optims(self, **kwargs):
-        opt = torch.optim.Adam(self.model.parameters(),lr = learningrate, betas = (.5,.999))
+    def _init_optims(self, lr = 2e-4, beta1 = .5, beta2 = .999, **kwargs):
+        opt = torch.optim.Adam(self.model.parameters(),lr = lr, betas = (beta1, beta2))
         self.register_optimizer(opt, CGANLoss(), name="Generator")
 
         for D in self.discriminators:
-            optim = torch.optim.Adam(D.parameters(), lr = learningrate, betas = (.5,.999))
+            optim = torch.optim.Adam(D.parameters(), lr = lr, betas = (beta1, beta2))
             self.register_optim(optim, CGANLoss())
     
     def format_train_report(self, losses):

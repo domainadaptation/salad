@@ -138,9 +138,10 @@ class CorrDistanceSolver(CorrelationDistanceSolver):
 
 class CentroidDistanceLossSolver(CorrelationDistanceSolver):
     """
-    Minimal Entropy Correlation Alignment for Unsupervised Domain Adaptation
-    Paper: https://openreview.net/pdf?id=rJWechg0Z
-    and: https://arxiv.org/pdf/1705.08180.pdf
+    Notes
+    -----
+
+    Needs work.
     """
 
     def __init__(self, model, dataset, *args, **kwargs):
