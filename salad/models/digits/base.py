@@ -201,14 +201,34 @@ class DigitFeatures(_ConditionalModel):
 
         return x
 
+class NullspaceDigitFeatures(DigitFeatures):
+
+     def __init__(self, linear):
+        super().__init__()
+        self.W = linear.weight
+
+     def _compute_nullspace(self):
+        with torch.no_grad():
+            u,s,vh = torch.svd(self.W)
+            N = vh.mm(vh.transpose(1,0))
+        return N
+
+     def forward(self, x, d):
+        x = super().forward(x)
+        N = self._compute_nullspace()
+        x_ = x.mm(N)
+        return x_
+
 class DigitModel(_ConditionalModel):
     
-    def __init__(self, n_classes=10, n_domains=2, noisy=False):
+    def __init__(self, n_classes=10, n_domains=2, noisy=False, nullspace = False):
         super().__init__(n_domains)
         
         self.n_domains = n_domains
         if noisy:
             self.features   = NoisyDigitFeatures(n_domains = n_domains)
+        elif nullspace:
+            self.features = NullspaceDigitFeatures(self.classifier)
         else:
             self.features   = DigitFeatures(n_domains = n_domains)
 

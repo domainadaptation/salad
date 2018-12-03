@@ -109,7 +109,7 @@ class VADASolver(DANNSolver):
         
 class DIRTTSolver(Solver):
 
-    """ Virtual Adversarial Domain Adaptation
+    """ DIRT-T Finetuning on the Target Domain
     """
 
     def __init__(self, model, teacher, dataset, *args, **kwargs):

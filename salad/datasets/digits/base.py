@@ -17,7 +17,8 @@ class _BaseDataset(Dataset):
     training_file = None
     test_file     = None
     
-    def __init__(self, root, split = 'train', transform = None, label_transform = None, download=True):
+    def __init__(self, root, split = 'train', transform = None,
+                 label_transform = None, download=True):
 
         super().__init__()
         
