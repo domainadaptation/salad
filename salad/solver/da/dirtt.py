@@ -83,7 +83,7 @@ class VADASolver(DANNSolver):
     def __init__(self, model, discriminator, dataset, *args, **kwargs):
         super(VADASolver, self).__init__(model, discriminator, dataset, *args, **kwargs)
 
-    def _init_optims(self):
+    def _init_optims(self, **kwargs):
         # override original call, but call init of higher class
         DABaseSolver._init_optims(self)
 
@@ -99,7 +99,7 @@ class VADASolver(DANNSolver):
                                     lr=3e-4),
                                 loss_disc)
 
-    def _init_losses(self):
+    def _init_losses(self, **kwargs):
 
         super()._init_losses(cl_weight=1e-2)
 
