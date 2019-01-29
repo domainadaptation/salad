@@ -1,34 +1,4 @@
-param_collection = [{}, {}, {}, {}]
 
-N = 9
-
-n_models = len(fnames)
-
-for n, fname in enumerate(fnames):
-    model = torch.load(fname)
-    
-    print(n, len(param_collection))
-
-    for i in range(N):
-
-        for j, layer in enumerate(model.conditional_layers):
-            
-            vals = get_transform(layer.layers[i])
-            
-            for val, param_dict in zip(vals, param_collection): 
-                
-                val = val.data.detach().cpu().numpy()
-
-                p             = param_dict.get(j, np.zeros((10,n_models) + val.shape))
-                p[i,n]        = val
-                param_dict[j] = p
-
-P = []
-for p in param_collection:
-    params = [p[i] for i in range(len(p))]
-    P.append(np.concatenate(params, axis=-1))
-P = np.stack(P, axis=0)[:,:9]
-P.shape
 
 def compute_linear(params):
 
@@ -57,3 +27,38 @@ def get_transform(bn_layer):
     b = b.data.detach().cpu().numpy()
     
     return mu, var, gamma, beta
+
+
+
+if __name__ == "__main__":
+    param_collection = [{}, {}, {}, {}]
+
+    N = 9
+
+    n_models = len(fnames)
+
+    for n, fname in enumerate(fnames):
+        model = torch.load(fname)
+        
+        print(n, len(param_collection))
+
+        for i in range(N):
+
+            for j, layer in enumerate(model.conditional_layers):
+                
+                vals = get_transform(layer.layers[i])
+                
+                for val, param_dict in zip(vals, param_collection): 
+                    
+                    val = val.data.detach().cpu().numpy()
+
+                    p             = param_dict.get(j, np.zeros((10,n_models) + val.shape))
+                    p[i,n]        = val
+                    param_dict[j] = p
+
+    P = []
+    for p in param_collection:
+        params = [p[i] for i in range(len(p))]
+        P.append(np.concatenate(params, axis=-1))
+    P = np.stack(P, axis=0)[:,:9]
+    P.shape

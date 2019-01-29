@@ -50,7 +50,6 @@ def make_data(n_samples = 50000, n_domains = 2, plot=False, noisemodels = None, 
 class ToyDatasetLoader(MultiDomainLoader):
     """ Digits dataset
 
-    Four domains available: SVHN, MNIST, SYNTH, USPS
     """ 
     
     def __init__(self, seed = None, augment = False,

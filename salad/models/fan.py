@@ -1,3 +1,7 @@
+""" The feature aware normalization module
+"""
+
+
 import torch
 import torch.nn as nn
 
