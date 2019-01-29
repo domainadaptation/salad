@@ -39,6 +39,14 @@ class DIRTTSolver(Solver):
 
     """ DIRT-T Finetuning on the Target Domain
 
+    DIRT-T solves an unsupervised objective partly making use of ensembling
+    between a teacher and a student model in addition to the VAT and Conditional
+    Entropy Losses.
+
+    The fine-tuning operates under the assumption that by exploiting the cluster
+    assumption on the target domain, the classification boundary can be additionally
+    improved.
+
     References
     ----------
     
@@ -64,8 +72,9 @@ class DIRTTSolver(Solver):
                               alpha=teacher_alpha)
 
         opt = optim.JointOptimizer(opt_stud_src)
-        
-        loss_model = VADA(self.model, self.discriminator, train_G = True)
+        loss = DIRTT(self.model, self.discriminator, train_G = True)
+        self.register_optim(opt, loss, "Joint DIRTT Opt (Adam + EMA)")
+
 
     def _init_losses(self, cl_weight = 1e-2, vat_weight = 1e-2, entropy_weight = 1e-2):
 
