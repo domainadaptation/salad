@@ -7,3 +7,5 @@ torchvision
 h5py
 pandas
 pytables
+tqdm
+opencv

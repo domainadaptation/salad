@@ -7,10 +7,10 @@ def test_digits():
     T = transforms.ToTensor()
 
     data = [
-        MNIST('/tmp/data', transform = T),
-        SVHN('/tmp/data',  transform = T),
-        SynthSmall('/tmp/data',  transform = T),
-        USPS('/tmp/data',  transform = T),
+        MNIST('/tmp/data', transform = T, download=True),
+        SVHN('/tmp/data',  transform = T, download=True),
+        SynthSmall('/tmp/data',  transform = T, download=True),
+        USPS('/tmp/data',  transform = T, download=True),
     ]
 
     for ds in data:
