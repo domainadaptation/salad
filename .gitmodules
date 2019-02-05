@@ -1,3 +1,8 @@
 [submodule "docs/_release"]
 	path = _sphinx/_release
 	url = git@github.com:domainadaptation/domainadaptation.github.io.git
+
+[submodule "_sphinx/readinglist"]
+    path = _sphinx/readinglist
+    url = git@github.com:domainadaptation/awesome-transfer-learning.git
+
