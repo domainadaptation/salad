@@ -8,6 +8,6 @@ before_install:
     - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
     - git submodule update --init --recursive
 install:
-    - pip install -r requirements.txt
+    - pip install --progress-bar off -r requirements.txt
 script:
     - python -m pytest
