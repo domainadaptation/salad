@@ -1,3 +1,7 @@
+.. image:: https://travis-ci.org/domainadaptation/salad.svg?branch=master
+    :target: https://travis-ci.org/domainadaptation/salad
+
+
 🥗 salad 
 ========
 
@@ -5,7 +9,6 @@
 
 .. figure:: img/domainshift.png
    :alt: 
-
 
 ``salad`` is a library to easily setup experiments using the current
 state-of-the art techniques in domain adaptation. It features several of
