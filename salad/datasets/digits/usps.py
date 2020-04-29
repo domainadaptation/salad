@@ -50,7 +50,7 @@ class USPS(_BaseDataset):
         'http://statweb.stanford.edu/~tibs/ElemStatLearn/datasets/zip.test.gz'
     ]
     training_file = 'zip.train.gz'
-    test_file = 'zip.train.gz'
+    test_file = 'zip.test.gz'
     
     def extract_images_labels(self, filename):
         import gzip
