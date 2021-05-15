@@ -17,6 +17,8 @@ approaches are published.
 Contribute and explore the code on `Github <https://github.com/domainadaptation/salad>`__.
 For commonly asked questions, head to our `FAQ <https://github.com/domainadaptation/salad/wiki/FAQ>`_.
 
+**Check out robusta, our new library for domain adaptation and robustness evaluation on ImageNet scale: https://github.com/bethgelab/robustness**
+
 📊 Benchmarking Results
 -----------------------
 
